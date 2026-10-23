@@ -1,0 +1,93 @@
+name: macos-repro
+
+# Re-runs the codex-core test group from CorbanuCore/CorbanuTerminal issue #1367
+# five times, each from a clean build, on a GitHub-hosted macOS 15 runner
+# (the same runner label as the crashed CI job 120066112486).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repro:
+    runs-on: macos-15
+    timeout-minutes: 340
+    env:
+      UPSTREAM: https://github.com/CorbanuCore/CorbanuTerminal.git
+      COMMIT: 1e90ae8def
+      # Same job-level env as rust-ci-core-security.yml at 1e90ae8def, and
+      # TMPDIR=/tmp as in its failing macOS step.
+      CARGO_INCREMENTAL: "0"
+      CORBANU_TEST_NO_NATIVE_KEYRING: "1"
+      RUST_BACKTRACE: "1"
+      RUST_MIN_STACK: "8388608"
+      TMPDIR: /tmp
+    steps:
+      - name: Clone and check out the crashed commit
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/logs"
+          git clone "$UPSTREAM" CorbanuTerminal
+          cd CorbanuTerminal
+          git checkout "$COMMIT"
+          {
+            echo "\$ git rev-parse HEAD"
+            git rev-parse HEAD
+            echo "\$ sw_vers"
+            sw_vers
+            echo "\$ uname -m"
+            uname -m
+            echo "\$ sysctl -n machdep.cpu.brand_string"
+            sysctl -n machdep.cpu.brand_string
+            echo "\$ sysctl -n hw.ncpu hw.memsize"
+            sysctl -n hw.ncpu hw.memsize
+            echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+          } | tee "$RUNNER_TEMP/logs/00-environment.txt"
+
+      - name: Toolchain
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          {
+            echo "\$ cat rust-toolchain.toml"
+            cat rust-toolchain.toml
+            echo "\$ rustc -V; cargo -V"
+            rustc -V
+            cargo -V
+          } 2>&1 | tee "$RUNNER_TEMP/logs/01-toolchain.txt"
+
+      - name: Five clean runs of the card command
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          cmd='cargo test -p codex-core --test all -- suite::issue_506 suite::issue_584 suite::issue_620_622 suite::issue_736_740 suite::issue_747'
+          summary="$RUNNER_TEMP/logs/summary.txt"
+          echo "command (run in codex-rs/, each preceded by cargo clean): $cmd" > "$summary"
+          for n in 1 2 3 4 5; do
+            log="$RUNNER_TEMP/logs/run-$n.log"
+            start=$(date -u +%FT%TZ)
+            {
+              echo "=== run $n start $start"
+              echo "\$ cargo clean"
+              cargo clean
+              echo "\$ $cmd"
+              $cmd
+            } > "$log" 2>&1
+            rc=$?
+            end=$(date -u +%FT%TZ)
+            if [ "$rc" -eq 0 ]; then res=PASS; else res=FAIL; fi
+            sig=$(grep -c -E 'signal: 11|SIGSEGV' "$log")
+            echo "=== run $n end $end result $res exit $rc sigsegv_lines $sig" >> "$log"
+            echo "run $n start $start end $end result $res exit $rc sigsegv_lines $sig" | tee -a "$summary"
+          done
+          exit 0
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-repro-logs
+          path: ${{ runner.temp }}/logs/
+          retention-days: 30
