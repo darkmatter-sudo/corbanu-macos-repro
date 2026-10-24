@@ -1,0 +1,177 @@
+name: macos-unwind-probe
+
+# Lead: on macos-15 the linker warns that the `all` test binary's __eh_frame
+# is over 16 MB ("too large to encode dwarf unwind offsets in compact unwind
+# table"). The warning is also in green runs, so it cannot crash a run alone.
+# It could if a #902 test panics and unwinding then faults: libtest captures
+# the panic message, so the process would die with a silent SIGSEGV, which
+# is what job 120066112486 (issue #1367) shows.
+# This workflow measures that on the same binary: (1) the __eh_frame /
+# __unwind_info sizes and the DWARF-mode compact unwind entries, (2) three
+# deliberate-panic tests added to the `all` binary IN THIS RUNNER ONLY,
+# repeated with and without TMPDIR=/tmp, (3) one #902 step for comparison.
+# Nothing is pushed or posted upstream.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: CorbanuTerminal commit to test.
+        required: true
+        default: 55ffd0277cba12bbe90dfa687a086809d14c4c10
+      repeats:
+        description: Runs of the probe tests per TMPDIR setting.
+        required: true
+        default: "20"
+
+permissions:
+  contents: read
+
+jobs:
+  unwind-probe:
+    runs-on: macos-15
+    timeout-minutes: 120
+    env:
+      UPSTREAM: https://github.com/CorbanuCore/CorbanuTerminal.git
+      COMMIT: ${{ inputs.commit }}
+      REPEATS: ${{ inputs.repeats }}
+      TARGET: aarch64-apple-darwin
+      # Same job-level env as rust-ci-core-security.yml.
+      CARGO_INCREMENTAL: "0"
+      CORBANU_TEST_NO_NATIVE_KEYRING: "1"
+      RUST_BACKTRACE: "1"
+      RUST_MIN_STACK: "8388608"
+    steps:
+      - name: Clone, check out, add probe tests (runner only)
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/logs"
+          git clone "$UPSTREAM" CorbanuTerminal
+          cd CorbanuTerminal
+          git checkout "$COMMIT"
+          cat > codex-rs/core/tests/suite/zz_unwind_probe.rs <<'EOF'
+          //! Fork-only probe for issue #1367, never pushed upstream: does a
+          //! panic unwind cleanly in this binary on macOS?
+          use std::hint::black_box;
+
+          #[inline(never)]
+          fn deep(n: u32) -> u32 {
+              if n == 0 {
+                  panic!("unwind probe: deliberate panic");
+              }
+              black_box(deep(black_box(n - 1))) + 1
+          }
+
+          #[test]
+          #[should_panic(expected = "unwind probe")]
+          fn probe_plain_panic_unwinds() {
+              black_box(deep(64));
+          }
+
+          #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+          #[should_panic(expected = "unwind probe")]
+          async fn probe_tokio_test_panic_unwinds() {
+              tokio::task::yield_now().await;
+              black_box(deep(64));
+          }
+
+          #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+          async fn probe_spawned_task_panic_is_caught() {
+              let joined = tokio::spawn(async {
+                  tokio::task::yield_now().await;
+                  deep(64)
+              })
+              .await;
+              assert!(joined.expect_err("task must panic").is_panic());
+          }
+          EOF
+          echo 'mod zz_unwind_probe;' >> codex-rs/core/tests/suite/mod.rs
+          {
+            echo "\$ git rev-parse HEAD"
+            git rev-parse HEAD
+            echo "\$ git status --short (probe files only)"
+            git status --short
+            echo "\$ cat codex-rs/core/tests/suite/zz_unwind_probe.rs"
+            cat codex-rs/core/tests/suite/zz_unwind_probe.rs
+            echo "\$ sw_vers; uname -m"
+            sw_vers
+            uname -m
+            echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+          } 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"
+
+      - name: Build the all test binary
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          { rustc -V; cargo -V; ld -v 2>&1 | head -1; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"
+          cargo test --locked --target "$TARGET" -p codex-core --test all --no-run 2>&1 \
+            | tee "$RUNNER_TEMP/logs/02-build.txt" | grep -E 'eh_frame|Executable' || true
+          cargo build --locked --target "$TARGET" -p codex-code-mode-host -p codex-rmcp-client --bins 2>&1 | tail -3
+
+      - name: Static unwind info of the all binary
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          # Cargo prints "Executable tests/all.rs (<path>)" for the binary it built.
+          bin=$(sed -n 's/.*Executable tests\/all\.rs (\(.*\))$/\1/p' "$RUNNER_TEMP/logs/02-build.txt" | tail -1)
+          out="$RUNNER_TEMP/logs/03-unwind-info.txt"
+          {
+            echo "binary: $(basename "$bin") ($(stat -f %z "$bin") bytes)"
+            echo "\$ otool -l (sections __eh_frame, __unwind_info)"
+            otool -l "$bin" | grep -A4 -E 'sectname __(eh_frame|unwind_info)'
+          } > "$out" 2>&1
+          objdump --macho --unwind-info "$bin" > "$RUNNER_TEMP/unwind.txt" 2>&1
+          # arm64 compact encoding: mode in bits 24-27, 0x3 = DWARF, low 24 bits = FDE offset hint.
+          python3 - "$RUNNER_TEMP/unwind.txt" >> "$out" <<'PY'
+          import re, sys, collections
+          modes = collections.Counter(); dwarf = []
+          for line in open(sys.argv[1], errors="replace"):
+              m = re.search(r"encoding(?:\[\d+\])?=0x([0-9a-fA-F]+)", line)
+              if not m:
+                  continue
+              enc = int(m.group(1), 16)
+              mode = (enc >> 24) & 0xF
+              modes[mode] += 1
+              if mode == 3:
+                  dwarf.append(enc & 0xFFFFFF)
+          print("compact unwind entries by mode (arm64: 2=frameless 3=dwarf 4=frame):", dict(sorted(modes.items())))
+          print("dwarf-mode entries:", len(dwarf), "| offset hint == 0:", sum(1 for d in dwarf if d == 0),
+                "| max hint: 0x%x" % (max(dwarf) if dwarf else 0))
+          PY
+          cat "$out"
+
+      - name: Run probe tests repeatedly
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          summary="$RUNNER_TEMP/logs/summary.txt"
+          : > "$summary"
+          for n in $(seq 1 "$REPEATS"); do
+            for tmp in "" /tmp; do
+              log="$RUNNER_TEMP/logs/probe-$n-${tmp:+tmp}.log"
+              if [ -n "$tmp" ]; then
+                TMPDIR="$tmp" cargo test --locked --target "$TARGET" -p codex-core --test all -- suite::zz_unwind_probe:: > "$log" 2>&1
+              else
+                cargo test --locked --target "$TARGET" -p codex-core --test all -- suite::zz_unwind_probe:: > "$log" 2>&1
+              fi
+              rc=$?
+              sig=$(grep -c -E 'signal: 1[01]|SIGSEGV|SIGBUS|SIGABRT' "$log")
+              res=$(grep -E '^test result:' "$log" | tail -1)
+              echo "probe run $n TMPDIR=${tmp:-unset} exit $rc signal_lines $sig ${res:-no test result}" | tee -a "$summary"
+              if [ "$rc" -eq 0 ] && [ "$n" -gt 1 ]; then rm -f "$log"; fi
+            done
+          done
+          echo "probe failures: $(grep -c -v ' exit 0 ' "$summary")" | tee -a "$summary"
+          suites902="suite::issue_506:: suite::issue_584:: suite::issue_620_622:: suite::issue_736_740:: suite::issue_747:: suite::issue_748::"
+          # shellcheck disable=SC2086 # word list on purpose
+          TMPDIR=/tmp cargo test --locked --target "$TARGET" -p codex-core --test all -- $suites902 > "$RUNNER_TEMP/logs/902-tmp.log" 2>&1
+          echo "902 step TMPDIR=/tmp exit $? $(grep -E '^test result:' "$RUNNER_TEMP/logs/902-tmp.log" | tail -1)" | tee -a "$summary"
+          exit 0
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-unwind-probe-logs
+          path: ${{ runner.temp }}/logs/
+          retention-days: 30
