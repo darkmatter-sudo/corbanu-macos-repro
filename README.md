@@ -18,3 +18,15 @@ The job uses the same job-level environment as the upstream
 `rust-ci-core-security.yml` (`RUST_MIN_STACK=8388608`, `RUST_BACKTRACE=1`,
 `CARGO_INCREMENTAL=0`, `CORBANU_TEST_NO_NATIVE_KEYRING=1`) and `TMPDIR=/tmp` as in the
 failing macOS step. No upstream code is changed.
+
+## Stress run (`stress.yml`)
+
+`.github/workflows/stress.yml` (manual `workflow_dispatch`, inputs `commit`, `iterations`)
+builds the codex-core `all` test binary once on `macos-15` and runs the exact #902 step
+of `rust-ci-core-security.yml`
+(`cargo test --locked --target aarch64-apple-darwin -p codex-core --test all -- suite::issue_506:: suite::issue_584:: suite::issue_620_622:: suite::issue_736_740:: suite::issue_747:: suite::issue_748::`)
+`iterations` times, alternating `TMPDIR` unset and `TMPDIR=/tmp` as that workflow does.
+It keeps a one-line summary per run, the full log of every failing run, and any macOS
+crash report (`~/Library/Logs/DiagnosticReports/all-*.ips`) written for the test binary,
+as the `macos-stress-logs` artifact. Same job-level environment as above. No upstream code
+is changed and nothing is posted upstream.
