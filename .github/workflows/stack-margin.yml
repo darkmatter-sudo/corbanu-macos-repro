@@ -1,0 +1,118 @@
+name: macos-stack-margin
+
+# How much stack headroom the #902 suites (issue #1367) have on macos-15.
+# Builds the codex-core `all` test binary once from CorbanuCore/CorbanuTerminal
+# and runs the exact #902 step from rust-ci-core-security.yml with
+# RUST_MIN_STACK set below, at and above the 8 MiB the workflow uses. The
+# lowest value that still passes shows how close 8 MiB is to the suites'
+# real need; the failure mode below it (stack-overflow message vs. a silent
+# SIGSEGV) shows whether an overflow there looks like the #1367 crash.
+# Crash reports (*.ips) are kept. Nothing is posted upstream.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: CorbanuTerminal commit to test.
+        required: true
+        default: 55ffd0277cba12bbe90dfa687a086809d14c4c10
+      stacks_mib:
+        description: Space-separated RUST_MIN_STACK values in MiB.
+        required: true
+        default: "1 2 3 4 6 8 32"
+      repeats:
+        description: Runs per value (alternating TMPDIR unset and /tmp).
+        required: true
+        default: "2"
+
+permissions:
+  contents: read
+
+jobs:
+  margin:
+    runs-on: macos-15
+    timeout-minutes: 180
+    env:
+      UPSTREAM: https://github.com/CorbanuCore/CorbanuTerminal.git
+      COMMIT: ${{ inputs.commit }}
+      STACKS_MIB: ${{ inputs.stacks_mib }}
+      REPEATS: ${{ inputs.repeats }}
+      # Same job-level env as rust-ci-core-security.yml (RUST_MIN_STACK is
+      # set per run below).
+      CARGO_INCREMENTAL: "0"
+      CORBANU_TEST_NO_NATIVE_KEYRING: "1"
+      RUST_BACKTRACE: "1"
+    steps:
+      - name: Clone and check out
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/logs/crash-reports"
+          git clone "$UPSTREAM" CorbanuTerminal
+          cd CorbanuTerminal
+          git checkout "$COMMIT"
+          {
+            echo "\$ git rev-parse HEAD"
+            git rev-parse HEAD
+            echo "\$ sw_vers"
+            sw_vers
+            echo "\$ uname -m"
+            uname -m
+            echo "\$ sysctl -n machdep.cpu.brand_string hw.ncpu hw.memsize"
+            sysctl -n machdep.cpu.brand_string hw.ncpu hw.memsize
+            echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+          } 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"
+
+      - name: Build the test binary (as the workflow does)
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          { rustc -V; cargo -V; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"
+          cargo test --locked --target aarch64-apple-darwin -p codex-core --test all --no-run 2>&1 | tail -5
+
+      - name: Run the step at each stack size
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          summary="$RUNNER_TEMP/logs/summary.txt"
+          : > "$summary"
+          for mib in $STACKS_MIB; do
+            bytes=$((mib * 1024 * 1024))
+            for n in $(seq 1 "$REPEATS"); do
+              if [ $((n % 2)) -eq 0 ]; then tmp=/tmp; else tmp=""; fi
+              log="$RUNNER_TEMP/logs/stack-${mib}MiB-run-$n.log"
+              start=$(date -u +%FT%TZ)
+              if [ -n "$tmp" ]; then
+                TMPDIR=/tmp RUST_MIN_STACK=$bytes cargo test --locked --target aarch64-apple-darwin -p codex-core --test all -- \
+                  suite::issue_506:: suite::issue_584:: suite::issue_620_622:: suite::issue_736_740:: suite::issue_747:: suite::issue_748:: \
+                  > "$log" 2>&1
+              else
+                RUST_MIN_STACK=$bytes cargo test --locked --target aarch64-apple-darwin -p codex-core --test all -- \
+                  suite::issue_506:: suite::issue_584:: suite::issue_620_622:: suite::issue_736_740:: suite::issue_747:: suite::issue_748:: \
+                  > "$log" 2>&1
+              fi
+              rc=$?
+              segv=$(grep -c -E 'signal: 11|SIGSEGV' "$log")
+              ovf=$(grep -c 'has overflowed its stack' "$log")
+              done_tests=$(grep -c -E '^test .* \.\.\. ' "$log")
+              res=$(grep -E '^test result:' "$log" | tail -1)
+              echo "RUST_MIN_STACK=${mib}MiB run $n start $start TMPDIR=${tmp:-unset} exit $rc sigsegv_lines $segv overflow_msgs $ovf tests_finished $done_tests ${res:-no test result}" | tee -a "$summary"
+            done
+          done
+          exit 0
+
+      - name: Collect crash reports
+        if: always()
+        run: |
+          set +e
+          find ~/Library/Logs/DiagnosticReports /Library/Logs/DiagnosticReports -name 'all-*' -newer "$RUNNER_TEMP/logs/00-environment.txt" \
+            -exec cp {} "$RUNNER_TEMP/logs/crash-reports/" \; 2>/dev/null
+          ls -la "$RUNNER_TEMP/logs/crash-reports"
+          exit 0
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-stack-margin-logs
+          path: ${{ runner.temp }}/logs/
+          retention-days: 30
