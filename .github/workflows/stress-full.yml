@@ -1,0 +1,125 @@
+name: macos-stress-full
+
+# stress.yml ran only the #902 step, 60 times, with no crash. In job
+# 120066112486 (issue #1367) the SIGSEGV came in the 6th test step, after the
+# security:: and pf_23/pf_25 steps had run in the same job and home folder.
+# This workflow builds what rust-ci-core-security.yml builds, then replays ALL
+# six test steps of that workflow, in order, many times on one runner, and
+# keeps the macOS crash report (*.ips, faulting thread backtrace) of any crash.
+# Nothing is posted upstream.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: CorbanuTerminal commit to test.
+        required: true
+        default: 55ffd0277cba12bbe90dfa687a086809d14c4c10
+      iterations:
+        description: Number of replays of the six-step sequence.
+        required: true
+        default: "25"
+
+permissions:
+  contents: read
+
+jobs:
+  stress-full:
+    runs-on: macos-15
+    timeout-minutes: 300
+    env:
+      UPSTREAM: https://github.com/CorbanuCore/CorbanuTerminal.git
+      COMMIT: ${{ inputs.commit }}
+      ITERATIONS: ${{ inputs.iterations }}
+      TARGET: aarch64-apple-darwin
+      # Same job-level env as rust-ci-core-security.yml.
+      CARGO_INCREMENTAL: "0"
+      CORBANU_TEST_NO_NATIVE_KEYRING: "1"
+      RUST_BACKTRACE: "1"
+      RUST_MIN_STACK: "8388608"
+    steps:
+      - name: Clone and check out
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/logs/crash-reports"
+          git clone "$UPSTREAM" CorbanuTerminal
+          cd CorbanuTerminal
+          git checkout "$COMMIT"
+          {
+            echo "\$ git rev-parse HEAD"
+            git rev-parse HEAD
+            echo "\$ sw_vers"
+            sw_vers
+            echo "\$ uname -m"
+            uname -m
+            echo "\$ sysctl -n machdep.cpu.brand_string hw.ncpu hw.memsize"
+            sysctl -n machdep.cpu.brand_string hw.ncpu hw.memsize
+            echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+            echo "\$ ls ~/Library/Logs/DiagnosticReports (before)"
+            ls -la ~/Library/Logs/DiagnosticReports 2>&1 || true
+          } 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"
+
+      - name: Build (as the workflow does)
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          { rustc -V; cargo -V; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"
+          cargo test --locked --target "$TARGET" -p codex-core --lib --no-run 2>&1 | tail -3
+          cargo test --locked --target "$TARGET" -p codex-core --test all --no-run 2>&1 | tail -3
+          cargo build --locked --target "$TARGET" -p codex-code-mode-host -p codex-rmcp-client --bins 2>&1 | tail -3
+
+      - name: Replay the six test steps repeatedly
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          summary="$RUNNER_TEMP/logs/summary.txt"
+          : > "$summary"
+          suites902="suite::issue_506:: suite::issue_584:: suite::issue_620_622:: suite::issue_736_740:: suite::issue_747:: suite::issue_748::"
+          # step name|cargo test args after -p codex-core|TMPDIR (empty = runner default)
+          steps=(
+            "security|--lib -- security::|"
+            "security-tmp|--lib -- security::|/tmp"
+            "pf|--test all -- suite::pf_23_s01 suite::pf_25_s01|"
+            "pf-tmp|--test all -- suite::pf_23_s01 suite::pf_25_s01|/tmp"
+            "902|--test all -- $suites902|"
+            "902-tmp|--test all -- $suites902|/tmp"
+          )
+          for n in $(seq 1 "$ITERATIONS"); do
+            for s in "${steps[@]}"; do
+              IFS='|' read -r name args tmp <<< "$s"
+              log="$RUNNER_TEMP/logs/iter-$n-$name.log"
+              start=$(date -u +%FT%TZ)
+              # shellcheck disable=SC2086 # args is a word list on purpose
+              if [ -n "$tmp" ]; then
+                TMPDIR="$tmp" cargo test --locked --target "$TARGET" -p codex-core $args > "$log" 2>&1
+              else
+                cargo test --locked --target "$TARGET" -p codex-core $args > "$log" 2>&1
+              fi
+              rc=$?
+              sig=$(grep -c -E 'signal: 1[01]|SIGSEGV|SIGBUS|overflowed' "$log")
+              res=$(grep -E '^test result:' "$log" | tail -1)
+              echo "iter $n step $name start $start TMPDIR=${tmp:-unset} exit $rc signal_lines $sig ${res:-no test result}" | tee -a "$summary"
+              # Keep only failing logs in full; passing ones are summarized.
+              if [ "$rc" -eq 0 ]; then rm -f "$log"; fi
+            done
+          done
+          echo "failures: $(grep -c -v ' exit 0 ' "$summary")" | tee -a "$summary"
+          exit 0
+
+      - name: Collect crash reports
+        if: always()
+        run: |
+          set +e
+          ls -la ~/Library/Logs/DiagnosticReports 2>&1 | tee "$RUNNER_TEMP/logs/02-diagnostic-reports.txt"
+          find ~/Library/Logs/DiagnosticReports /Library/Logs/DiagnosticReports -name '*.ips' -newer "$RUNNER_TEMP/logs/00-environment.txt" \
+            -exec cp {} "$RUNNER_TEMP/logs/crash-reports/" \; 2>/dev/null
+          ls -la "$RUNNER_TEMP/logs/crash-reports"
+          exit 0
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-stress-full-logs
+          path: ${{ runner.temp }}/logs/
+          retention-days: 30

@@ -30,3 +30,16 @@ It keeps a one-line summary per run, the full log of every failing run, and any 
 crash report (`~/Library/Logs/DiagnosticReports/all-*.ips`) written for the test binary,
 as the `macos-stress-logs` artifact. Same job-level environment as above. No upstream code
 is changed and nothing is posted upstream.
+
+## Full-sequence stress run (`stress-full.yml`)
+
+`stress.yml` ran only the #902 step (60/60 passed, run 40080772518). In the failing upstream
+job the crash came in the sixth test step, after the `security::` and `pf_23_s01`/`pf_25_s01`
+steps had already run on the same runner and home folder. `.github/workflows/stress-full.yml`
+(manual `workflow_dispatch`, inputs `commit`, `iterations`) builds what
+`rust-ci-core-security.yml` builds (`--lib` and `--test all` test binaries plus the
+`codex-code-mode-host`/`codex-rmcp-client` helpers), then replays all six test steps of that
+workflow in order, with the same `TMPDIR` settings, `iterations` times on one `macos-15` runner.
+It writes one summary line per step, the full log of every failing step, and every new `*.ips`
+crash report, as the `macos-stress-full-logs` artifact. No upstream code is changed and nothing
+is posted upstream.
