@@ -3,13 +3,20 @@ name: crash-report proof (#1367)
 # Proof for the CorbanuTerminal PR that uploads macOS crash reports when the
 # core-security job fails. The two "(#1367)" steps in each job are copied
 # byte-for-byte from .github/workflows/rust-ci-core-security.yml at
-# CorbanuTerminal commit 18a3006da5429b88ab0f1fd1e60d29f30a014877
+# CorbanuTerminal commit 6defab722ba8457d2afdcd943e6ee4d239f9fb6a
 # (the job's first step re-checks that). Actions is disabled on the fork, so
 # the proof runs here.
-#   crash: a process dies with SIGSEGV and the job fails -> artifact expected.
+#   crash: a process dies with SIGSEGV and the job fails -> artifact with
+#          that process's report only (the image's old reports are skipped).
 #   pass:  the job passes -> both steps skipped, no artifact.
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: Used only in the artifact name, as in the real job.
+        required: false
+        type: string
+        default: aarch64-apple-darwin
 
 permissions:
   contents: read
@@ -18,7 +25,7 @@ jobs:
   crash:
     runs-on: macos-15
     env:
-      PR_SHA: 18a3006da5429b88ab0f1fd1e60d29f30a014877
+      PR_SHA: 6defab722ba8457d2afdcd943e6ee4d239f9fb6a
     steps:
       - name: Show runner and check the copied steps match the PR commit
         run: |
@@ -38,8 +45,10 @@ jobs:
       # #1367: a test binary once died with a bare SIGSEGV and no output, and
       # the log could not say which thread faulted. When this job fails on
       # macOS, keep the crash reports (`*.ips`) so the next occurrence can.
-      # ReportCrash writes them a few seconds after the crash, so wait briefly
-      # when none are there yet.
+      # The runner image ships old reports from its own build, so only take
+      # files changed within this job's 60-minute timeout (+10). ReportCrash
+      # writes a report a few seconds after the crash, so wait briefly when
+      # none is there yet.
       - name: Collect macOS crash reports (#1367)
         if: ${{ failure() && runner.os == 'macOS' }}
         working-directory: .
@@ -49,7 +58,7 @@ jobs:
           mkdir -p "$out"
           for _ in 1 2 3 4 5 6; do
             find "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports \
-              -maxdepth 1 -name '*.ips' -exec cp -p {} "$out/" \; 2>/dev/null
+              -maxdepth 1 -name '*.ips' -mmin -70 -exec cp -p {} "$out/" \; 2>/dev/null
             [ -n "$(ls -A "$out")" ] && break
             sleep 5
           done
@@ -69,7 +78,7 @@ jobs:
   pass:
     runs-on: macos-15
     env:
-      PR_SHA: 18a3006da5429b88ab0f1fd1e60d29f30a014877
+      PR_SHA: 6defab722ba8457d2afdcd943e6ee4d239f9fb6a
     steps:
       - name: Show runner and check the copied steps match the PR commit
         run: |
@@ -86,8 +95,10 @@ jobs:
       # #1367: a test binary once died with a bare SIGSEGV and no output, and
       # the log could not say which thread faulted. When this job fails on
       # macOS, keep the crash reports (`*.ips`) so the next occurrence can.
-      # ReportCrash writes them a few seconds after the crash, so wait briefly
-      # when none are there yet.
+      # The runner image ships old reports from its own build, so only take
+      # files changed within this job's 60-minute timeout (+10). ReportCrash
+      # writes a report a few seconds after the crash, so wait briefly when
+      # none is there yet.
       - name: Collect macOS crash reports (#1367)
         if: ${{ failure() && runner.os == 'macOS' }}
         working-directory: .
@@ -97,7 +108,7 @@ jobs:
           mkdir -p "$out"
           for _ in 1 2 3 4 5 6; do
             find "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports \
-              -maxdepth 1 -name '*.ips' -exec cp -p {} "$out/" \; 2>/dev/null
+              -maxdepth 1 -name '*.ips' -mmin -70 -exec cp -p {} "$out/" \; 2>/dev/null
             [ -n "$(ls -A "$out")" ] && break
             sleep 5
           done
