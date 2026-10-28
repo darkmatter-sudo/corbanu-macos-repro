@@ -56,6 +56,7 @@ default test-thread stack in debug builds. Manual `workflow_dispatch` (input `co
    (exit code, "has overflowed its stack" lines, test result);
 2. on Linux, runs the overflowing case under gdb and prints the faulting thread's backtrace with
    the stack bytes each frame uses, to name the oversized future or frame before choosing a fix;
-3. if a candidate fix commit is given, runs the same command on it with `RUST_MIN_STACK` unset.
+3. if a candidate fix commit is given, runs the same command on it with `RUST_MIN_STACK` unset,
+   1.5 MiB and 1 MiB (headroom the fix leaves).
 
 Logs are uploaded as `request-compression-stack-<runner>` artifacts. Nothing is posted upstream.

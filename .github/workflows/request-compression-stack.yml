@@ -12,7 +12,8 @@ name: request-compression-stack
 #    oversized future/frame can be named.
 #
 # Optionally it also runs a candidate fix commit (`fix_repo`/`fix_commit`) with
-# the same command and RUST_MIN_STACK unset. Nothing is posted upstream.
+# the same command with RUST_MIN_STACK unset, 1.5 MiB and 1 MiB. Nothing is
+# posted upstream.
 
 on:
   workflow_dispatch:
@@ -173,14 +174,21 @@ jobs:
           set +e
           git checkout -q "$FIX_COMMIT"
           summary="$RUNNER_TEMP/logs/summary.txt"
-          log="$RUNNER_TEMP/logs/fix-stack-unset.log"
-          env -u RUST_MIN_STACK cargo test --locked -p codex-core --test all request_compression > "$log" 2>&1
-          rc=$?
-          line="fix $(git rev-parse --short=10 HEAD) RUST_MIN_STACK=unset exit=$rc"
-          line="$line overflow_lines=$(grep -c 'has overflowed its stack' "$log")"
-          line="$line result=$(grep -m1 '^test result:' "$log" || echo none)"
-          echo "$line" | tee -a "$summary"
-          grep -E "has overflowed its stack|^test |signal:" "$log" | head -20
+          # unset = the default 2 MiB; 1 and 1.5 MiB show how much headroom the fix leaves.
+          for stack in unset 1572864 1048576; do
+            log="$RUNNER_TEMP/logs/fix-stack-$stack.log"
+            if [ "$stack" = unset ]; then
+              env -u RUST_MIN_STACK cargo test --locked -p codex-core --test all request_compression > "$log" 2>&1
+            else
+              RUST_MIN_STACK=$stack cargo test --locked -p codex-core --test all request_compression > "$log" 2>&1
+            fi
+            rc=$?
+            line="fix $(git rev-parse --short=10 HEAD) RUST_MIN_STACK=$stack exit=$rc"
+            line="$line overflow_lines=$(grep -c 'has overflowed its stack' "$log")"
+            line="$line result=$(grep -m1 '^test result:' "$log" || echo none)"
+            echo "$line" | tee -a "$summary"
+            grep -E "has overflowed its stack|^test |signal:" "$log" | head -20
+          done
           exit 0
 
       - name: Summary
