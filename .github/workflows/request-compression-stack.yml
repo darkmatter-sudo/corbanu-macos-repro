@@ -29,6 +29,11 @@ on:
         description: Optional candidate fix commit in fix_repo.
         required: false
         default: ""
+      full_suite:
+        description: Also run the whole `all` target on main and on the fix (CI env, RUST_MIN_STACK 8 MiB).
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -188,6 +193,27 @@ jobs:
             line="$line result=$(grep -m1 '^test result:' "$log" || echo none)"
             echo "$line" | tee -a "$summary"
             grep -E "has overflowed its stack|^test |signal:" "$log" | head -20
+          done
+          exit 0
+
+      - name: Whole `all` target on main and on the fix (RUST_MIN_STACK 8 MiB, as in CI)
+        if: ${{ inputs.full_suite && inputs.fix_commit != '' }}
+        working-directory: CorbanuTerminal/codex-rs
+        env:
+          RUST_MIN_STACK: "8388608"
+        run: |
+          set +e
+          summary="$RUNNER_TEMP/logs/summary.txt"
+          for rev in "$COMMIT" "$FIX_COMMIT"; do
+            git checkout -q "$rev"
+            short="$(git rev-parse --short=10 HEAD)"
+            log="$RUNNER_TEMP/logs/full-$short.log"
+            cargo test --locked -p codex-core --test all > "$log" 2>&1
+            rc=$?
+            line="full $short RUST_MIN_STACK=$RUST_MIN_STACK exit=$rc"
+            line="$line result=$(grep -m1 '^test result:' "$log" || echo none)"
+            echo "$line" | tee -a "$summary"
+            grep -E '^test .* FAILED$|^failures:$|has overflowed its stack|signal:' "$log" | head -40
           done
           exit 0
 
