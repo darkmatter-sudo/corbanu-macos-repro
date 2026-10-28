@@ -1,0 +1,33 @@
+name: rustfmt-check
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "owner/repo to check"
+        default: "darkmatter-sudo/CorbanuTerminal"
+      commit:
+        description: "full commit SHA"
+        required: true
+      file:
+        description: "file under codex-rs/ to check"
+        default: "core/tests/suite/request_compression.rs"
+permissions:
+  contents: read
+jobs:
+  fmt:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout target commit
+        run: |
+          git init -q CorbanuTerminal
+          cd CorbanuTerminal
+          git fetch -q --depth 1 "https://github.com/${{ inputs.repo }}.git" "${{ inputs.commit }}"
+          git checkout -q FETCH_HEAD
+          git rev-parse HEAD
+      - name: rustfmt --check (repo toolchain + rustfmt.toml)
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          rustup component add rustfmt
+          rustfmt --version
+          rustfmt --edition 2024 --check "${{ inputs.file }}"
+          echo "RUSTFMT_OK ${{ inputs.file }}"
