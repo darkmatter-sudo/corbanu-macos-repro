@@ -1,0 +1,186 @@
+name: crash-report follow-up proof (#1367, || true)
+
+# Proof for the CorbanuTerminal follow-up to #1417 that appends `|| true` to
+# the `find` line of "Collect macOS crash reports (#1367)". The copied steps
+# in each job are byte-for-byte from .github/workflows/rust-ci-core-security.yml
+# at the commit in SRC_SHA (each job's first step re-checks that).
+#   missing-fix: ~/Library/Logs/DiagnosticReports removed, job fails, fix
+#                commit f0ca934b14 -> collect step succeeds, no artifact.
+#   missing-old: same, but main 1c56abd9e5 (before the fix)
+#                -> collect step fails (find exits 1 under bash -e).
+#   crash-fix:   a process dies with SIGSEGV, fix commit -> artifact with
+#                that process's report.
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Used only in the artifact name, as in the real job.
+        required: false
+        type: string
+        default: aarch64-apple-darwin
+
+permissions:
+  contents: read
+
+jobs:
+  missing-fix:
+    runs-on: macos-15
+    env:
+      SRC_SHA: f0ca934b14502a109de51155282bb95b2b071e4d
+    steps:
+      - name: Show runner and check the copied steps match the source commit
+        run: |
+          set -euo pipefail
+          sw_vers; uname -m
+          curl -fsSL "https://raw.githubusercontent.com/darkmatter-sudo/CorbanuTerminal/${SRC_SHA}/.github/workflows/rust-ci-core-security.yml" \
+            | awk '/^      # #1367: a test binary once died/{p=1} /^      # Only main saves caches/{p=0} p' > src.txt
+          curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/.github/workflows/crash-report-followup-proof.yml" \
+            | awk '/^  missing-fix:/{j=1} j && /^      # #1367: a test binary once died/{p=1} p && /^      - name: End of copied steps/{exit} p' > here.txt
+          wc -l src.txt here.txt
+          diff src.txt here.txt && echo "copied steps identical to darkmatter-sudo/CorbanuTerminal commit ${SRC_SHA}"
+      - name: "PROOF: remove ~/Library/Logs/DiagnosticReports, then fail the job"
+        run: |
+          ls -ld "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports || true
+          mv "$HOME/Library/Logs/DiagnosticReports" "$RUNNER_TEMP/DiagnosticReports.moved"
+          ls -ld "$HOME/Library/Logs/DiagnosticReports" || echo "user DiagnosticReports folder is now missing"
+          echo "deliberate failure so the failure()-only steps run"; exit 1
+      # #1367: a test binary once died with a bare SIGSEGV and no output, and
+      # the log could not say which thread faulted. When this job fails on
+      # macOS, keep the crash reports (`*.ips`) so the next occurrence can.
+      # The runner image ships old reports from its own build, so only take
+      # files changed within this job's 60-minute timeout (+10). ReportCrash
+      # writes a report a few seconds after the crash, so wait briefly when
+      # none is there yet.
+      - name: Collect macOS crash reports (#1367)
+        if: ${{ failure() && runner.os == 'macOS' }}
+        working-directory: .
+        run: |
+          set -uo pipefail
+          out="${RUNNER_TEMP}/crash-reports"
+          mkdir -p "$out"
+          for _ in 1 2 3 4 5 6; do
+            find "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports \
+              -maxdepth 1 -name '*.ips' -mmin -70 -exec cp -p {} "$out/" \; 2>/dev/null || true
+            [ -n "$(ls -A "$out")" ] && break
+            sleep 5
+          done
+          ls -l "$out"
+      - name: Upload macOS crash reports (#1367)
+        if: ${{ failure() && runner.os == 'macOS' }}
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: macos-crash-reports-${{ inputs.target }}-attempt-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/crash-reports/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: End of copied steps
+        if: always()
+        run: echo done
+  missing-old:
+    runs-on: macos-15
+    env:
+      SRC_SHA: 1c56abd9e548f177173c7c10f91f2a8957cc6640
+    steps:
+      - name: Show runner and check the copied steps match the source commit
+        run: |
+          set -euo pipefail
+          sw_vers; uname -m
+          curl -fsSL "https://raw.githubusercontent.com/CorbanuCore/CorbanuTerminal/${SRC_SHA}/.github/workflows/rust-ci-core-security.yml" \
+            | awk '/^      # #1367: a test binary once died/{p=1} /^      # Only main saves caches/{p=0} p' > src.txt
+          curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/.github/workflows/crash-report-followup-proof.yml" \
+            | awk '/^  missing-old:/{j=1} j && /^      # #1367: a test binary once died/{p=1} p && /^      - name: End of copied steps/{exit} p' > here.txt
+          wc -l src.txt here.txt
+          diff src.txt here.txt && echo "copied steps identical to CorbanuCore/CorbanuTerminal commit ${SRC_SHA}"
+      - name: "PROOF: remove ~/Library/Logs/DiagnosticReports, then fail the job"
+        run: |
+          ls -ld "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports || true
+          mv "$HOME/Library/Logs/DiagnosticReports" "$RUNNER_TEMP/DiagnosticReports.moved"
+          ls -ld "$HOME/Library/Logs/DiagnosticReports" || echo "user DiagnosticReports folder is now missing"
+          echo "deliberate failure so the failure()-only steps run"; exit 1
+      # #1367: a test binary once died with a bare SIGSEGV and no output, and
+      # the log could not say which thread faulted. When this job fails on
+      # macOS, keep the crash reports (`*.ips`) so the next occurrence can.
+      # The runner image ships old reports from its own build, so only take
+      # files changed within this job's 60-minute timeout (+10). ReportCrash
+      # writes a report a few seconds after the crash, so wait briefly when
+      # none is there yet.
+      - name: Collect macOS crash reports (#1367)
+        if: ${{ failure() && runner.os == 'macOS' }}
+        working-directory: .
+        run: |
+          set -uo pipefail
+          out="${RUNNER_TEMP}/crash-reports"
+          mkdir -p "$out"
+          for _ in 1 2 3 4 5 6; do
+            find "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports \
+              -maxdepth 1 -name '*.ips' -mmin -70 -exec cp -p {} "$out/" \; 2>/dev/null
+            [ -n "$(ls -A "$out")" ] && break
+            sleep 5
+          done
+          ls -l "$out"
+      - name: Upload macOS crash reports (#1367)
+        if: ${{ failure() && runner.os == 'macOS' }}
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: macos-crash-reports-${{ inputs.target }}-attempt-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/crash-reports/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: End of copied steps
+        if: always()
+        run: echo done
+  crash-fix:
+    runs-on: macos-15
+    env:
+      SRC_SHA: f0ca934b14502a109de51155282bb95b2b071e4d
+    steps:
+      - name: Show runner and check the copied steps match the source commit
+        run: |
+          set -euo pipefail
+          sw_vers; uname -m
+          curl -fsSL "https://raw.githubusercontent.com/darkmatter-sudo/CorbanuTerminal/${SRC_SHA}/.github/workflows/rust-ci-core-security.yml" \
+            | awk '/^      # #1367: a test binary once died/{p=1} /^      # Only main saves caches/{p=0} p' > src.txt
+          curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/.github/workflows/crash-report-followup-proof.yml" \
+            | awk '/^  crash-fix:/{j=1} j && /^      # #1367: a test binary once died/{p=1} p && /^      - name: End of copied steps/{exit} p' > here.txt
+          wc -l src.txt here.txt
+          diff src.txt here.txt && echo "copied steps identical to darkmatter-sudo/CorbanuTerminal commit ${SRC_SHA}"
+      - name: "PROOF: deliberate SIGSEGV crash"
+        run: |
+          printf 'int main(void){volatile int *p = 0; return *p;}\n' > "$RUNNER_TEMP/crash.c"
+          cc -o "$RUNNER_TEMP/crash1367" "$RUNNER_TEMP/crash.c"
+          "$RUNNER_TEMP/crash1367"
+      # #1367: a test binary once died with a bare SIGSEGV and no output, and
+      # the log could not say which thread faulted. When this job fails on
+      # macOS, keep the crash reports (`*.ips`) so the next occurrence can.
+      # The runner image ships old reports from its own build, so only take
+      # files changed within this job's 60-minute timeout (+10). ReportCrash
+      # writes a report a few seconds after the crash, so wait briefly when
+      # none is there yet.
+      - name: Collect macOS crash reports (#1367)
+        if: ${{ failure() && runner.os == 'macOS' }}
+        working-directory: .
+        run: |
+          set -uo pipefail
+          out="${RUNNER_TEMP}/crash-reports"
+          mkdir -p "$out"
+          for _ in 1 2 3 4 5 6; do
+            find "$HOME/Library/Logs/DiagnosticReports" /Library/Logs/DiagnosticReports \
+              -maxdepth 1 -name '*.ips' -mmin -70 -exec cp -p {} "$out/" \; 2>/dev/null || true
+            [ -n "$(ls -A "$out")" ] && break
+            sleep 5
+          done
+          ls -l "$out"
+      - name: Upload macOS crash reports (#1367)
+        if: ${{ failure() && runner.os == 'macOS' }}
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: macos-crash-reports-${{ inputs.target }}-attempt-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/crash-reports/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: End of copied steps
+        if: always()
+        run: echo done
