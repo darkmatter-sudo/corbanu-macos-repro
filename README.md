@@ -43,3 +43,19 @@ workflow in order, with the same `TMPDIR` settings, `iterations` times on one `m
 It writes one summary line per step, the full log of every failing step, and every new `*.ips`
 crash report, as the `macos-stress-full-logs` artifact. No upstream code is changed and nothing
 is posted upstream.
+
+## request_compression stack probe (`request-compression-stack.yml`)
+
+For the maintainers' follow-up (b) on
+[#1396](https://github.com/CorbanuCore/CorbanuTerminal/pull/1396#issuecomment-6455141884)
+(decision D201): `cargo test -p codex-core --test all request_compression` overflowing the
+default test-thread stack in debug builds. Manual `workflow_dispatch` (input `commit`, optional
+`fix_repo`/`fix_commit`) on `ubuntu-24.04` and `macos-15`:
+
+1. runs that exact command with `RUST_MIN_STACK` unset, then at 4 and 8 MiB, one log per run
+   (exit code, "has overflowed its stack" lines, test result);
+2. on Linux, runs the overflowing case under gdb and prints the faulting thread's backtrace with
+   the stack bytes each frame uses, to name the oversized future or frame before choosing a fix;
+3. if a candidate fix commit is given, runs the same command on it with `RUST_MIN_STACK` unset.
+
+Logs are uploaded as `request-compression-stack-<runner>` artifacts. Nothing is posted upstream.

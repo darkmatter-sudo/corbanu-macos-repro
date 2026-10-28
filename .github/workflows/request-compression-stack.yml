@@ -1,0 +1,196 @@
+name: request-compression-stack
+
+# Maintainers' follow-up (b) on CorbanuCore/CorbanuTerminal#1396 (decision
+# D201): `cargo test -p codex-core --test all request_compression` is said to
+# abort with a stack overflow in debug builds on main unless RUST_MIN_STACK is
+# raised. This workflow measures that before any fix is written:
+#
+# 1. runs the exact command with RUST_MIN_STACK unset, then at 4 and 8 MiB
+#    (one log per run, exit code and any "has overflowed its stack" line);
+# 2. on Linux, runs the overflowing case under gdb and prints the backtrace of
+#    the faulting thread with the stack bytes each frame uses, so the
+#    oversized future/frame can be named.
+#
+# Optionally it also runs a candidate fix commit (`fix_repo`/`fix_commit`) with
+# the same command and RUST_MIN_STACK unset. Nothing is posted upstream.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: CorbanuCore/CorbanuTerminal commit to test.
+        required: true
+      fix_repo:
+        description: Optional repo (owner/name) holding a candidate fix commit.
+        required: false
+        default: ""
+      fix_commit:
+        description: Optional candidate fix commit in fix_repo.
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            target: x86_64-unknown-linux-gnu
+          - runner: macos-15
+            target: aarch64-apple-darwin
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 120
+    env:
+      COMMIT: ${{ inputs.commit }}
+      FIX_REPO: ${{ inputs.fix_repo }}
+      FIX_COMMIT: ${{ inputs.fix_commit }}
+      TARGET: ${{ matrix.target }}
+      # Same job-level env as rust-ci-core-security.yml, except RUST_MIN_STACK,
+      # which is set per run below.
+      CARGO_INCREMENTAL: "0"
+      CORBANU_TEST_NO_NATIVE_KEYRING: "1"
+      RUST_BACKTRACE: "1"
+    steps:
+      - name: Install Linux build dependencies
+        if: ${{ runner.os == 'Linux' }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update -y
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends pkg-config libcap-dev bubblewrap gdb
+          sudo sysctl -w kernel.unprivileged_userns_clone=1
+          if sudo sysctl -a 2>/dev/null | grep -q '^kernel.apparmor_restrict_unprivileged_userns'; then
+            sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+          fi
+
+      - name: Clone and check out
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/logs"
+          git clone https://github.com/CorbanuCore/CorbanuTerminal.git CorbanuTerminal
+          cd CorbanuTerminal
+          git checkout "$COMMIT"
+          if [ -n "$FIX_REPO" ] && [ -n "$FIX_COMMIT" ]; then
+            git fetch "https://github.com/$FIX_REPO.git" "$FIX_COMMIT"
+          fi
+          {
+            echo "\$ git rev-parse HEAD"
+            git rev-parse HEAD
+            echo "\$ uname -sm"
+            uname -sm
+            echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+          } 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"
+
+      - name: Toolchain
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          rustup show active-toolchain || rustup toolchain install
+          rustup target add "$TARGET"
+          { rustc -V; cargo -V; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"
+
+      - name: Build (main)
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          cargo test --locked -p codex-core --test all --no-run 2>&1 | tail -3
+          cargo test --locked -p codex-core --test all --no-run --message-format=json 2>/dev/null \
+            | jq -r 'select(.reason=="compiler-artifact" and .target.name=="all" and .profile.test==true) | .executable' \
+            | tail -1 > "$RUNNER_TEMP/all-bin"
+          cat "$RUNNER_TEMP/all-bin"
+
+      - name: Run the command on main at each stack size
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          summary="$RUNNER_TEMP/logs/summary.txt"
+          for stack in unset 4194304 8388608; do
+            log="$RUNNER_TEMP/logs/main-stack-$stack.log"
+            if [ "$stack" = unset ]; then
+              env -u RUST_MIN_STACK cargo test --locked -p codex-core --test all request_compression > "$log" 2>&1
+            else
+              RUST_MIN_STACK=$stack cargo test --locked -p codex-core --test all request_compression > "$log" 2>&1
+            fi
+            rc=$?
+            line="main $(git rev-parse --short=10 HEAD) RUST_MIN_STACK=$stack exit=$rc"
+            line="$line overflow_lines=$(grep -c 'has overflowed its stack' "$log")"
+            line="$line result=$(grep -m1 '^test result:' "$log" || echo none)"
+            echo "$line" | tee -a "$summary"
+            grep -E "has overflowed its stack|^test |signal:|SIGABRT|SIGSEGV" "$log" | head -20
+          done
+          exit 0
+
+      - name: Faulting-thread backtrace with frame sizes (Linux, RUST_MIN_STACK unset)
+        if: ${{ runner.os == 'Linux' }}
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          bin="$(cat "$RUNNER_TEMP/all-bin")"
+          cat > "$RUNNER_TEMP/frames.py" <<'PY'
+          import gdb
+
+          def dump(limit=80):
+              f = gdb.newest_frame()
+              print("thread:", gdb.selected_thread().name)
+              n = 0
+              while f is not None and n < limit:
+                  older = f.older()
+                  sp = int(f.read_register("sp"))
+                  size = int(older.read_register("sp")) - sp if older is not None else 0
+                  name = f.name() or "??"
+                  sal = f.find_sal()
+                  loc = f"{sal.symtab.filename}:{sal.line}" if sal.symtab else ""
+                  print(f"#{n:<3} {size:>9} B  {name}  {loc}")
+                  f = older
+                  n += 1
+
+          class Frames(gdb.Command):
+              def __init__(self):
+                  super().__init__("frames", gdb.COMMAND_USER)
+              def invoke(self, arg, from_tty):
+                  dump()
+          Frames()
+          PY
+          env -u RUST_MIN_STACK gdb -q -batch \
+            -ex "set pagination off" \
+            -ex "source $RUNNER_TEMP/frames.py" \
+            -ex "handle SIGSEGV stop nopass" \
+            -ex "run" \
+            -ex "frames" \
+            --args "$bin" request_compression --test-threads=1 \
+            > "$RUNNER_TEMP/logs/gdb-frames.log" 2>&1
+          grep -E '^thread:|^#' "$RUNNER_TEMP/logs/gdb-frames.log" | sort -t' ' -k2 -n -r | head -5
+          grep -E '^thread:|^#' "$RUNNER_TEMP/logs/gdb-frames.log" | head -60
+          exit 0
+
+      - name: Run the command on the candidate fix (RUST_MIN_STACK unset)
+        if: ${{ inputs.fix_commit != '' }}
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e
+          git checkout -q "$FIX_COMMIT"
+          summary="$RUNNER_TEMP/logs/summary.txt"
+          log="$RUNNER_TEMP/logs/fix-stack-unset.log"
+          env -u RUST_MIN_STACK cargo test --locked -p codex-core --test all request_compression > "$log" 2>&1
+          rc=$?
+          line="fix $(git rev-parse --short=10 HEAD) RUST_MIN_STACK=unset exit=$rc"
+          line="$line overflow_lines=$(grep -c 'has overflowed its stack' "$log")"
+          line="$line result=$(grep -m1 '^test result:' "$log" || echo none)"
+          echo "$line" | tee -a "$summary"
+          grep -E "has overflowed its stack|^test |signal:" "$log" | head -20
+          exit 0
+
+      - name: Summary
+        if: always()
+        run: cat "$RUNNER_TEMP/logs/summary.txt" 2>/dev/null || true
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: request-compression-stack-${{ matrix.runner }}
+          path: ${{ runner.temp }}/logs
+          retention-days: 30
