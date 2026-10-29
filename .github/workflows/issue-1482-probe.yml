@@ -176,7 +176,8 @@ jobs:
         if: always()
         run: |
           cd "$RUNNER_TEMP/logs" || exit 0
-          grep -h '^exit=\|exit=' 1*.log 2*.log 3*.log 4*.log 2>/dev/null
+          # 4*.log (fmt/clippy) exist only on Linux: a missing file must not fail the summary.
+          grep -h '^exit=\|exit=' 1*.log 2*.log 3*.log 4*.log 2>/dev/null || true
           grep -h '^test result:' 2*.log 3*.log 2>/dev/null
           cat 12-probe-diff.txt 2>/dev/null | head -60
 
