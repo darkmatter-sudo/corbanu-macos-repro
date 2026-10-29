@@ -23,6 +23,8 @@ fn issue_1482_probe() {
         ("1-chroot", x_evil, "sudo --chr -C 3 ./x"),
         ("1-note-control", x_evil, "sudo x"),
         ("1-note-control", x_evil, "sudo bash x"),
+        ("1-abbrev", sub_evil, "sudo --chd sub ./run.sh"),
+        ("1-abbrev", x_evil, "xargs --repl ./x ./y"),
         ("2", sub_evil, "sudo -R >log -C sub ./run.sh"),
         ("3", three_evil, "eval 'sudo -C 3 ./run.sh'"),
         ("3-control", three_evil, "sudo -C 3 ./run.sh"),
