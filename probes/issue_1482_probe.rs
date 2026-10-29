@@ -13,11 +13,14 @@ fn issue_1482_probe() {
     let x_ok: &[(&str, &str)] = &[("x", "true\n")];
     let sub_evil: &[(&str, &str)] = &[("run.sh", "true\n"), ("sub/run.sh", evil)];
     let three_evil: &[(&str, &str)] = &[("run.sh", "true\n"), ("3/run.sh", evil)];
+    // The test harness prints `test ... ` without a newline first.
+    println!();
     let issue: &[(&str, &[(&str, &str)], &str)] = &[
         ("1a", x_evil, "sudo -nC 3 sh x"),
         ("1b", sub_evil, "sudo -nD sub ./run.sh"),
         ("1c", sub_evil, "sudo --chdir sub ./run.sh"),
         ("1-note", x_evil, "sudo --chdir bash x"),
+        ("1-chroot", x_evil, "sudo --chr -C 3 ./x"),
         ("1-note-control", x_evil, "sudo x"),
         ("1-note-control", x_evil, "sudo bash x"),
         ("2", sub_evil, "sudo -R >log -C sub ./run.sh"),

@@ -101,7 +101,7 @@ jobs:
       - name: Probe on main
         working-directory: CorbanuTerminal/codex-rs
         run: |
-          set -uo pipefail
+          set +e -uo pipefail
           cat ../../repro/probes/issue_1482_probe.rs >> core/src/security/tainted_action_tests.rs
           CORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \
             cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482_probe -- --ignored --nocapture --test-threads=1 \
@@ -113,7 +113,7 @@ jobs:
       - name: Probe on fix
         working-directory: CorbanuTerminal/codex-rs
         run: |
-          set -uo pipefail
+          set +e -uo pipefail
           git checkout -q "$FIX_COMMIT"
           cat ../../repro/probes/issue_1482_probe.rs >> core/src/security/tainted_action_tests.rs
           CORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \
@@ -125,7 +125,7 @@ jobs:
 
       - name: Diff main vs fix
         run: |
-          set -uo pipefail
+          set +e -uo pipefail
           cd "$RUNNER_TEMP/logs"
           grep -E '^(PROBE|SWEEP)' 10-probe-main.log > main.lines
           grep -E '^(PROBE|SWEEP)' 11-probe-fix.log > fix.lines
@@ -139,7 +139,7 @@ jobs:
       - name: Regression test on the fix, and with the fix reverted
         working-directory: CorbanuTerminal/codex-rs
         run: |
-          set -uo pipefail
+          set +e -uo pipefail
           git checkout -q "$FIX_COMMIT"
           cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 > "$RUNNER_TEMP/logs/20-test-fix.log" 2>&1
           echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/20-test-fix.log"
@@ -154,7 +154,7 @@ jobs:
       - name: "security:: suite on the fix"
         working-directory: CorbanuTerminal/codex-rs
         run: |
-          set -uo pipefail
+          set +e -uo pipefail
           git checkout -q "$FIX_COMMIT"
           cargo build --locked --target "$TARGET" -p codex-code-mode-host -p codex-rmcp-client --bins > /dev/null 2>&1 || true
           cargo test --locked --target "$TARGET" -p codex-core --lib -- security:: > "$RUNNER_TEMP/logs/30-security-fix.log" 2>&1
@@ -165,7 +165,7 @@ jobs:
         if: ${{ runner.os == 'Linux' }}
         working-directory: CorbanuTerminal/codex-rs
         run: |
-          set -uo pipefail
+          set +e -uo pipefail
           git checkout -q "$FIX_COMMIT"
           rustup component add rustfmt clippy
           { cargo fmt --check; echo "fmt exit=$?"; } > "$RUNNER_TEMP/logs/40-fmt.log" 2>&1
