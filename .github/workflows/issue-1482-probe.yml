@@ -1,0 +1,189 @@
+name: issue-1482-probe
+
+# CorbanuCore/CorbanuTerminal#1482 (sudo option values read as the command).
+# Main vs fix, same probe on both:
+#
+# 1. appends probes/issue_1482_probe.rs (an ignored test that prints the
+#    command word and the classifier verdict for every #1482 example, plus a
+#    sweep over every wrapper line in main's tainted_action_tests.rs) to the
+#    test module on main and on the fix, runs it, and diffs the two outputs;
+# 2. runs the fix's regression test on the fix, and on the fix's tests with
+#    main's indirect.rs/git_config.rs (fix reverted: it must fail);
+# 3. on the fix: `cargo test -p codex-core --lib -- security::`, and on Linux
+#    `cargo fmt --check` and `cargo clippy -p codex-core --tests -D warnings`.
+#
+# Nothing is posted upstream.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: CorbanuCore/CorbanuTerminal main commit.
+        required: true
+      fix_repo:
+        description: Repo (owner/name) holding the fix commit.
+        required: true
+        default: darkmatter-sudo/CorbanuTerminal
+      fix_commit:
+        description: Fix commit in fix_repo.
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            target: x86_64-unknown-linux-gnu
+          - runner: macos-15
+            target: aarch64-apple-darwin
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 150
+    env:
+      COMMIT: ${{ inputs.commit }}
+      FIX_REPO: ${{ inputs.fix_repo }}
+      FIX_COMMIT: ${{ inputs.fix_commit }}
+      TARGET: ${{ matrix.target }}
+      # Same job-level env as rust-ci-core-security.yml.
+      CARGO_INCREMENTAL: "0"
+      CORBANU_TEST_NO_NATIVE_KEYRING: "1"
+      RUST_BACKTRACE: "1"
+      RUST_MIN_STACK: "8388608"
+    steps:
+      - name: Install Linux build dependencies
+        if: ${{ runner.os == 'Linux' }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update -y
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends pkg-config libcap-dev bubblewrap
+          sudo sysctl -w kernel.unprivileged_userns_clone=1
+          if sudo sysctl -a 2>/dev/null | grep -q '^kernel.apparmor_restrict_unprivileged_userns'; then
+            sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+          fi
+
+      - name: Check out this repo (probe source)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          path: repro
+
+      - name: Clone and check out
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/logs"
+          git clone https://github.com/CorbanuCore/CorbanuTerminal.git CorbanuTerminal
+          cd CorbanuTerminal
+          git checkout -q "$COMMIT"
+          git fetch -q "https://github.com/$FIX_REPO.git" "$FIX_COMMIT"
+          cp codex-rs/core/src/security/tainted_action_tests.rs "$RUNNER_TEMP/corpus.rs"
+          {
+            echo "main: $(git rev-parse HEAD)"
+            echo "fix:  $(git rev-parse "$FIX_COMMIT") ($FIX_REPO)"
+            echo "fix parent: $(git rev-parse "$FIX_COMMIT^")"
+            echo "probe sha256: $(shasum -a 256 ../repro/probes/issue_1482_probe.rs | cut -d' ' -f1)"
+            echo "corpus sha256: $(shasum -a 256 "$RUNNER_TEMP/corpus.rs" | cut -d' ' -f1)"
+            echo "uname: $(uname -sm)"
+            echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+            git diff --stat "$COMMIT" "$FIX_COMMIT"
+          } 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"
+
+      - name: Toolchain
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          rustup show active-toolchain || rustup toolchain install
+          rustup target add "$TARGET"
+          { rustc -V; cargo -V; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"
+
+      - name: Probe on main
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -uo pipefail
+          cat ../../repro/probes/issue_1482_probe.rs >> core/src/security/tainted_action_tests.rs
+          CORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \
+            cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482_probe -- --ignored --nocapture --test-threads=1 \
+            > "$RUNNER_TEMP/logs/10-probe-main.log" 2>&1
+          echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/10-probe-main.log"
+          git checkout -- .
+          grep -E '^(PROBE|SWEEP-COUNT)' "$RUNNER_TEMP/logs/10-probe-main.log"
+
+      - name: Probe on fix
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -uo pipefail
+          git checkout -q "$FIX_COMMIT"
+          cat ../../repro/probes/issue_1482_probe.rs >> core/src/security/tainted_action_tests.rs
+          CORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \
+            cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482_probe -- --ignored --nocapture --test-threads=1 \
+            > "$RUNNER_TEMP/logs/11-probe-fix.log" 2>&1
+          echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/11-probe-fix.log"
+          git checkout -- .
+          grep -E '^(PROBE|SWEEP-COUNT)' "$RUNNER_TEMP/logs/11-probe-fix.log"
+
+      - name: Diff main vs fix
+        run: |
+          set -uo pipefail
+          cd "$RUNNER_TEMP/logs"
+          grep -E '^(PROBE|SWEEP)' 10-probe-main.log > main.lines
+          grep -E '^(PROBE|SWEEP)' 11-probe-fix.log > fix.lines
+          {
+            echo "main lines: $(wc -l < main.lines)  fix lines: $(wc -l < fix.lines)"
+            echo "changed lines (- main, + fix):"
+            diff main.lines fix.lines
+            echo "diff exit=$?"
+          } | tee 12-probe-diff.txt
+
+      - name: Regression test on the fix, and with the fix reverted
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -uo pipefail
+          git checkout -q "$FIX_COMMIT"
+          cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 > "$RUNNER_TEMP/logs/20-test-fix.log" 2>&1
+          echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/20-test-fix.log"
+          git checkout -q "$COMMIT" -- core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/git_config.rs
+          git status --short | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"
+          cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 >> "$RUNNER_TEMP/logs/21-test-reverted.log" 2>&1
+          echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"
+          git checkout -q "$FIX_COMMIT" -- .
+          git status --short
+          grep -E '^test |^test result:|panicked|left:|right:|should' "$RUNNER_TEMP/logs/20-test-fix.log" "$RUNNER_TEMP/logs/21-test-reverted.log" | head -40
+
+      - name: security:: suite on the fix
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -uo pipefail
+          git checkout -q "$FIX_COMMIT"
+          cargo build --locked --target "$TARGET" -p codex-code-mode-host -p codex-rmcp-client --bins > /dev/null 2>&1 || true
+          cargo test --locked --target "$TARGET" -p codex-core --lib -- security:: > "$RUNNER_TEMP/logs/30-security-fix.log" 2>&1
+          echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/30-security-fix.log"
+          grep -E '^test result:|FAILED|^failures:' "$RUNNER_TEMP/logs/30-security-fix.log" | head -40
+
+      - name: fmt and clippy on the fix (Linux)
+        if: ${{ runner.os == 'Linux' }}
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -uo pipefail
+          git checkout -q "$FIX_COMMIT"
+          rustup component add rustfmt clippy
+          { cargo fmt --check; echo "fmt exit=$?"; } > "$RUNNER_TEMP/logs/40-fmt.log" 2>&1
+          { cargo clippy --locked --target "$TARGET" -p codex-core --tests -- -D warnings; echo "clippy exit=$?"; } > "$RUNNER_TEMP/logs/41-clippy.log" 2>&1
+          tail -5 "$RUNNER_TEMP/logs/40-fmt.log" "$RUNNER_TEMP/logs/41-clippy.log"
+
+      - name: Summary
+        if: always()
+        run: |
+          cd "$RUNNER_TEMP/logs" || exit 0
+          grep -h '^exit=\|exit=' 1*.log 2*.log 3*.log 4*.log 2>/dev/null
+          grep -h '^test result:' 2*.log 3*.log 2>/dev/null
+          cat 12-probe-diff.txt 2>/dev/null | head -60
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: issue-1482-probe-${{ matrix.runner }}
+          path: ${{ runner.temp }}/logs
+          retention-days: 30
