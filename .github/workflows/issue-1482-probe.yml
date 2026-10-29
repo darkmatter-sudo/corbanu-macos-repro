@@ -151,7 +151,7 @@ jobs:
           git status --short
           grep -E '^test |^test result:|panicked|left:|right:|should' "$RUNNER_TEMP/logs/20-test-fix.log" "$RUNNER_TEMP/logs/21-test-reverted.log" | head -40
 
-      - name: security:: suite on the fix
+      - name: "security:: suite on the fix"
         working-directory: CorbanuTerminal/codex-rs
         run: |
           set -uo pipefail
