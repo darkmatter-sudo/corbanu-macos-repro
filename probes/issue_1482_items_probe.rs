@@ -23,6 +23,8 @@ fn issue_1482_items_probe() {
         ("2", x_evil, "env >log ./x"),
         ("2", x_evil, "2>log sh x"),
         ("2", x_evil, "<log sh x"),
+        ("2", x_evil, "sudo 2>log ./x"),
+        ("2", x_evil, "2 >log sh x"),
         ("2-control", x_ok, "ls >log"),
         ("2-control", x_ok, "2>/dev/null ls"),
         ("2-control", x_ok, "sudo ./x >log"),
