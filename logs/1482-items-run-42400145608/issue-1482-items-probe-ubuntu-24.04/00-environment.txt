@@ -1,0 +1,13 @@
+main: 9361108dab21d738e5495bb6f9aba9f9fb07b56e
+fix:  633e35bc8ded44ef148a2e4b9765533686b9e312 (darkmatter-sudo/CorbanuTerminal)
+fix parents: 9e554ed9212bd0eef8ea8c7f138ef5b4556f0442 9361108dab21d738e5495bb6f9aba9f9fb07b56e 
+prev: 6bf195dba2712ffd6f93e7d88d4adb45fd6ac964
+probe sha256: be0c6b48595c4c0682afc1eed9afd5663d5a1ed08436f38e5bb62e06ef8f1213
+corpus sha256: d10c9827d31780bbe41c82e7a0c4b2b32e2a89abb6afd89208e81d109a582ca2
+uname: Linux x86_64
+runner: ubuntu24 image 20261101.360.1
+ codex-rs/core/src/security/tainted_action.rs       |  31 ++++
+ .../core/src/security/tainted_action/indirect.rs   | 160 +++++++++++++++++++
+ codex-rs/core/src/security/tainted_action/shell.rs |  64 +++++++-
+ codex-rs/core/src/security/tainted_action_tests.rs | 170 +++++++++++++++++++++
+ 4 files changed, 424 insertions(+), 1 deletion(-)

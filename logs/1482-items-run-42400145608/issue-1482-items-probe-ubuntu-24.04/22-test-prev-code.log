@@ -1,0 +1,92 @@
+M  core/src/security/tainted_action.rs
+M  core/src/security/tainted_action/indirect.rs
+   Compiling codex-core v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+   Compiling core_test_support v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+   Compiling codex-image-generation-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+   Compiling codex-memories-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+   Compiling codex-web-search-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 19s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/x86_64-unknown-linux-gnu/debug/deps/codex_core-21077267e61b3ab0)
+
+running 4 tests
+test security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word ... ok
+test security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command ... ok
+test security::tainted_action::tests::issue_1482_items_2_to_5_ask ... FAILED
+test security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear ... FAILED
+
+failures:
+
+---- security::tainted_action::tests::issue_1482_items_2_to_5_ask stdout ----
+
+thread 'security::tainted_action::tests::issue_1482_items_2_to_5_ask' (18475) panicked at core/src/security/tainted_action_tests.rs:7151:5:
+assertion failed: `(left == right)`: should ask
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[[0m
+[31m<    ">log sudo -A true",[0m
+[31m<    "2>/dev/null sudo -A true",[0m
+[31m<    "sudo >log -A true",[0m
+[31m<    "sudo 2>&1 -A true",[0m
+[31m<    "sudo {fd}>log -e f",[0m
+[31m<    ">log sudoedit f",[0m
+[31m<][0m
+[32m>[][0m
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_ask
+             at ./src/security/tainted_action_tests.rs:7151:5
+   3: codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_ask::{closure#0}
+             at ./src/security/tainted_action_tests.rs:7089:33
+   4: <codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_ask::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+---- security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear stdout ----
+
+thread 'security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear' (18476) panicked at core/src/security/tainted_action/work.rs:166:9:
+chained sudo -R: 2289847 steps at 1x, 17615491 at 4x (linear work grows at most 4x, quadratic about 16x)
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::work::assert_linear::<codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0}>
+             at ./src/security/tainted_action/work.rs:166:9
+   3: codex_core::security::tainted_action::tests::work::assert_linear::<codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0}>::{closure#0}
+             at ./src/security/tainted_action_tests.rs:31:18
+   4: tracing_core::dispatcher::with_default::<(), codex_core::security::tainted_action::tests::work::assert_linear<codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0}>::{closure#0}>
+             at /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-core-0.1.36/src/dispatcher.rs:260:5
+   5: tracing::subscriber::with_default::<(), tracing_core::subscriber::NoSubscriber, codex_core::security::tainted_action::tests::work::assert_linear<codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0}>::{closure#0}>
+             at /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-0.1.44/src/subscriber.rs:24:5
+   6: codex_core::security::tainted_action::tests::work::quiet::<(), codex_core::security::tainted_action::tests::work::assert_linear<codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0}>::{closure#0}>
+             at ./src/security/tainted_action_tests.rs:35:9
+   7: codex_core::security::tainted_action::tests::work::assert_linear::<codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0}>
+             at ./src/security/tainted_action_tests.rs:31:9
+   8: codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear
+             at ./src/security/tainted_action_tests.rs:7238:9
+   9: codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0}
+             at ./src/security/tainted_action_tests.rs:7228:47
+  10: <codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+  11: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+
+failures:
+    security::tainted_action::tests::issue_1482_items_2_to_5_ask
+    security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear
+
+test result: FAILED. 2 passed; 2 failed; 0 ignored; 0 measured; 3716 filtered out; finished in 3.69s
+
+error: test failed, to rerun pass `-p codex-core --lib`
+exit=101
