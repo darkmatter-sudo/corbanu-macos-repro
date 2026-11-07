@@ -1,0 +1,77 @@
+M  core/src/security/tainted_action.rs
+M  core/src/security/tainted_action/indirect.rs
+   Compiling codex-core v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+warning: function `one_word` is never used
+   --> core/src/security/tainted_action/shell.rs:163:15
+    |
+163 | pub(super) fn one_word(text: &str) -> bool {
+    |               ^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling core_test_support v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+   Compiling codex-image-generation-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+   Compiling codex-web-search-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+   Compiling codex-memories-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+warning: `codex-core` (lib) generated 1 warning
+warning: linker stderr: ld: __eh_frame section too large (max 16MB) to encode dwarf unwind offsets in compact unwind table, performance of exception handling might be affected
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+warning: `codex-core` (lib test) generated 2 warnings (1 duplicate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3m 46s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/aarch64-apple-darwin/debug/deps/codex_core-bae4fe48997897e0)
+
+running 4 tests
+test security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word ... ok
+test security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command ... ok
+test security::tainted_action::tests::issue_1482_items_2_to_5_ask ... FAILED
+test security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear ... ok
+
+failures:
+
+---- security::tainted_action::tests::issue_1482_items_2_to_5_ask stdout ----
+
+thread 'security::tainted_action::tests::issue_1482_items_2_to_5_ask' (257190) panicked at core/src/security/tainted_action_tests.rs:7086:5:
+assertion failed: `(left == right)`: should ask
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[[0m
+[31m<    "sudo 2>&1 ./x",[0m
+[31m<    "2>&1 ./x",[0m
+[31m<    ">&2 ./x",[0m
+[31m<    "{fd}>log ./x",[0m
+[31m<    "<<EOF ./x",[0m
+[31m<    ">log eval ./x",[0m
+[31m<    "sudo &>log -u root ./x",[0m
+[31m<    "sudo -R &>log -C sub ./run.sh",[0m
+[31m<    "eval '>log ./x'",[0m
+[31m<    "eval sudo -A ./x",[0m
+[31m<    "eval sudoedit ./x",[0m
+[31m<    "sudo -R sub -A ./x",[0m
+[31m<][0m
+[32m>[][0m
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_ask
+   3: codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_ask::{closure#0}
+   4: <codex_core::security::tainted_action::tests::issue_1482_items_2_to_5_ask::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+
+failures:
+    security::tainted_action::tests::issue_1482_items_2_to_5_ask
+
+test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 3713 filtered out; finished in 4.19s
+
+error: test failed, to rerun pass `-p codex-core --lib`
+exit=101

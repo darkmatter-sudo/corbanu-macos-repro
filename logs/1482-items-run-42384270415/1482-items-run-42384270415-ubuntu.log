@@ -1,0 +1,1091 @@
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	﻿2026-11-07T15:00:50.4985568Z Current runner version: '2.338.2'
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5010103Z ##[group]Runner Image Provisioner
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5011103Z Hosted Compute Agent
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5011716Z Version: 20261028.624
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5012432Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5013539Z Build Date: 2026-10-28T21:51:42Z
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5014250Z Worker ID: {692f5552-ff52-4780-83d0-78be2436b471}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5015070Z Region: westus
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5015630Z Cloud: Azure
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5016262Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5017883Z ##[group]Operating System
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5018574Z Ubuntu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5019535Z 24.04.5
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5020078Z LTS
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5020614Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5021244Z ##[group]Runner Image
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5021892Z Image: ubuntu-24.04
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5022515Z Version: 20261101.360.1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5023890Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5025769Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5026800Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5027958Z ##[group]GITHUB_TOKEN Permissions
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5030140Z Contents: read
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5030856Z Metadata: read
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5031440Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5033694Z Secret source: Actions
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5034831Z Cache mode: write
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5035744Z Prepare workflow directory
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5561670Z Prepare all required actions
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.5611412Z Getting action download info
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:50.8992564Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:51.1729155Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Set up job	2026-11-07T15:00:51.3738712Z Complete job name: probe (ubuntu-24.04, x86_64-unknown-linux-gnu)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	﻿2026-11-07T15:00:51.4517850Z ##[group]Run set -euo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4518539Z ^[[36;1mset -euo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4519075Z ^[[36;1msudo apt-get update -y^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4520122Z ^[[36;1msudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends pkg-config libcap-dev bubblewrap^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4521277Z ^[[36;1msudo sysctl -w kernel.unprivileged_userns_clone=1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4522258Z ^[[36;1mif sudo sysctl -a 2>/dev/null | grep -q '^kernel.apparmor_restrict_unprivileged_userns'; then^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4523495Z ^[[36;1m  sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4524203Z ^[[36;1mfi^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4548243Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4549216Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4549726Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4550389Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4551074Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4551788Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4552433Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4553493Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4554296Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4555043Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4555488Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.4555959Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.5462119Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.5824793Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.5999723Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.6014472Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.6040498Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.6065813Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.6846605Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [743 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.6992186Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [675 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.7971757Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1425 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.8060972Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [313 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.8064908Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1711 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.8150414Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [344 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.8176183Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1840 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.8276278Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [420 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.8292070Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [50.7 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.8296980Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9129686Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1157 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9188192Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [234 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9625973Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1228 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9685136Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [248 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9701369Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1721 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9777800Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [394 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9799608Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [45.4 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:51.9809090Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.4 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:55.3374070Z Fetched 13.0 MB in 1s (9754 kB/s)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.4925465Z Reading package lists...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.5319763Z Reading package lists...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.7560246Z Building dependency tree...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.7567808Z Reading state information...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.8951116Z pkg-config is already the newest version (1.8.1-2build1).
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.8952071Z Suggested packages:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.8952465Z   manpages-dev
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.9124927Z The following NEW packages will be installed:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.9131219Z   bubblewrap libcap-dev
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.9328185Z 0 upgraded, 2 newly installed, 0 to remove and 27 not upgraded.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.9329118Z Need to get 646 kB of archives.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.9329646Z After this operation, 3063 kB of additional disk space will be used.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:56.9330216Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.0096400Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 bubblewrap amd64 0.9.0-1ubuntu0.3 [50.4 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.0788100Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcap-dev amd64 1:2.66-5ubuntu2.4 [596 kB]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7293902Z Fetched 646 kB in 1s (1196 kB/s)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7554403Z Selecting previously unselected package bubblewrap.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7833722Z (Reading database ... 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7834351Z (Reading database ... 5%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7834661Z (Reading database ... 10%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7834944Z (Reading database ... 15%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7835273Z (Reading database ... 20%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7835562Z (Reading database ... 25%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7835866Z (Reading database ... 30%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7836367Z (Reading database ... 35%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7836942Z (Reading database ... 40%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7838320Z (Reading database ... 45%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7838824Z (Reading database ... 50%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.7891310Z (Reading database ... 55%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.8550767Z (Reading database ... 60%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.9014842Z (Reading database ... 65%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:57.9973069Z (Reading database ... 70%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.0592989Z (Reading database ... 75%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.1443943Z (Reading database ... 80%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.3423972Z (Reading database ... 85%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.4510821Z (Reading database ... 90%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.5607885Z (Reading database ... 95%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.5608625Z (Reading database ... 100%
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.5609315Z (Reading database ... 215960 files and directories currently installed.)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.5654757Z Preparing to unpack .../bubblewrap_0.9.0-1ubuntu0.3_amd64.deb ...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.5682519Z Unpacking bubblewrap (0.9.0-1ubuntu0.3) ...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.5982488Z Selecting previously unselected package libcap-dev:amd64.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.6126896Z Preparing to unpack .../libcap-dev_1%3a2.66-5ubuntu2.4_amd64.deb ...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.6135366Z Unpacking libcap-dev:amd64 (1:2.66-5ubuntu2.4) ...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.6788793Z Setting up bubblewrap (0.9.0-1ubuntu0.3) ...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.6871720Z Setting up libcap-dev:amd64 (1:2.66-5ubuntu2.4) ...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.6898857Z Processing triggers for man-db (2.12.0-4build2) ...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:58.6921400Z Not building database; man-db/auto-update is not 'true'.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3752604Z 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3753873Z Running kernel seems to be up-to-date.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3754348Z 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3754485Z No services need to be restarted.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3754800Z 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3754939Z No containers need to be restarted.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3755162Z 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3755311Z No user sessions are running outdated binaries.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3755589Z 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:00:59.3755826Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:01:00.3562613Z kernel.unprivileged_userns_clone = 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Install Linux build dependencies	2026-11-07T15:01:00.4073371Z kernel.apparmor_restrict_unprivileged_userns = 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	﻿2026-11-07T15:01:00.4273370Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4273816Z with:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4274009Z   path: repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4274265Z   repository: darkmatter-sudo/corbanu-macos-repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4277242Z   token: ***
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4277446Z   ssh-strict: true
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4277677Z   ssh-user: git
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4277886Z   persist-credentials: true
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4278112Z   clean: true
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4278322Z   sparse-checkout-cone-mode: true
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4278571Z   fetch-depth: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4278760Z   fetch-tags: false
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4278957Z   show-progress: true
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4279163Z   lfs: false
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4279346Z   submodules: false
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4279556Z   set-safe-directory: true
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4279795Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4280010Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4280330Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4280683Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4281022Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4281330Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4281575Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4281853Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4282315Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4282641Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.4283152Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.6902420Z Syncing repository: darkmatter-sudo/corbanu-macos-repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.6904162Z ##[group]Getting Git version info
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.6904648Z Working directory is '/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro'
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.6997895Z [command]/usr/bin/git version
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7041339Z git version 2.56.0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7055087Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7069904Z Temporarily overriding HOME='/home/runner/work/_temp/2192b15d-3e76-4eb2-89e9-e3f2a0f1cb92' before making global git config changes
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7071569Z Adding repository directory to the temporary git global config as a safe directory
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7076992Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7144859Z ##[group]Initializing the repository
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7151490Z [command]/usr/bin/git init /home/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7284496Z hint: Using 'master' as the name for the initial branch. This default branch name
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7285502Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7286393Z hint: to use in all of your new repositories, which will suppress this warning,
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7287117Z hint: call:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7287436Z hint:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7287903Z hint: 	git config --global init.defaultBranch <name>
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7288447Z hint:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7288962Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7289846Z hint: 'development'. The just-created branch can be renamed via this command:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7290549Z hint:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7291168Z hint: 	git branch -m <name>
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7291686Z hint:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7292330Z hint: Disable this message with "git config set advice.defaultBranchName false"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7298442Z Initialized empty Git repository in /home/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro/.git/
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7310285Z [command]/usr/bin/git remote add origin https://github.com/darkmatter-sudo/corbanu-macos-repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7362878Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7363613Z ##[group]Disabling automatic garbage collection
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7370667Z [command]/usr/bin/git config --local gc.auto 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7406824Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7407430Z ##[group]Setting up auth
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7415546Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7456418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7851511Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.7904417Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.8154806Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.8205220Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.8206042Z ##[group]Fetching the repository
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:00.8219081Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +369e8106efab318fc27266ab29cbc4bda7057c44:refs/remotes/origin/main
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3402521Z From https://github.com/darkmatter-sudo/corbanu-macos-repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3403863Z  * [new ref]         369e8106efab318fc27266ab29cbc4bda7057c44 -> origin/main
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3409069Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3409573Z ##[group]Determining the checkout info
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3411876Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3418100Z [command]/usr/bin/git sparse-checkout disable
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3481189Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3520505Z ##[group]Checking out the ref
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3525963Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3736210Z Switched to a new branch 'main'
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3742015Z branch 'main' set up to track 'origin/main'.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3748045Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3802549Z [command]/usr/bin/git log -1 --format=%H
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Check out this repo (probe source)	2026-11-07T15:01:01.3838162Z 369e8106efab318fc27266ab29cbc4bda7057c44
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	﻿2026-11-07T15:01:01.3995867Z ##[group]Run set -euo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3996206Z ^[[36;1mset -euo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3996462Z ^[[36;1mmkdir -p "$RUNNER_TEMP/logs"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3996898Z ^[[36;1mgit clone https://github.com/CorbanuCore/CorbanuTerminal.git CorbanuTerminal^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3997328Z ^[[36;1mcd CorbanuTerminal^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3997574Z ^[[36;1mgit checkout -q "$COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3997921Z ^[[36;1mgit fetch -q "https://github.com/$FIX_REPO.git" "$FIX_COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3998467Z ^[[36;1mif [ -n "$PREV_COMMIT" ]; then git fetch -q "https://github.com/$FIX_REPO.git" "$PREV_COMMIT"; fi^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3999075Z ^[[36;1mcp codex-rs/core/src/security/tainted_action_tests.rs "$RUNNER_TEMP/corpus.rs"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3999498Z ^[[36;1m{^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.3999716Z ^[[36;1m  echo "main: $(git rev-parse HEAD)"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4000069Z ^[[36;1m  echo "fix:  $(git rev-parse "$FIX_COMMIT") ($FIX_REPO)"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4000497Z ^[[36;1m  echo "fix parents: $(git rev-parse "$FIX_COMMIT^@" | tr '\n' ' ')"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4001037Z ^[[36;1m  if [ -n "$PREV_COMMIT" ]; then echo "prev: $(git rev-parse "$PREV_COMMIT")"; fi^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4001673Z ^[[36;1m  echo "probe sha256: $(shasum -a 256 ../repro/probes/issue_1482_items_probe.rs | cut -d' ' -f1)"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4002963Z ^[[36;1m  echo "corpus sha256: $(shasum -a 256 "$RUNNER_TEMP/corpus.rs" | cut -d' ' -f1)"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4003781Z ^[[36;1m  echo "uname: $(uname -sm)"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4004326Z ^[[36;1m  echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4004781Z ^[[36;1m  git diff --stat "$COMMIT" "$FIX_COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4005128Z ^[[36;1m} 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4027848Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4028107Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4028454Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4028835Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4029184Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4029608Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4030001Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4030249Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4030471Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4030797Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4031059Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4031276Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:01.4099446Z Cloning into 'CorbanuTerminal'...
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.1018804Z Updating files:  35% (13397/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.1170457Z Updating files:  36% (13677/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.1320105Z Updating files:  37% (14056/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.1559294Z Updating files:  38% (14436/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.1740121Z Updating files:  39% (14816/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.1897443Z Updating files:  40% (15196/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.2161995Z Updating files:  41% (15576/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.2313477Z Updating files:  42% (15956/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.2466106Z Updating files:  43% (16336/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.2623823Z Updating files:  44% (16716/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.2838056Z Updating files:  45% (17096/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.3005317Z Updating files:  46% (17475/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.3183535Z Updating files:  47% (17855/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.3417995Z Updating files:  48% (18235/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.3604733Z Updating files:  49% (18615/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.3969467Z Updating files:  50% (18995/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.4193665Z Updating files:  51% (19375/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.4438645Z Updating files:  52% (19755/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.4659237Z Updating files:  53% (20135/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.4908247Z Updating files:  54% (20515/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.5157713Z Updating files:  55% (20894/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.5377159Z Updating files:  56% (21274/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.5671320Z Updating files:  57% (21654/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.5890810Z Updating files:  58% (22034/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.6168461Z Updating files:  59% (22414/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.6414308Z Updating files:  60% (22794/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.6680745Z Updating files:  61% (23174/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.6958613Z Updating files:  62% (23554/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.7245243Z Updating files:  63% (23934/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.7445354Z Updating files:  64% (24313/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.7683177Z Updating files:  65% (24693/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.7916569Z Updating files:  66% (25073/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.8118143Z Updating files:  67% (25453/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.8288211Z Updating files:  68% (25833/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.8511680Z Updating files:  69% (26213/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.8677646Z Updating files:  70% (26593/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.8901888Z Updating files:  71% (26973/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.9064541Z Updating files:  72% (27353/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.9271157Z Updating files:  73% (27732/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.9485545Z Updating files:  74% (28112/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.9730443Z Updating files:  75% (28492/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:42.9959257Z Updating files:  76% (28872/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.0173811Z Updating files:  77% (29252/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.0357512Z Updating files:  78% (29632/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.0569600Z Updating files:  79% (30012/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.0780796Z Updating files:  80% (30392/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.0911959Z Updating files:  81% (30772/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.0973334Z Updating files:  81% (31028/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.1133576Z Updating files:  82% (31151/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.1272216Z Updating files:  83% (31531/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.1469514Z Updating files:  84% (31911/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.1702373Z Updating files:  85% (32291/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.1919598Z Updating files:  86% (32671/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.2125530Z Updating files:  87% (33051/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.2326340Z Updating files:  88% (33431/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.2492442Z Updating files:  89% (33811/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.2713597Z Updating files:  90% (34191/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.2893334Z Updating files:  91% (34570/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.3124930Z Updating files:  92% (34950/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.3329391Z Updating files:  93% (35330/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.3751710Z Updating files:  94% (35710/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.3904368Z Updating files:  95% (36090/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.4042902Z Updating files:  96% (36470/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.4244904Z Updating files:  97% (36850/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.4480847Z Updating files:  98% (37230/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.4823936Z Updating files:  99% (37610/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.4824466Z Updating files: 100% (37989/37989)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:43.4824902Z Updating files: 100% (37989/37989), done.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7391857Z main: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7409040Z fix:  25474e11af71d5813d75efa3bc563735097958c8 (darkmatter-sudo/CorbanuTerminal)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7434120Z fix parents: 9c872e7c5804703b9f7b42a7fc0135e6dde64f91 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7451281Z prev: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7665763Z probe sha256: 397d7603653697258e614bef88177e9a778f487a9bd12666c7ba8a430774cb5a
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7869668Z corpus sha256: e66eadbfa5d441a4edac078a95b2374eac4945b62d8c2df5de7bc00e57eb18cc
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7883032Z uname: Linux x86_64
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7883684Z runner: ubuntu24 image 20261101.360.1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7997650Z  codex-rs/core/src/security/tainted_action.rs       |  39 ++++++
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7998292Z  .../core/src/security/tainted_action/indirect.rs   | 121 ++++++++++++++++
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7998917Z  codex-rs/core/src/security/tainted_action/shell.rs |  64 ++++++++-
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.7999838Z  codex-rs/core/src/security/tainted_action_tests.rs | 152 +++++++++++++++++++++
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Clone and check out	2026-11-07T15:01:44.8000402Z  4 files changed, 375 insertions(+), 1 deletion(-)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	﻿2026-11-07T15:01:44.8041676Z ##[group]Run set -euo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8042001Z ^[[36;1mset -euo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8042324Z ^[[36;1mrustup show active-toolchain || rustup toolchain install^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8042967Z ^[[36;1mrustup target add "$TARGET"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8043382Z ^[[36;1m{ rustc -V; cargo -V; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8064833Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8065085Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8065311Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8065655Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8065985Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8066341Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8066675Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8066927Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8067164Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8067414Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8067654Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8067872Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:44.8775485Z info: syncing channel updates for 1.99.1-x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:45.1708058Z info: latest update on 2026-10-15 for version 1.99.1 (58cf8f9c3 2026-10-13)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:45.1783070Z info: downloading 6 components
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.4053047Z warn: the missing active toolchain `1.99.1-x86_64-unknown-linux-gnu` has been auto-installed
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.4053990Z 1.99.1-x86_64-unknown-linux-gnu (overridden by '/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/rust-toolchain.toml')
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.4055110Z warn: auto-installation is deprecated for most `rustup` commands
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.4055833Z warn: scripts relying on this behavior in `rustup` may stop working in the future
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.4056438Z warn: to install the active toolchain, use `rustup install` instead
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.4056915Z warn: see <https://github.com/rust-lang/rustup/issues/4836> for more info
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.4875014Z info: component rust-std is up to date
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.5250934Z rustc 1.99.1 (58cf8f9c3 2026-10-13)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Toolchain	2026-11-07T15:01:54.5576535Z cargo 1.99.1 (5f94df478 2026-08-27)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	﻿2026-11-07T15:01:54.5619235Z ##[group]Run set +e -uo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5619579Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5620035Z ^[[36;1mcat ../../repro/probes/issue_1482_items_probe.rs >> core/src/security/tainted_action_tests.rs^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5620553Z ^[[36;1mCORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5621171Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482_items_probe -- --ignored --nocapture --test-threads=1 \^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5621771Z ^[[36;1m  > "$RUNNER_TEMP/logs/10-probe-main.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5622170Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/10-probe-main.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5622519Z ^[[36;1mgit checkout -- .^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5623268Z ^[[36;1mgrep -E '^(PROBE|SWEEP-COUNT|CLUSTER-COUNT)' "$RUNNER_TEMP/logs/10-probe-main.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5643695Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5643944Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5644168Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5644531Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5644857Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5645196Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5645504Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5645751Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5645969Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5646212Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5646423Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:01:54.5646808Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:40.7672586Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4880198Z PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4881509Z PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4882472Z PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4883837Z PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4885357Z PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4886275Z PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4887226Z PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4888160Z PROBE issue#2 "2 >log sh x" files=["x"] command_word=Some((0, "2")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4889192Z PROBE issue#2-control "ls >log" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4890350Z PROBE issue#2-control "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4891292Z PROBE issue#2-control "sudo ./x >log" files=["x"] command_word=Some((1, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4891954Z PROBE issue#2-control "sudo ./x >log" files=["x"] command_word=Some((1, "x")) verdict=Some(Persistence)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4892619Z PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4893634Z PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4894301Z PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4894888Z PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4895467Z PROBE issue#3-control "sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((3, "run.sh")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4896069Z PROBE issue#3-control "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4896599Z PROBE issue#3-control "eval true" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4897151Z PROBE issue#4 "sudo -i ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4898072Z PROBE issue#4 "sudo -iu root ./x" files=["x"] command_word=Some((3, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4898705Z PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4899172Z PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4899659Z PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4900158Z PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4900638Z PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4901130Z PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4901630Z PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4902126Z PROBE issue#4-s "sudo -s ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4902640Z PROBE issue#4-control "sudo -u root ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4903814Z PROBE issue#4-control "sudo -E ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4904633Z PROBE issue#4-control "sudo -u e ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4905488Z PROBE issue#4-control "sudo -p A ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4906235Z PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4907047Z PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4907614Z PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4908101Z PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4908892Z PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4909434Z PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4910219Z PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4911047Z PROBE issue#r1-2 "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4911871Z PROBE issue#r1-4 "eval sudo -A ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4912525Z PROBE issue#r1-4 "eval sudoedit ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4913710Z PROBE issue#r1-4 "eval '>log ./x'" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4914333Z PROBE issue#r1-f1 "sudo &>log -u root ./x" files=["x"] command_word=Some((1, "&>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4914980Z PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "&>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4915946Z PROBE issue#r1-f2 "sudo -R sub -A ./x" files=["x"] command_word=Some((2, "sub")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4916533Z PROBE issue#r1-f2 "sudo --user root --askpass ./x" files=["x"] command_word=Some((4, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4917411Z PROBE issue#r1-control "ls 2>/dev/null" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4918160Z PROBE issue#r1-control "ls 2>&1" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4918788Z PROBE issue#r1-control "ls >&2" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4919490Z PROBE issue#r1-control "sudo ./x 2>&1" files=["x"] command_word=Some((1, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4920467Z PROBE issue#r1-control "sudo -R sub ./x" files=["x"] command_word=Some((2, "sub")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4921140Z PROBE issue#r1-control "sudo --user root ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4921919Z PROBE issue#r1-control "eval sudo ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4922378Z PROBE issue#5 argv=["true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4923090Z PROBE issue#5 argv=["env", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4923554Z PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4923960Z PROBE issue#5 argv=["true;./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4924337Z PROBE issue#5-control argv=["true", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4924738Z PROBE issue#5-control argv=["./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4925129Z PROBE issue#5-control argv=["echo", "a b"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4925579Z PROBE issue#5-control argv=["bash", "-lc", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4926072Z PROBE issue#5-control argv=["sudo", "sh", "-c", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4926566Z PROBE issue#r1-3 argv=["env", "A=1 ./y", "./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4927076Z PROBE issue#r1-3 argv=["sudo", "-u", "root ./y", "./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4927536Z PROBE issue#r1-3 argv=["./{x,y}"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4927960Z PROBE issue#r1-3 argv=["true`./x`"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4928429Z PROBE issue#r1-3-control argv=["env", "A=1", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4929193Z PROBE issue#r1-3-control argv=["sudo", "-u", "root", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4929694Z PROBE issue#r1-3-control argv=["./x", "a b", "{c,d}"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on main	2026-11-07T15:11:42.4930062Z SWEEP-COUNT 1190
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	﻿2026-11-07T15:11:42.5010661Z ##[group]Run set +e -uo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5011006Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5011270Z ^[[36;1mgit checkout -q "$FIX_COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5011726Z ^[[36;1mcat ../../repro/probes/issue_1482_items_probe.rs >> core/src/security/tainted_action_tests.rs^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5012239Z ^[[36;1mCORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5013194Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482_items_probe -- --ignored --nocapture --test-threads=1 \^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5013826Z ^[[36;1m  > "$RUNNER_TEMP/logs/11-probe-fix.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5014203Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/11-probe-fix.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5014561Z ^[[36;1mgit checkout -- .^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5014953Z ^[[36;1mgrep -E '^(PROBE|SWEEP-COUNT|CLUSTER-COUNT)' "$RUNNER_TEMP/logs/11-probe-fix.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5083518Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5083773Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5084048Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5084390Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5084729Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5085102Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5085426Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5085676Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5085901Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5086147Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5086356Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:11:42.5086573Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.1578231Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2172532Z PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2174178Z PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2175221Z PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2176372Z PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2177116Z PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2178051Z PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2178811Z PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2179450Z PROBE issue#2 "2 >log sh x" files=["x"] command_word=Some((0, "2")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2180037Z PROBE issue#2-control "ls >log" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2180699Z PROBE issue#2-control "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2181372Z PROBE issue#2-control "sudo ./x >log" files=["x"] command_word=Some((1, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2182081Z PROBE issue#2-control "sudo ./x >log" files=["x"] command_word=Some((1, "x")) verdict=Some(Persistence)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2183193Z PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2184109Z PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2184910Z PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2185582Z PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(Persistence)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2186449Z PROBE issue#3-control "sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((3, "run.sh")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2187079Z PROBE issue#3-control "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2187798Z PROBE issue#3-control "eval true" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2188349Z PROBE issue#4 "sudo -i ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2188893Z PROBE issue#4 "sudo -iu root ./x" files=["x"] command_word=Some((3, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2189435Z PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2189955Z PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2190502Z PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2191058Z PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2191608Z PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2192160Z PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2192966Z PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2193512Z PROBE issue#4-s "sudo -s ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2194029Z PROBE issue#4-control "sudo -u root ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2194554Z PROBE issue#4-control "sudo -E ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2195073Z PROBE issue#4-control "sudo -u e ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2195590Z PROBE issue#4-control "sudo -p A ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2196128Z PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2196665Z PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2197181Z PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2197726Z PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2198282Z PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2198831Z PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2199379Z PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2199894Z PROBE issue#r1-2 "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2200464Z PROBE issue#r1-4 "eval sudo -A ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2201057Z PROBE issue#r1-4 "eval sudoedit ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2201649Z PROBE issue#r1-4 "eval '>log ./x'" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2202250Z PROBE issue#r1-f1 "sudo &>log -u root ./x" files=["x"] command_word=Some((1, "&>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2203177Z PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "&>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2203879Z PROBE issue#r1-f2 "sudo -R sub -A ./x" files=["x"] command_word=Some((2, "sub")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2204513Z PROBE issue#r1-f2 "sudo --user root --askpass ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2205280Z PROBE issue#r1-control "ls 2>/dev/null" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2205806Z PROBE issue#r1-control "ls 2>&1" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2206321Z PROBE issue#r1-control "ls >&2" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2207027Z PROBE issue#r1-control "sudo ./x 2>&1" files=["x"] command_word=Some((1, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2207585Z PROBE issue#r1-control "sudo -R sub ./x" files=["x"] command_word=Some((2, "sub")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2208158Z PROBE issue#r1-control "sudo --user root ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2208726Z PROBE issue#r1-control "eval sudo ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2209222Z PROBE issue#5 argv=["true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2209652Z PROBE issue#5 argv=["env", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2210129Z PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2210586Z PROBE issue#5 argv=["true;./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2210993Z PROBE issue#5-control argv=["true", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2211398Z PROBE issue#5-control argv=["./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2211780Z PROBE issue#5-control argv=["echo", "a b"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2212222Z PROBE issue#5-control argv=["bash", "-lc", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2212953Z PROBE issue#5-control argv=["sudo", "sh", "-c", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2213462Z PROBE issue#r1-3 argv=["env", "A=1 ./y", "./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2213971Z PROBE issue#r1-3 argv=["sudo", "-u", "root ./y", "./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2214437Z PROBE issue#r1-3 argv=["./{x,y}"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2214864Z PROBE issue#r1-3 argv=["true`./x`"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2215317Z PROBE issue#r1-3-control argv=["env", "A=1", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2215798Z PROBE issue#r1-3-control argv=["sudo", "-u", "root", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2216277Z PROBE issue#r1-3-control argv=["./x", "a b", "{c,d}"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on fix	2026-11-07T15:14:40.2216636Z SWEEP-COUNT 1190
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	﻿2026-11-07T15:14:40.2254462Z ##[group]Run set +e -uo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2254802Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2255066Z ^[[36;1mgit checkout -q "$PREV_COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2255536Z ^[[36;1mcat ../../repro/probes/issue_1482_items_probe.rs >> core/src/security/tainted_action_tests.rs^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2256042Z ^[[36;1mCORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2256653Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482_items_probe -- --ignored --nocapture --test-threads=1 \^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2257274Z ^[[36;1m  > "$RUNNER_TEMP/logs/13-probe-prev.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2257680Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/13-probe-prev.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2258033Z ^[[36;1mgit checkout -- .^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2258348Z ^[[36;1mgrep -E '^PROBE issue#' "$RUNNER_TEMP/logs/13-probe-prev.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2277692Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2277938Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2278163Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2278518Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2278841Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2279183Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2279487Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2279732Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2279947Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2280338Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2280545Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:14:40.2280760Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.3862440Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4657249Z PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4658524Z PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4661149Z PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4662581Z PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4663896Z PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4664902Z PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4665900Z PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4667146Z PROBE issue#2 "2 >log sh x" files=["x"] command_word=Some((0, "2")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4668103Z PROBE issue#2-control "ls >log" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4669062Z PROBE issue#2-control "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4670041Z PROBE issue#2-control "sudo ./x >log" files=["x"] command_word=Some((1, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4671209Z PROBE issue#2-control "sudo ./x >log" files=["x"] command_word=Some((1, "x")) verdict=Some(Persistence)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4672425Z PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4674054Z PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4675395Z PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4676558Z PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(Persistence)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4677659Z PROBE issue#3-control "sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((3, "run.sh")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4678749Z PROBE issue#3-control "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4679708Z PROBE issue#3-control "eval true" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4681050Z PROBE issue#4 "sudo -i ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4682027Z PROBE issue#4 "sudo -iu root ./x" files=["x"] command_word=Some((3, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4683355Z PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4684318Z PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4685319Z PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4686320Z PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4687306Z PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4688315Z PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4689351Z PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4690303Z PROBE issue#4-s "sudo -s ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4691217Z PROBE issue#4-control "sudo -u root ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4692172Z PROBE issue#4-control "sudo -E ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4693527Z PROBE issue#4-control "sudo -u e ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4694477Z PROBE issue#4-control "sudo -p A ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4695387Z PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4696233Z PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4697063Z PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4697920Z PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4698806Z PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4699676Z PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4700618Z PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4701572Z PROBE issue#r1-2 "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4702491Z PROBE issue#r1-4 "eval sudo -A ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4703639Z PROBE issue#r1-4 "eval sudoedit ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4704577Z PROBE issue#r1-4 "eval '>log ./x'" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4705545Z PROBE issue#r1-f1 "sudo &>log -u root ./x" files=["x"] command_word=Some((1, "&>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4706691Z PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "&>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4707810Z PROBE issue#r1-f2 "sudo -R sub -A ./x" files=["x"] command_word=Some((2, "sub")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4708907Z PROBE issue#r1-f2 "sudo --user root --askpass ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4710014Z PROBE issue#r1-control "ls 2>/dev/null" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4710951Z PROBE issue#r1-control "ls 2>&1" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4711836Z PROBE issue#r1-control "ls >&2" files=["x"] command_word=Some((0, "ls")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4712923Z PROBE issue#r1-control "sudo ./x 2>&1" files=["x"] command_word=Some((1, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4714130Z PROBE issue#r1-control "sudo -R sub ./x" files=["x"] command_word=Some((2, "sub")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4715187Z PROBE issue#r1-control "sudo --user root ./x" files=["x"] command_word=Some((3, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4716219Z PROBE issue#r1-control "eval sudo ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4717096Z PROBE issue#5 argv=["true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4717865Z PROBE issue#5 argv=["env", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4718704Z PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4719522Z PROBE issue#5 argv=["true;./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4720317Z PROBE issue#5-control argv=["true", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4721014Z PROBE issue#5-control argv=["./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4721713Z PROBE issue#5-control argv=["echo", "a b"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4722501Z PROBE issue#5-control argv=["bash", "-lc", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4723594Z PROBE issue#5-control argv=["sudo", "sh", "-c", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4724455Z PROBE issue#r1-3 argv=["env", "A=1 ./y", "./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4725493Z PROBE issue#r1-3 argv=["sudo", "-u", "root ./y", "./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4726274Z PROBE issue#r1-3 argv=["./{x,y}"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4726957Z PROBE issue#r1-3 argv=["true`./x`"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4727751Z PROBE issue#r1-3-control argv=["env", "A=1", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4728605Z PROBE issue#r1-3-control argv=["sudo", "-u", "root", "./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Probe on previous fix commit	2026-11-07T15:19:18.4729467Z PROBE issue#r1-3-control argv=["./x", "a b", "{c,d}"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	﻿2026-11-07T15:19:18.4787551Z ##[group]Run set +e -uo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4788156Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4788570Z ^[[36;1mcd "$RUNNER_TEMP/logs"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4789160Z ^[[36;1mgrep -E '^(PROBE|SWEEP|CLUSTER)' 10-probe-main.log > main.lines^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4789934Z ^[[36;1mgrep -E '^(PROBE|SWEEP|CLUSTER)' 11-probe-fix.log > fix.lines^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4790535Z ^[[36;1m{^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4791049Z ^[[36;1m  echo "main lines: $(wc -l < main.lines)  fix lines: $(wc -l < fix.lines)"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4791764Z ^[[36;1m  echo "changed lines (- main, + fix):"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4792289Z ^[[36;1m  diff main.lines fix.lines^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4792970Z ^[[36;1m  echo "diff exit=$?"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4793396Z ^[[36;1m} | tee 12-probe-diff.txt^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4794213Z ^[[36;1mpython3 "$GITHUB_WORKSPACE/repro/probes/quieter.py" main.lines fix.lines | tee 14-quieter.txt^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4818110Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4818358Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4818621Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4818957Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4819432Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4819785Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4820133Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4820395Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4820615Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4820861Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4821059Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4821271Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4974538Z main lines: 1262  fix lines: 1262
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4975056Z changed lines (- main, + fix):
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.4999899Z 1,7c1,7
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5001157Z < PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5002314Z < PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5003617Z < PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5004542Z < PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5005478Z < PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5006368Z < PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5007265Z < PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5007964Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5008765Z > PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5009985Z > PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5011011Z > PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5012077Z > PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5013549Z > PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5014769Z > PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5016059Z > PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5016845Z 13,16c13,16
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5017568Z < PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5018788Z < PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5019901Z < PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5020716Z < PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5021072Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5021490Z > PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5022253Z > PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5023779Z > PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5024487Z > PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(Persistence)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5024894Z 22,28c22,28
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5025191Z < PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5025673Z < PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5026191Z < PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5026697Z < PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5027206Z < PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5027729Z < PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5028463Z < PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5028900Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5029223Z > PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5029768Z > PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5030336Z > PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5030899Z > PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5031449Z > PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5032018Z > PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5032597Z > PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5033554Z 34,40c34,40
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5033864Z < PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5034346Z < PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5034815Z < PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5035313Z < PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5036036Z < PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5036546Z < PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5037211Z < PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5037578Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5038397Z > PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5038991Z > PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5039706Z > PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5040281Z > PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5041178Z > PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5042102Z > PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5042883Z > PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5043636Z 42,48c42,48
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5044210Z < PROBE issue#r1-4 "eval sudo -A ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5045219Z < PROBE issue#r1-4 "eval sudoedit ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5046193Z < PROBE issue#r1-4 "eval '>log ./x'" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5047173Z < PROBE issue#r1-f1 "sudo &>log -u root ./x" files=["x"] command_word=Some((1, "&>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5048342Z < PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "&>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5049535Z < PROBE issue#r1-f2 "sudo -R sub -A ./x" files=["x"] command_word=Some((2, "sub")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5050600Z < PROBE issue#r1-f2 "sudo --user root --askpass ./x" files=["x"] command_word=Some((4, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5051370Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5051977Z > PROBE issue#r1-4 "eval sudo -A ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5053507Z > PROBE issue#r1-4 "eval sudoedit ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5054613Z > PROBE issue#r1-4 "eval '>log ./x'" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5055725Z > PROBE issue#r1-f1 "sudo &>log -u root ./x" files=["x"] command_word=Some((1, "&>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5057026Z > PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "&>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5058295Z > PROBE issue#r1-f2 "sudo -R sub -A ./x" files=["x"] command_word=Some((2, "sub")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5059473Z > PROBE issue#r1-f2 "sudo --user root --askpass ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5060311Z 56,59c56,59
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5060727Z < PROBE issue#5 argv=["true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5061376Z < PROBE issue#5 argv=["env", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5062128Z < PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5063038Z < PROBE issue#5 argv=["true;./x"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5063562Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5064018Z > PROBE issue#5 argv=["true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5064793Z > PROBE issue#5 argv=["env", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5065653Z > PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5066492Z > PROBE issue#5 argv=["true;./x"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5067074Z 67c67
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5067487Z < PROBE issue#r1-3 argv=["./{x,y}"] files=["x"] verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5068023Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5068468Z > PROBE issue#r1-3 argv=["./{x,y}"] files=["x"] verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5069058Z diff exit=1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5427124Z compared 1260 main / 1260 fix lines
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5427595Z louder on fix: 37
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5427955Z   LOUDER PROBE issue#2 "2>log sh x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5428404Z   LOUDER PROBE issue#2 "<log sh x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5428833Z   LOUDER PROBE issue#2 ">log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5429260Z   LOUDER PROBE issue#2 "env >log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5429775Z   LOUDER PROBE issue#2 "sudo -R >log -C sub ./run.sh"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5430337Z   LOUDER PROBE issue#2 "sudo 2>log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5430805Z   LOUDER PROBE issue#2 "sudo >log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5431296Z   LOUDER PROBE issue#3 "eval 'sudo -C 3 ./run.sh'"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5432116Z   LOUDER PROBE issue#3 "eval 'sudo -D sub ./run.sh'"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5432820Z   LOUDER PROBE issue#3 "eval ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5433296Z   LOUDER PROBE issue#3 "eval sudo -C 3 ./run.sh"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5433822Z   LOUDER PROBE issue#4 "sudo --askpass ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5434317Z   LOUDER PROBE issue#4 "sudo --edit ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5434791Z   LOUDER PROBE issue#4 "sudo -A ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5435236Z   LOUDER PROBE issue#4 "sudo -e ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5435685Z   LOUDER PROBE issue#4 "sudo -nA ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5436154Z   LOUDER PROBE issue#4 "sudo -u root -e ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5436641Z   LOUDER PROBE issue#4 "sudoedit ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5437127Z   LOUDER PROBE issue#5 argv=["env", "true ./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5437728Z   LOUDER PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5438313Z   LOUDER PROBE issue#5 argv=["true ./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5438780Z   LOUDER PROBE issue#5 argv=["true;./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5439244Z   LOUDER PROBE issue#r1-1 "2>&1 ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5439676Z   LOUDER PROBE issue#r1-1 "<<EOF ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5440113Z   LOUDER PROBE issue#r1-1 ">&2 ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5440566Z   LOUDER PROBE issue#r1-1 "sudo 2>&1 ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5441037Z   LOUDER PROBE issue#r1-1 "{fd}>log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5441498Z   LOUDER PROBE issue#r1-2 ">log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5441947Z   LOUDER PROBE issue#r1-2 ">log eval ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5442416Z   LOUDER PROBE issue#r1-3 argv=["./{x,y}"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5443067Z   LOUDER PROBE issue#r1-4 "eval '>log ./x'"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5443568Z   LOUDER PROBE issue#r1-4 "eval sudo -A ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5444076Z   LOUDER PROBE issue#r1-4 "eval sudoedit ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5444616Z   LOUDER PROBE issue#r1-f1 "sudo &>log -u root ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5445229Z   LOUDER PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5445875Z   LOUDER PROBE issue#r1-f2 "sudo --user root --askpass ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5446476Z   LOUDER PROBE issue#r1-f2 "sudo -R sub -A ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Diff main vs fix	2026-11-07T15:19:18.5446956Z quieter on fix: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	﻿2026-11-07T15:19:18.5506015Z ##[group]Run set +e -uo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5506545Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5506981Z ^[[36;1mgit checkout -q "$FIX_COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5507887Z ^[[36;1mcargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 > "$RUNNER_TEMP/logs/20-test-fix.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5508946Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/20-test-fix.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5510003Z ^[[36;1mgit checkout -q "$COMMIT" -- core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5511130Z ^[[36;1mgit status --short | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5512264Z ^[[36;1mcargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 >> "$RUNNER_TEMP/logs/21-test-reverted.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5513724Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5514379Z ^[[36;1mgit checkout -q "$FIX_COMMIT" -- .^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5514910Z ^[[36;1mif [ -n "$PREV_COMMIT" ]; then^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5515861Z ^[[36;1m  git checkout -q "$PREV_COMMIT" -- core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5517197Z ^[[36;1m  git status --short | tee -a "$RUNNER_TEMP/logs/22-test-prev-code.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5518354Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 >> "$RUNNER_TEMP/logs/22-test-prev-code.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5519457Z ^[[36;1m  echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/22-test-prev-code.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5520121Z ^[[36;1m  git checkout -q "$FIX_COMMIT" -- .^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5520582Z ^[[36;1mfi^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5520904Z ^[[36;1mgit status --short^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5521654Z ^[[36;1mgrep -E '^test |^test result:|panicked|left:|right:|should' "$RUNNER_TEMP"/logs/2*.log | head -60^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5546861Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5547250Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5547628Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5548186Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5548744Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5549417Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5549973Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5550401Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5550776Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5551198Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5551538Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:19:18.5551900Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:23:54.8744081Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:23:55.1676942Z M  core/src/security/tainted_action.rs
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:23:55.1677665Z M  core/src/security/tainted_action/indirect.rs
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:26:48.6927609Z exit=101
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:26:48.9704090Z M  core/src/security/tainted_action.rs
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:26:48.9704771Z M  core/src/security/tainted_action/indirect.rs
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.4944375Z exit=101
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7210958Z /home/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7212122Z /home/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7213645Z /home/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tests::issue_1482_items_2_to_5_ask ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7215224Z /home/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7216838Z /home/runner/work/_temp/logs/20-test-fix.log:test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 3706 filtered out; finished in 3.11s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7218283Z /home/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7219571Z /home/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7220464Z /home/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tests::issue_1482_items_2_to_5_ask ... FAILED
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7221330Z /home/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7222377Z /home/runner/work/_temp/logs/21-test-reverted.log:thread 'security::tainted_action::tests::issue_1482_items_2_to_5_ask' (20352) panicked at core/src/security/tainted_action_tests.rs:7086:5:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7223570Z /home/runner/work/_temp/logs/21-test-reverted.log:assertion failed: `(left == right)`: should ask
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7224359Z /home/runner/work/_temp/logs/21-test-reverted.log:test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 3706 filtered out; finished in 2.87s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7225318Z /home/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7226304Z /home/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7227376Z /home/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tests::issue_1482_items_2_to_5_ask ... FAILED
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7228215Z /home/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tests::issue_1482_items_2_to_5_checks_are_linear ... ok
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7229247Z /home/runner/work/_temp/logs/22-test-prev-code.log:thread 'security::tainted_action::tests::issue_1482_items_2_to_5_ask' (20560) panicked at core/src/security/tainted_action_tests.rs:7086:5:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7230163Z /home/runner/work/_temp/logs/22-test-prev-code.log:assertion failed: `(left == right)`: should ask
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Regression test on the fix, and with the fix reverted	2026-11-07T15:29:45.7230960Z /home/runner/work/_temp/logs/22-test-prev-code.log:test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 3706 filtered out; finished in 2.93s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	﻿2026-11-07T15:29:45.7263028Z ##[group]Run set +e -uo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7263405Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7263666Z ^[[36;1mgit checkout -q "$FIX_COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7264213Z ^[[36;1mcargo build --locked --target "$TARGET" -p codex-code-mode-host -p codex-rmcp-client --bins > /dev/null 2>&1 || true^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7265020Z ^[[36;1mcargo test --locked --target "$TARGET" -p codex-core --lib -- security:: > "$RUNNER_TEMP/logs/30-security-fix.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7265638Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/30-security-fix.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7266173Z ^[[36;1mgrep -E '^test result:|FAILED|^failures:' "$RUNNER_TEMP/logs/30-security-fix.log" | head -40^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7286047Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7286291Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7286518Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7286848Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7287170Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7287553Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7287861Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7288109Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7288355Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7288603Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7288806Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:29:45.7289021Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:38:13.8407131Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	security:: suite on the fix	2026-11-07T15:38:13.8421911Z test result: ok. 794 passed; 0 failed; 5 ignored; 0 measured; 2911 filtered out; finished in 174.55s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	﻿2026-11-07T15:38:13.9651527Z ##[group]Run set +e -uo pipefail
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9654089Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9656361Z ^[[36;1mgit checkout -q "$FIX_COMMIT"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9660544Z ^[[36;1mrustup component add rustfmt clippy^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9662969Z ^[[36;1m{ cargo fmt --check; echo "fmt exit=$?"; } > "$RUNNER_TEMP/logs/40-fmt.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9667292Z ^[[36;1m{ cargo clippy --locked --target "$TARGET" -p codex-core --tests -- -D warnings; echo "clippy exit=$?"; } > "$RUNNER_TEMP/logs/41-clippy.log" 2>&1^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9672995Z ^[[36;1mtail -n 5 "$RUNNER_TEMP/logs/40-fmt.log" "$RUNNER_TEMP/logs/41-clippy.log"^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9745189Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9747268Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9749430Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9749881Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9751974Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9754612Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9759530Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9762073Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9774755Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9778777Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9782788Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:13.9785796Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:14.2032982Z info: component rustfmt is up to date
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:38:14.2037866Z info: component clippy is up to date
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0735082Z ==> /home/runner/work/_temp/logs/40-fmt.log <==
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0742542Z Warning: can't set `imports_granularity = Item`, unstable features are only available in nightly channel.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0745533Z Warning: can't set `imports_granularity = Item`, unstable features are only available in nightly channel.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0751058Z Warning: can't set `imports_granularity = Item`, unstable features are only available in nightly channel.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0754045Z Warning: can't set `imports_granularity = Item`, unstable features are only available in nightly channel.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0756939Z fmt exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0757145Z 
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0757326Z ==> /home/runner/work/_temp/logs/41-clippy.log <==
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0764221Z     Checking codex-web-search-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0767359Z     Finished `dev` profile [unoptimized + debuginfo] target(s) in 3m 50s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0770352Z warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0773657Z note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	fmt and clippy on the fix (Linux)	2026-11-07T15:42:23.0776563Z clippy exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	﻿2026-11-07T15:42:23.0905474Z ##[group]Run cd "$RUNNER_TEMP/logs" || exit 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0908235Z ^[[36;1mcd "$RUNNER_TEMP/logs" || exit 0^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0919008Z ^[[36;1m# 4*.log (fmt/clippy) exist only on Linux: a missing file must not fail the summary.^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0921656Z ^[[36;1mgrep -h '^exit=\|exit=' 1*.log 2*.log 3*.log 4*.log 2>/dev/null || true^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0924320Z ^[[36;1mgrep -h '^test result:' 2*.log 3*.log 2>/dev/null^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0926842Z ^[[36;1mcat 14-quieter.txt 2>/dev/null^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0928887Z ^[[36;1mcat 12-probe-diff.txt 2>/dev/null | head -60^[[0m
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0955393Z shell: /usr/bin/bash -e {0}
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0957093Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0959516Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0962257Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0962999Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0965054Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0967488Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0969671Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0971305Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0973233Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0977347Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.0979360Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1086431Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1088749Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1089196Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1091165Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1093821Z exit=101
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1096746Z exit=101
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1099136Z exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1101412Z fmt exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1101903Z clippy exit=0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1105070Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 3706 filtered out; finished in 3.11s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1107900Z test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 3706 filtered out; finished in 2.87s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1108666Z test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 3706 filtered out; finished in 2.93s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1112584Z test result: ok. 794 passed; 0 failed; 5 ignored; 0 measured; 2911 filtered out; finished in 174.55s
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1119044Z compared 1260 main / 1260 fix lines
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1121449Z louder on fix: 37
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1123605Z   LOUDER PROBE issue#2 "2>log sh x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1126481Z   LOUDER PROBE issue#2 "<log sh x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1130481Z   LOUDER PROBE issue#2 ">log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1132449Z   LOUDER PROBE issue#2 "env >log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1141710Z   LOUDER PROBE issue#2 "sudo -R >log -C sub ./run.sh"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1147012Z   LOUDER PROBE issue#2 "sudo 2>log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1147430Z   LOUDER PROBE issue#2 "sudo >log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1153546Z   LOUDER PROBE issue#3 "eval 'sudo -C 3 ./run.sh'"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1156043Z   LOUDER PROBE issue#3 "eval 'sudo -D sub ./run.sh'"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1159739Z   LOUDER PROBE issue#3 "eval ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1163627Z   LOUDER PROBE issue#3 "eval sudo -C 3 ./run.sh"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1166141Z   LOUDER PROBE issue#4 "sudo --askpass ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1168555Z   LOUDER PROBE issue#4 "sudo --edit ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1168950Z   LOUDER PROBE issue#4 "sudo -A ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1171352Z   LOUDER PROBE issue#4 "sudo -e ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1173753Z   LOUDER PROBE issue#4 "sudo -nA ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1176169Z   LOUDER PROBE issue#4 "sudo -u root -e ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1176582Z   LOUDER PROBE issue#4 "sudoedit ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1180458Z   LOUDER PROBE issue#5 argv=["env", "true ./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1183048Z   LOUDER PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1183603Z   LOUDER PROBE issue#5 argv=["true ./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1186067Z   LOUDER PROBE issue#5 argv=["true;./x"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1188100Z   LOUDER PROBE issue#r1-1 "2>&1 ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1190488Z   LOUDER PROBE issue#r1-1 "<<EOF ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1193203Z   LOUDER PROBE issue#r1-1 ">&2 ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1193894Z   LOUDER PROBE issue#r1-1 "sudo 2>&1 ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1196764Z   LOUDER PROBE issue#r1-1 "{fd}>log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1200763Z   LOUDER PROBE issue#r1-2 ">log ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1204398Z   LOUDER PROBE issue#r1-2 ">log eval ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1206999Z   LOUDER PROBE issue#r1-3 argv=["./{x,y}"]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1207421Z   LOUDER PROBE issue#r1-4 "eval '>log ./x'"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1209764Z   LOUDER PROBE issue#r1-4 "eval sudo -A ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1212053Z   LOUDER PROBE issue#r1-4 "eval sudoedit ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1214466Z   LOUDER PROBE issue#r1-f1 "sudo &>log -u root ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1217002Z   LOUDER PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1219744Z   LOUDER PROBE issue#r1-f2 "sudo --user root --askpass ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1220242Z   LOUDER PROBE issue#r1-f2 "sudo -R sub -A ./x"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1223002Z quieter on fix: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1225963Z main lines: 1262  fix lines: 1262
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1228478Z changed lines (- main, + fix):
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1228856Z 1,7c1,7
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1231084Z < PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1233645Z < PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1236263Z < PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1238938Z < PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1241278Z < PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1242007Z < PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1244651Z < PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1247172Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1249880Z > PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1253069Z > PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1253926Z > PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1256593Z > PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1259338Z > PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1260349Z > PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1265190Z > PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1269743Z 13,16c13,16
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1271985Z < PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1274868Z < PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1277640Z < PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1280182Z < PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1282944Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1283723Z > PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1284732Z > PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1285787Z > PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1673138Z > PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(Persistence)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1677113Z 22,28c22,28
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1679721Z < PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1682849Z < PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1683712Z < PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1687586Z < PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1690068Z < PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1692223Z < PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1695972Z < PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1696627Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1697071Z > PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1699446Z > PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1701689Z > PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1703965Z > PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1706161Z > PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1708167Z > PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1708981Z > PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1709509Z 34,40c34,40
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1709892Z < PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1710601Z < PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1711181Z < PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1711785Z < PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1712538Z < PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1713425Z < PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1714239Z < PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1714797Z ---
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1715172Z > PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1715817Z > PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1716392Z > PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1717103Z > PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1717730Z > PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1718349Z > PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Summary	2026-11-07T15:42:23.1719105Z > PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	﻿2026-11-07T15:42:23.2030158Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2034707Z with:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2039969Z   name: issue-1482-items-probe-ubuntu-24.04
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2046139Z   path: /home/runner/work/_temp/logs
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2049128Z   retention-days: 30
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2055118Z   if-no-files-found: warn
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2061297Z   compression-level: 6
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2063034Z   overwrite: false
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2066585Z   include-hidden-files: false
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2070312Z env:
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2077076Z   COMMIT: b06efb2d6a552099073f8101dbbc93e2606dbb7d
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2085483Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2088459Z   FIX_COMMIT: 25474e11af71d5813d75efa3bc563735097958c8
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2088984Z   PREV_COMMIT: 130d26e56a965a96de549e9ebf644cc1416e7015
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2093353Z   TARGET: x86_64-unknown-linux-gnu
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2098518Z   CARGO_INCREMENTAL: 0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2105634Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2109195Z   RUST_BACKTRACE: 1
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2113994Z   RUST_MIN_STACK: 8388608
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.2115870Z ##[endgroup]
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.3934197Z (node:31839) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.3935796Z (Use `node --trace-deprecation ...` to show where the warning was created)
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.4110026Z With the provided path, there will be 15 files uploaded
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.4111615Z Artifact name is valid!
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.4112392Z Root directory input is valid!
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.7965613Z Beginning upload of artifact content to blob storage
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:23.8559980Z (node:31839) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:24.3594132Z Uploaded bytes 124704
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:24.4391385Z Finished uploading artifact content to blob storage!
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:24.4392605Z SHA256 digest of uploaded artifact zip is 6fe5bae74251bf05fb1ce3dd0be7391e1b27d28c7d8e7e655b6ee96a8f238cc5
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:24.4394535Z Finalizing artifact upload
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:24.9108673Z Artifact issue-1482-items-probe-ubuntu-24.04.zip successfully finalized. Artifact ID 13580520629
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:24.9110263Z Artifact issue-1482-items-probe-ubuntu-24.04 has been successfully uploaded! Final size is 124704 bytes. Artifact ID is 13580520629
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Upload logs	2026-11-07T15:42:24.9117306Z Artifact download URL: https://github.com/darkmatter-sudo/corbanu-macos-repro/actions/runs/42384270415/artifacts/13580520629
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	﻿2026-11-07T15:42:24.9410625Z Post job cleanup.
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0284523Z [command]/usr/bin/git version
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0362825Z git version 2.56.0
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0403464Z Temporarily overriding HOME='/home/runner/work/_temp/b7cce77a-f740-4c58-a09e-8b87c6a605ec' before making global git config changes
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0405096Z Adding repository directory to the temporary git global config as a safe directory
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0409412Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0456804Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0497380Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0810971Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0843911Z http.https://github.com/.extraheader
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0857946Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Post Check out this repo (probe source)	2026-11-07T15:42:25.0924691Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Complete job	﻿2026-11-07T15:42:25.1374436Z Cleaning up orphan processes
+probe (ubuntu-24.04, x86_64-unknown-linux-gnu)	Complete job	2026-11-07T15:42:25.2144945Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

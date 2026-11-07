@@ -1,0 +1,177 @@
+main lines: 1262  fix lines: 1262
+changed lines (- main, + fix):
+1,7c1,7
+< PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=None
+< PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+< PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+< PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=None
+< PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=None
+< PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=None
+< PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=None
+---
+> PROBE issue#2 "sudo -R >log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, ">log")) verdict=Some(UnseenCode)
+> PROBE issue#2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+> PROBE issue#2 "sudo >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+> PROBE issue#2 "env >log ./x" files=["x"] command_word=Some((1, ">log")) verdict=Some(UnseenCode)
+> PROBE issue#2 "2>log sh x" files=["x"] command_word=Some((0, "2>log")) verdict=Some(UnseenCode)
+> PROBE issue#2 "<log sh x" files=["x"] command_word=Some((0, "<log")) verdict=Some(UnseenCode)
+> PROBE issue#2 "sudo 2>log ./x" files=["x"] command_word=Some((1, "2>log")) verdict=Some(UnseenCode)
+10c10
+< PROBE issue#2-control "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+---
+> PROBE issue#2-control "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=Some(UnseenCode)
+13,16c13,16
+< PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+< PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=None
+< PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=None
+< PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+---
+> PROBE issue#3 "eval 'sudo -C 3 ./run.sh'" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+> PROBE issue#3 "eval sudo -C 3 ./run.sh" files=["run.sh", "3/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+> PROBE issue#3 "eval 'sudo -D sub ./run.sh'" files=["run.sh", "sub/run.sh"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+> PROBE issue#3 "eval ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(Persistence)
+22,28c22,28
+< PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+< PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+< PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+< PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+< PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=None
+< PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=None
+< PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=None
+---
+> PROBE issue#4 "sudo -A ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+> PROBE issue#4 "sudo -nA ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+> PROBE issue#4 "sudo --askpass ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+> PROBE issue#4 "sudo -e ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+> PROBE issue#4 "sudo -u root -e ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+> PROBE issue#4 "sudo --edit ./x" files=["x"] command_word=Some((2, "x")) verdict=Some(UnseenCode)
+> PROBE issue#4 "sudoedit ./x" files=["x"] command_word=Some((0, "sudoedit")) verdict=Some(UnseenCode)
+34,48c34,48
+< PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=None
+< PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=None
+< PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=None
+< PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=None
+< PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=None
+< PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+< PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=None
+< PROBE issue#r1-2 "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=None
+< PROBE issue#r1-4 "eval sudo -A ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+< PROBE issue#r1-4 "eval sudoedit ./x" files=["x"] command_word=Some((0, "eval")) verdict=None
+< PROBE issue#r1-4 "eval '>log ./x'" files=["x"] command_word=Some((0, "eval")) verdict=None
+< PROBE issue#r1-f1 "sudo &>log -u root ./x" files=["x"] command_word=Some((1, "&>log")) verdict=None
+< PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "&>log")) verdict=None
+< PROBE issue#r1-f2 "sudo -R sub -A ./x" files=["x"] command_word=Some((2, "sub")) verdict=None
+< PROBE issue#r1-f2 "sudo --user root --askpass ./x" files=["x"] command_word=Some((4, "x")) verdict=None
+---
+> PROBE issue#r1-1 "sudo 2>&1 ./x" files=["x"] command_word=Some((1, "2>&1")) verdict=Some(UnseenCode)
+> PROBE issue#r1-1 "2>&1 ./x" files=["x"] command_word=Some((0, "2>&1")) verdict=Some(UnseenCode)
+> PROBE issue#r1-1 ">&2 ./x" files=["x"] command_word=Some((0, ">&2")) verdict=Some(UnseenCode)
+> PROBE issue#r1-1 "{fd}>log ./x" files=["x"] command_word=Some((0, "{fd}>log")) verdict=Some(UnseenCode)
+> PROBE issue#r1-1 "<<EOF ./x" files=["x"] command_word=Some((0, "<<eof")) verdict=Some(UnseenCode)
+> PROBE issue#r1-2 ">log eval ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+> PROBE issue#r1-2 ">log ./x" files=["x"] command_word=Some((0, ">log")) verdict=Some(UnseenCode)
+> PROBE issue#r1-2 "2>/dev/null ls" files=["x"] command_word=Some((0, "null")) verdict=Some(UnseenCode)
+> PROBE issue#r1-4 "eval sudo -A ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+> PROBE issue#r1-4 "eval sudoedit ./x" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+> PROBE issue#r1-4 "eval '>log ./x'" files=["x"] command_word=Some((0, "eval")) verdict=Some(UnseenCode)
+> PROBE issue#r1-f1 "sudo &>log -u root ./x" files=["x"] command_word=Some((1, "&>log")) verdict=Some(UnseenCode)
+> PROBE issue#r1-f1 "sudo -R &>log -C sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "&>log")) verdict=Some(UnseenCode)
+> PROBE issue#r1-f2 "sudo -R sub -A ./x" files=["x"] command_word=Some((2, "sub")) verdict=Some(UnseenCode)
+> PROBE issue#r1-f2 "sudo --user root --askpass ./x" files=["x"] command_word=Some((4, "x")) verdict=Some(UnseenCode)
+56,59c56,59
+< PROBE issue#5 argv=["true ./x"] files=["x"] verdict=None
+< PROBE issue#5 argv=["env", "true ./x"] files=["x"] verdict=None
+< PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"] files=["x"] verdict=None
+< PROBE issue#5 argv=["true;./x"] files=["x"] verdict=None
+---
+> PROBE issue#5 argv=["true ./x"] files=["x"] verdict=Some(UnseenCode)
+> PROBE issue#5 argv=["env", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+> PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"] files=["x"] verdict=Some(UnseenCode)
+> PROBE issue#5 argv=["true;./x"] files=["x"] verdict=Some(UnseenCode)
+67c67
+< PROBE issue#r1-3 argv=["./{x,y}"] files=["x"] verdict=None
+---
+> PROBE issue#r1-3 argv=["./{x,y}"] files=["x"] verdict=Some(UnseenCode)
+73c73
+< SWEEP "!<symlink>evil.txt0" command_word=Some((0, "!<symlink>evil.txt0")) script=None workspace=None
+---
+> SWEEP "!<symlink>evil.txt0" command_word=Some((0, "!<symlink>evil.txt0")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+105,108c105,108
+< SWEEP "1>>!" command_word=Some((0, "1>>!")) script=None workspace=None
+< SWEEP "2>!" command_word=Some((0, "2>!")) script=None workspace=None
+< SWEEP "2>>!" command_word=Some((0, "2>>!")) script=None workspace=None
+< SWEEP "2>>|" command_word=Some((0, "2>>|")) script=None workspace=None
+---
+> SWEEP "1>>!" command_word=Some((0, "1>>!")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+> SWEEP "2>!" command_word=Some((0, "2>!")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+> SWEEP "2>>!" command_word=Some((0, "2>>!")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+> SWEEP "2>>|" command_word=Some((0, "2>>|")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+285c285
+< SWEEP "cd /home/fixture; cd /tmp && make >>| .zshenv" command_word=Some((0, "cd")) script=None workspace=None
+---
+> SWEEP "cd /home/fixture; cd /tmp && make >>| .zshenv" command_word=Some((0, "cd")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+287c287
+< SWEEP "cd /home/fixture; cd /tmp && make >>| cp a b && echo x >> .zshenv" command_word=Some((0, "cd")) script=None workspace=None
+---
+> SWEEP "cd /home/fixture; cd /tmp && make >>| cp a b && echo x >> .zshenv" command_word=Some((0, "cd")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+305c305
+< SWEEP "cd /home/fixture; cd /tmp || exit; make >>|.zshenv" command_word=Some((0, "cd")) script=None workspace=None
+---
+> SWEEP "cd /home/fixture; cd /tmp || exit; make >>|.zshenv" command_word=Some((0, "cd")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+342c342
+< SWEEP "cd /home/fixture; make >>| cp a b; cd /tmp && echo x >> .zshenv" command_word=Some((0, "cd")) script=None workspace=None
+---
+> SWEEP "cd /home/fixture; make >>| cp a b; cd /tmp && echo x >> .zshenv" command_word=Some((0, "cd")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+462c462
+< SWEEP "echo x &>| out.txt" command_word=Some((0, "echo")) script=None workspace=None
+---
+> SWEEP "echo x &>| out.txt" command_word=Some((0, "echo")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+499c499
+< SWEEP "echo x >>| out.txt" command_word=Some((0, "echo")) script=None workspace=None
+---
+> SWEEP "echo x >>| out.txt" command_word=Some((0, "echo")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+502c502
+< SWEEP "echo x >| out.txt" command_word=Some((0, "echo")) script=None workspace=None
+---
+> SWEEP "echo x >| out.txt" command_word=Some((0, "echo")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+585c585
+< SWEEP "exec 3>&1; sed p; sed p" command_word=Some((1, "3>&1;")) script=None workspace=None
+---
+> SWEEP "exec 3>&1; sed p; sed p" command_word=Some((1, "3>&1;")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+588c588
+< SWEEP "exec >f|" command_word=Some((1, ">f|")) script=None workspace=None
+---
+> SWEEP "exec >f|" command_word=Some((1, ">f|")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+590c590
+< SWEEP "exec >out; sed p; sed p" command_word=Some((1, ">out;")) script=None workspace=None
+---
+> SWEEP "exec >out; sed p; sed p" command_word=Some((1, ">out;")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+592c592
+< SWEEP "exec >{target}|" command_word=Some((1, ">{target}|")) script=None workspace=None
+---
+> SWEEP "exec >{target}|" command_word=Some((1, ">{target}|")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+714c714
+< SWEEP "node -e \"const readArray = (f) => f;\"" command_word=Some((0, "node")) script=None workspace=None
+---
+> SWEEP "node -e \"const readArray = (f) => f;\"" command_word=Some((0, "node")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+819c819
+< SWEEP "rush 'gzip {}' < f" command_word=Some((0, "rush")) script=None workspace=None
+---
+> SWEEP "rush 'gzip {}' < f" command_word=Some((0, "rush")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+824c824
+< SWEEP "rush -Q x 'echo {}' < f" command_word=Some((0, "rush")) script=None workspace=None
+---
+> SWEEP "rush -Q x 'echo {}' < f" command_word=Some((0, "rush")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+1134c1134
+< SWEEP "x &>f" command_word=Some((0, "x")) script=None workspace=None
+---
+> SWEEP "x &>f" command_word=Some((0, "x")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+1169c1169
+< SWEEP "xargs -I {} echo {} < list" command_word=Some((3, "echo")) script=None workspace=None
+---
+> SWEEP "xargs -I {} echo {} < list" command_word=Some((3, "echo")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+1219c1219
+< SWEEP "xargs -I{} rm -- {} < f" command_word=Some((2, "rm")) script=None workspace=None
+---
+> SWEEP "xargs -I{} rm -- {} < f" command_word=Some((2, "rm")) script=Some(UnseenCode) workspace=Some(UnseenCode)
+diff exit=1
