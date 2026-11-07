@@ -27,6 +27,10 @@ on:
       fix_commit:
         description: Fix commit in fix_repo.
         required: true
+      prev_commit:
+        description: Optional earlier fix commit in fix_repo to probe too (review rounds).
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -47,6 +51,7 @@ jobs:
       COMMIT: ${{ inputs.commit }}
       FIX_REPO: ${{ inputs.fix_repo }}
       FIX_COMMIT: ${{ inputs.fix_commit }}
+      PREV_COMMIT: ${{ inputs.prev_commit }}
       TARGET: ${{ matrix.target }}
       # Same job-level env as rust-ci-core-security.yml.
       CARGO_INCREMENTAL: "0"
@@ -78,11 +83,13 @@ jobs:
           cd CorbanuTerminal
           git checkout -q "$COMMIT"
           git fetch -q "https://github.com/$FIX_REPO.git" "$FIX_COMMIT"
+          if [ -n "$PREV_COMMIT" ]; then git fetch -q "https://github.com/$FIX_REPO.git" "$PREV_COMMIT"; fi
           cp codex-rs/core/src/security/tainted_action_tests.rs "$RUNNER_TEMP/corpus.rs"
           {
             echo "main: $(git rev-parse HEAD)"
             echo "fix:  $(git rev-parse "$FIX_COMMIT") ($FIX_REPO)"
-            echo "fix parent: $(git rev-parse "$FIX_COMMIT^")"
+            echo "fix parents: $(git rev-parse "$FIX_COMMIT^@" | tr '\n' ' ')"
+            if [ -n "$PREV_COMMIT" ]; then echo "prev: $(git rev-parse "$PREV_COMMIT")"; fi
             echo "probe sha256: $(shasum -a 256 ../repro/probes/issue_1482_probe.rs | cut -d' ' -f1)"
             echo "corpus sha256: $(shasum -a 256 "$RUNNER_TEMP/corpus.rs" | cut -d' ' -f1)"
             echo "uname: $(uname -sm)"
@@ -108,7 +115,7 @@ jobs:
             > "$RUNNER_TEMP/logs/10-probe-main.log" 2>&1
           echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/10-probe-main.log"
           git checkout -- .
-          grep -E '^(PROBE|SWEEP-COUNT)' "$RUNNER_TEMP/logs/10-probe-main.log"
+          grep -E '^(PROBE|SWEEP-COUNT|CLUSTER-COUNT)' "$RUNNER_TEMP/logs/10-probe-main.log"
 
       - name: Probe on fix
         working-directory: CorbanuTerminal/codex-rs
@@ -121,20 +128,35 @@ jobs:
             > "$RUNNER_TEMP/logs/11-probe-fix.log" 2>&1
           echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/11-probe-fix.log"
           git checkout -- .
-          grep -E '^(PROBE|SWEEP-COUNT)' "$RUNNER_TEMP/logs/11-probe-fix.log"
+          grep -E '^(PROBE|SWEEP-COUNT|CLUSTER-COUNT)' "$RUNNER_TEMP/logs/11-probe-fix.log"
+
+      - name: Probe on previous fix commit
+        if: ${{ inputs.prev_commit != '' }}
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set +e -uo pipefail
+          git checkout -q "$PREV_COMMIT"
+          cat ../../repro/probes/issue_1482_probe.rs >> core/src/security/tainted_action_tests.rs
+          CORBANU_1482_CORPUS="$RUNNER_TEMP/corpus.rs" \
+            cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482_probe -- --ignored --nocapture --test-threads=1 \
+            > "$RUNNER_TEMP/logs/13-probe-prev.log" 2>&1
+          echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/13-probe-prev.log"
+          git checkout -- .
+          grep -E '^PROBE issue#r1' "$RUNNER_TEMP/logs/13-probe-prev.log"
 
       - name: Diff main vs fix
         run: |
           set +e -uo pipefail
           cd "$RUNNER_TEMP/logs"
-          grep -E '^(PROBE|SWEEP)' 10-probe-main.log > main.lines
-          grep -E '^(PROBE|SWEEP)' 11-probe-fix.log > fix.lines
+          grep -E '^(PROBE|SWEEP|CLUSTER)' 10-probe-main.log > main.lines
+          grep -E '^(PROBE|SWEEP|CLUSTER)' 11-probe-fix.log > fix.lines
           {
             echo "main lines: $(wc -l < main.lines)  fix lines: $(wc -l < fix.lines)"
             echo "changed lines (- main, + fix):"
             diff main.lines fix.lines
             echo "diff exit=$?"
           } | tee 12-probe-diff.txt
+          python3 "$GITHUB_WORKSPACE/repro/probes/quieter.py" main.lines fix.lines | tee 14-quieter.txt
 
       - name: Regression test on the fix, and with the fix reverted
         working-directory: CorbanuTerminal/codex-rs
@@ -148,8 +170,15 @@ jobs:
           cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 >> "$RUNNER_TEMP/logs/21-test-reverted.log" 2>&1
           echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"
           git checkout -q "$FIX_COMMIT" -- .
+          if [ -n "$PREV_COMMIT" ]; then
+            git checkout -q "$PREV_COMMIT" -- core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/git_config.rs
+            git status --short | tee -a "$RUNNER_TEMP/logs/22-test-prev-code.log"
+            cargo test --locked --target "$TARGET" -p codex-core --lib issue_1482 >> "$RUNNER_TEMP/logs/22-test-prev-code.log" 2>&1
+            echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/22-test-prev-code.log"
+            git checkout -q "$FIX_COMMIT" -- .
+          fi
           git status --short
-          grep -E '^test |^test result:|panicked|left:|right:|should' "$RUNNER_TEMP/logs/20-test-fix.log" "$RUNNER_TEMP/logs/21-test-reverted.log" | head -40
+          grep -E '^test |^test result:|panicked|left:|right:|should' "$RUNNER_TEMP"/logs/2*.log | head -60
 
       - name: "security:: suite on the fix"
         working-directory: CorbanuTerminal/codex-rs
@@ -179,6 +208,7 @@ jobs:
           # 4*.log (fmt/clippy) exist only on Linux: a missing file must not fail the summary.
           grep -h '^exit=\|exit=' 1*.log 2*.log 3*.log 4*.log 2>/dev/null || true
           grep -h '^test result:' 2*.log 3*.log 2>/dev/null
+          cat 14-quieter.txt 2>/dev/null
           cat 12-probe-diff.txt 2>/dev/null | head -60
 
       - name: Upload logs

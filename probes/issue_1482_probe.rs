@@ -32,6 +32,14 @@ fn issue_1482_probe() {
         ("4", x_ok, "sudo -A ./x"),
         ("4", x_ok, "sudo -e ./x"),
         ("4", x_ok, "sudo -s ./x"),
+        // Review 1 (CHANGES_REQUESTED 2026-11-07): an unlisted letter that
+        // takes a value before a table letter.
+        ("r1", x_evil, "xargs -iI sh x"),
+        ("r1", x_evil, "systemd-run --user -dEu sh x"),
+        ("r1", x_evil, "nsenter -nt sh x"),
+        ("r1", x_evil, "sudo -Ru sh x"),
+        ("r1-optional", x_evil, "taskset 0x3 sh x"),
+        ("r1-optional", x_evil, "taskset -c -a 0 sh x"),
     ];
     for (tag, files, line) in issue {
         let names: Vec<&str> = files.iter().map(|(name, _)| *name).collect();
@@ -53,6 +61,27 @@ fn issue_1482_probe() {
             Some(root.path())
         )
     );
+    // Review 1 cluster sweep: for every wrapper row, every single-letter
+    // value option V and every letter or digit L, `<wrapper> -LV sh x` with a
+    // harmful ./x. A branch may only be louder than main here.
+    let mut clusters = 0;
+    for (wrapper, value_options, _) in indirect::WRAPPERS {
+        for value in value_options.iter().filter_map(|option| option.strip_prefix('-')) {
+            if value.len() != 1 {
+                continue;
+            }
+            for letter in ('a'..='z').chain('A'..='Z').chain('0'..='9') {
+                let line = format!("{wrapper} -{letter}{value} sh x");
+                clusters += 1;
+                println!(
+                    "CLUSTER {line:?} command_word={:?} verdict={:?}",
+                    indirect::command_word(&words(&line)),
+                    in_workspace(x_evil, &line)
+                );
+            }
+        }
+    }
+    println!("CLUSTER-COUNT {clusters}");
     // Main-vs-branch sweep: every string literal in the corpus that runs a
     // wrapper with an option, judged with harmful scripts at ./x, ./sub and
     // ./3 and without a workspace.
