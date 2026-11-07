@@ -1,0 +1,1242 @@
+main lines: 3315  fix lines: 3253
+changed lines (- main, + fix):
+1,4c1,4
+< PROBE issue#1a "sudo -nC 3 sh x" files=["x"] command_word=Some((2, "3")) verdict=None
+< PROBE issue#1b "sudo -nD sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "sub")) verdict=None
+< PROBE issue#1c "sudo --chdir sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((2, "sub")) verdict=None
+< PROBE issue#1-note "sudo --chdir bash x" files=["x"] command_word=Some((2, "bash")) verdict=Some(UnseenCode)
+---
+> PROBE issue#1a "sudo -nC 3 sh x" files=["x"] command_word=Some((3, "sh")) verdict=Some(Persistence)
+> PROBE issue#1b "sudo -nD sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((3, "run.sh")) verdict=Some(UnseenCode)
+> PROBE issue#1c "sudo --chdir sub ./run.sh" files=["run.sh", "sub/run.sh"] command_word=Some((3, "run.sh")) verdict=Some(UnseenCode)
+> PROBE issue#1-note "sudo --chdir bash x" files=["x"] command_word=Some((3, "x")) verdict=None
+22c22
+< PROBE issue#r1-optional "taskset -c -a 0 sh x" files=["x"] command_word=Some((3, "0")) verdict=None
+---
+> PROBE issue#r1-optional "taskset -c -a 0 sh x" files=["x"] command_word=Some((4, "sh")) verdict=Some(Persistence)
+25c25
+< CLUSTER "sudo -bu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bu sh x" command_word=Some((3, "x")) verdict=None
+28c28
+< CLUSTER "sudo -eu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -eu sh x" command_word=Some((3, "x")) verdict=None
+32c32
+< CLUSTER "sudo -iu sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -iu sh x" command_word=Some((3, "x")) verdict=None
+34,35c34,35
+< CLUSTER "sudo -ku sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -ku sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lu sh x" command_word=Some((3, "x")) verdict=None
+37c37
+< CLUSTER "sudo -nu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -nu sh x" command_word=Some((3, "x")) verdict=None
+42c42
+< CLUSTER "sudo -su sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -su sh x" command_word=Some((3, "x")) verdict=None
+45c45
+< CLUSTER "sudo -vu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vu sh x" command_word=Some((3, "x")) verdict=None
+50,51c50,51
+< CLUSTER "sudo -Au sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -Bu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Au sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -Bu sh x" command_word=Some((3, "x")) verdict=None
+54c54
+< CLUSTER "sudo -Eu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Eu sh x" command_word=Some((3, "x")) verdict=None
+57c57
+< CLUSTER "sudo -Hu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Hu sh x" command_word=Some((3, "x")) verdict=None
+60c60
+< CLUSTER "sudo -Ku sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ku sh x" command_word=Some((3, "x")) verdict=None
+65c65
+< CLUSTER "sudo -Pu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Pu sh x" command_word=Some((3, "x")) verdict=None
+68c68
+< CLUSTER "sudo -Su sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Su sh x" command_word=Some((3, "x")) verdict=None
+71c71
+< CLUSTER "sudo -Vu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Vu sh x" command_word=Some((3, "x")) verdict=None
+87c87
+< CLUSTER "sudo -bg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bg sh x" command_word=Some((3, "x")) verdict=None
+90c90
+< CLUSTER "sudo -eg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -eg sh x" command_word=Some((3, "x")) verdict=None
+94c94
+< CLUSTER "sudo -ig sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -ig sh x" command_word=Some((3, "x")) verdict=None
+96,97c96,97
+< CLUSTER "sudo -kg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kg sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lg sh x" command_word=Some((3, "x")) verdict=None
+99c99
+< CLUSTER "sudo -ng sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -ng sh x" command_word=Some((3, "x")) verdict=None
+104c104
+< CLUSTER "sudo -sg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -sg sh x" command_word=Some((3, "x")) verdict=None
+107c107
+< CLUSTER "sudo -vg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vg sh x" command_word=Some((3, "x")) verdict=None
+112,113c112,113
+< CLUSTER "sudo -Ag sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -Bg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ag sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -Bg sh x" command_word=Some((3, "x")) verdict=None
+116c116
+< CLUSTER "sudo -Eg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Eg sh x" command_word=Some((3, "x")) verdict=None
+119c119
+< CLUSTER "sudo -Hg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Hg sh x" command_word=Some((3, "x")) verdict=None
+122c122
+< CLUSTER "sudo -Kg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Kg sh x" command_word=Some((3, "x")) verdict=None
+127c127
+< CLUSTER "sudo -Pg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Pg sh x" command_word=Some((3, "x")) verdict=None
+130c130
+< CLUSTER "sudo -Sg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Sg sh x" command_word=Some((3, "x")) verdict=None
+133c133
+< CLUSTER "sudo -Vg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Vg sh x" command_word=Some((3, "x")) verdict=None
+149c149
+< CLUSTER "sudo -bh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bh sh x" command_word=Some((3, "x")) verdict=None
+152c152
+< CLUSTER "sudo -eh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -eh sh x" command_word=Some((3, "x")) verdict=None
+156c156
+< CLUSTER "sudo -ih sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -ih sh x" command_word=Some((3, "x")) verdict=None
+158,159c158,159
+< CLUSTER "sudo -kh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kh sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lh sh x" command_word=Some((3, "x")) verdict=None
+161c161
+< CLUSTER "sudo -nh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -nh sh x" command_word=Some((3, "x")) verdict=None
+166c166
+< CLUSTER "sudo -sh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -sh sh x" command_word=Some((3, "x")) verdict=None
+169c169
+< CLUSTER "sudo -vh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vh sh x" command_word=Some((3, "x")) verdict=None
+174,175c174,175
+< CLUSTER "sudo -Ah sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -Bh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ah sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -Bh sh x" command_word=Some((3, "x")) verdict=None
+178c178
+< CLUSTER "sudo -Eh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Eh sh x" command_word=Some((3, "x")) verdict=None
+181c181
+< CLUSTER "sudo -Hh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Hh sh x" command_word=Some((3, "x")) verdict=None
+184c184
+< CLUSTER "sudo -Kh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Kh sh x" command_word=Some((3, "x")) verdict=None
+189c189
+< CLUSTER "sudo -Ph sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ph sh x" command_word=Some((3, "x")) verdict=None
+192c192
+< CLUSTER "sudo -Sh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Sh sh x" command_word=Some((3, "x")) verdict=None
+195c195
+< CLUSTER "sudo -Vh sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Vh sh x" command_word=Some((3, "x")) verdict=None
+211c211
+< CLUSTER "sudo -bp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bp sh x" command_word=Some((3, "x")) verdict=None
+214c214
+< CLUSTER "sudo -ep sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -ep sh x" command_word=Some((3, "x")) verdict=None
+218c218
+< CLUSTER "sudo -ip sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -ip sh x" command_word=Some((3, "x")) verdict=None
+220,221c220,221
+< CLUSTER "sudo -kp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kp sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lp sh x" command_word=Some((3, "x")) verdict=None
+223c223
+< CLUSTER "sudo -np sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -np sh x" command_word=Some((3, "x")) verdict=None
+228c228
+< CLUSTER "sudo -sp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -sp sh x" command_word=Some((3, "x")) verdict=None
+231c231
+< CLUSTER "sudo -vp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vp sh x" command_word=Some((3, "x")) verdict=None
+236,237c236,237
+< CLUSTER "sudo -Ap sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -Bp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ap sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -Bp sh x" command_word=Some((3, "x")) verdict=None
+240c240
+< CLUSTER "sudo -Ep sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ep sh x" command_word=Some((3, "x")) verdict=None
+243c243
+< CLUSTER "sudo -Hp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Hp sh x" command_word=Some((3, "x")) verdict=None
+246c246
+< CLUSTER "sudo -Kp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Kp sh x" command_word=Some((3, "x")) verdict=None
+251c251
+< CLUSTER "sudo -Pp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Pp sh x" command_word=Some((3, "x")) verdict=None
+254c254
+< CLUSTER "sudo -Sp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Sp sh x" command_word=Some((3, "x")) verdict=None
+257c257
+< CLUSTER "sudo -Vp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Vp sh x" command_word=Some((3, "x")) verdict=None
+273c273
+< CLUSTER "sudo -bC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bC sh x" command_word=Some((3, "x")) verdict=None
+276c276
+< CLUSTER "sudo -eC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -eC sh x" command_word=Some((3, "x")) verdict=None
+280c280
+< CLUSTER "sudo -iC sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -iC sh x" command_word=Some((3, "x")) verdict=None
+282,283c282,283
+< CLUSTER "sudo -kC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kC sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lC sh x" command_word=Some((3, "x")) verdict=None
+285c285
+< CLUSTER "sudo -nC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -nC sh x" command_word=Some((3, "x")) verdict=None
+290c290
+< CLUSTER "sudo -sC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -sC sh x" command_word=Some((3, "x")) verdict=None
+293c293
+< CLUSTER "sudo -vC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vC sh x" command_word=Some((3, "x")) verdict=None
+298,299c298,299
+< CLUSTER "sudo -AC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -BC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -AC sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -BC sh x" command_word=Some((3, "x")) verdict=None
+302c302
+< CLUSTER "sudo -EC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -EC sh x" command_word=Some((3, "x")) verdict=None
+305c305
+< CLUSTER "sudo -HC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -HC sh x" command_word=Some((3, "x")) verdict=None
+308c308
+< CLUSTER "sudo -KC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -KC sh x" command_word=Some((3, "x")) verdict=None
+313c313
+< CLUSTER "sudo -PC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -PC sh x" command_word=Some((3, "x")) verdict=None
+316c316
+< CLUSTER "sudo -SC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -SC sh x" command_word=Some((3, "x")) verdict=None
+319c319
+< CLUSTER "sudo -VC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -VC sh x" command_word=Some((3, "x")) verdict=None
+335c335
+< CLUSTER "sudo -bD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -bD sh x" command_word=Some((3, "x")) verdict=None
+338c338
+< CLUSTER "sudo -eD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -eD sh x" command_word=Some((3, "x")) verdict=None
+342c342
+< CLUSTER "sudo -iD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -iD sh x" command_word=Some((3, "x")) verdict=None
+344,345c344,345
+< CLUSTER "sudo -kD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+< CLUSTER "sudo -lD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -kD sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lD sh x" command_word=Some((3, "x")) verdict=None
+347c347
+< CLUSTER "sudo -nD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -nD sh x" command_word=Some((3, "x")) verdict=None
+352c352
+< CLUSTER "sudo -sD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -sD sh x" command_word=Some((3, "x")) verdict=None
+355c355
+< CLUSTER "sudo -vD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -vD sh x" command_word=Some((3, "x")) verdict=None
+360,361c360,361
+< CLUSTER "sudo -AD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+< CLUSTER "sudo -BD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -AD sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -BD sh x" command_word=Some((3, "x")) verdict=None
+364c364
+< CLUSTER "sudo -ED sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -ED sh x" command_word=Some((3, "x")) verdict=None
+367c367
+< CLUSTER "sudo -HD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -HD sh x" command_word=Some((3, "x")) verdict=None
+370c370
+< CLUSTER "sudo -KD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -KD sh x" command_word=Some((3, "x")) verdict=None
+375c375
+< CLUSTER "sudo -PD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -PD sh x" command_word=Some((3, "x")) verdict=None
+378c378
+< CLUSTER "sudo -SD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -SD sh x" command_word=Some((3, "x")) verdict=None
+381c381
+< CLUSTER "sudo -VD sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -VD sh x" command_word=Some((3, "x")) verdict=None
+397c397
+< CLUSTER "sudo -br sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -br sh x" command_word=Some((3, "x")) verdict=None
+400c400
+< CLUSTER "sudo -er sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -er sh x" command_word=Some((3, "x")) verdict=None
+404c404
+< CLUSTER "sudo -ir sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -ir sh x" command_word=Some((3, "x")) verdict=None
+406,407c406,407
+< CLUSTER "sudo -kr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kr sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lr sh x" command_word=Some((3, "x")) verdict=None
+409c409
+< CLUSTER "sudo -nr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -nr sh x" command_word=Some((3, "x")) verdict=None
+414c414
+< CLUSTER "sudo -sr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -sr sh x" command_word=Some((3, "x")) verdict=None
+417c417
+< CLUSTER "sudo -vr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vr sh x" command_word=Some((3, "x")) verdict=None
+422,423c422,423
+< CLUSTER "sudo -Ar sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -Br sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ar sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -Br sh x" command_word=Some((3, "x")) verdict=None
+426c426
+< CLUSTER "sudo -Er sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Er sh x" command_word=Some((3, "x")) verdict=None
+429c429
+< CLUSTER "sudo -Hr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Hr sh x" command_word=Some((3, "x")) verdict=None
+432c432
+< CLUSTER "sudo -Kr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Kr sh x" command_word=Some((3, "x")) verdict=None
+437c437
+< CLUSTER "sudo -Pr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Pr sh x" command_word=Some((3, "x")) verdict=None
+440c440
+< CLUSTER "sudo -Sr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Sr sh x" command_word=Some((3, "x")) verdict=None
+443c443
+< CLUSTER "sudo -Vr sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Vr sh x" command_word=Some((3, "x")) verdict=None
+459c459
+< CLUSTER "sudo -bt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bt sh x" command_word=Some((3, "x")) verdict=None
+462c462
+< CLUSTER "sudo -et sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -et sh x" command_word=Some((3, "x")) verdict=None
+466c466
+< CLUSTER "sudo -it sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -it sh x" command_word=Some((3, "x")) verdict=None
+468,469c468,469
+< CLUSTER "sudo -kt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kt sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lt sh x" command_word=Some((3, "x")) verdict=None
+471c471
+< CLUSTER "sudo -nt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -nt sh x" command_word=Some((3, "x")) verdict=None
+476c476
+< CLUSTER "sudo -st sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -st sh x" command_word=Some((3, "x")) verdict=None
+479c479
+< CLUSTER "sudo -vt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vt sh x" command_word=Some((3, "x")) verdict=None
+484,485c484,485
+< CLUSTER "sudo -At sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -Bt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -At sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -Bt sh x" command_word=Some((3, "x")) verdict=None
+488c488
+< CLUSTER "sudo -Et sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Et sh x" command_word=Some((3, "x")) verdict=None
+491c491
+< CLUSTER "sudo -Ht sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Ht sh x" command_word=Some((3, "x")) verdict=None
+494c494
+< CLUSTER "sudo -Kt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Kt sh x" command_word=Some((3, "x")) verdict=None
+499c499
+< CLUSTER "sudo -Pt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Pt sh x" command_word=Some((3, "x")) verdict=None
+502c502
+< CLUSTER "sudo -St sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -St sh x" command_word=Some((3, "x")) verdict=None
+505c505
+< CLUSTER "sudo -Vt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -Vt sh x" command_word=Some((3, "x")) verdict=None
+521c521
+< CLUSTER "sudo -bU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bU sh x" command_word=Some((3, "x")) verdict=None
+524c524
+< CLUSTER "sudo -eU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -eU sh x" command_word=Some((3, "x")) verdict=None
+528c528
+< CLUSTER "sudo -iU sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -iU sh x" command_word=Some((3, "x")) verdict=None
+530,531c530,531
+< CLUSTER "sudo -kU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kU sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lU sh x" command_word=Some((3, "x")) verdict=None
+533c533
+< CLUSTER "sudo -nU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -nU sh x" command_word=Some((3, "x")) verdict=None
+538c538
+< CLUSTER "sudo -sU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -sU sh x" command_word=Some((3, "x")) verdict=None
+541c541
+< CLUSTER "sudo -vU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vU sh x" command_word=Some((3, "x")) verdict=None
+546,547c546,547
+< CLUSTER "sudo -AU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -BU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -AU sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -BU sh x" command_word=Some((3, "x")) verdict=None
+550c550
+< CLUSTER "sudo -EU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -EU sh x" command_word=Some((3, "x")) verdict=None
+553c553
+< CLUSTER "sudo -HU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -HU sh x" command_word=Some((3, "x")) verdict=None
+556c556
+< CLUSTER "sudo -KU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -KU sh x" command_word=Some((3, "x")) verdict=None
+561c561
+< CLUSTER "sudo -PU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -PU sh x" command_word=Some((3, "x")) verdict=None
+564c564
+< CLUSTER "sudo -SU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -SU sh x" command_word=Some((3, "x")) verdict=None
+567c567
+< CLUSTER "sudo -VU sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -VU sh x" command_word=Some((3, "x")) verdict=None
+583c583
+< CLUSTER "sudo -bT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -bT sh x" command_word=Some((3, "x")) verdict=None
+586c586
+< CLUSTER "sudo -eT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -eT sh x" command_word=Some((3, "x")) verdict=None
+590c590
+< CLUSTER "sudo -iT sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "sudo -iT sh x" command_word=Some((3, "x")) verdict=None
+592,593c592,593
+< CLUSTER "sudo -kT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -lT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -kT sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -lT sh x" command_word=Some((3, "x")) verdict=None
+595c595
+< CLUSTER "sudo -nT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -nT sh x" command_word=Some((3, "x")) verdict=None
+600c600
+< CLUSTER "sudo -sT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -sT sh x" command_word=Some((3, "x")) verdict=None
+603c603
+< CLUSTER "sudo -vT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -vT sh x" command_word=Some((3, "x")) verdict=None
+608,609c608,609
+< CLUSTER "sudo -AT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "sudo -BT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -AT sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "sudo -BT sh x" command_word=Some((3, "x")) verdict=None
+612c612
+< CLUSTER "sudo -ET sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -ET sh x" command_word=Some((3, "x")) verdict=None
+615c615
+< CLUSTER "sudo -HT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -HT sh x" command_word=Some((3, "x")) verdict=None
+618c618
+< CLUSTER "sudo -KT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -KT sh x" command_word=Some((3, "x")) verdict=None
+623c623
+< CLUSTER "sudo -PT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -PT sh x" command_word=Some((3, "x")) verdict=None
+626c626
+< CLUSTER "sudo -ST sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -ST sh x" command_word=Some((3, "x")) verdict=None
+629c629
+< CLUSTER "sudo -VT sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "sudo -VT sh x" command_word=Some((3, "x")) verdict=None
+657c657
+< CLUSTER "doas -nu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "doas -nu sh x" command_word=Some((3, "x")) verdict=None
+662c662
+< CLUSTER "doas -su sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "doas -su sh x" command_word=Some((3, "x")) verdict=None
+681c681
+< CLUSTER "doas -Lu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "doas -Lu sh x" command_word=Some((3, "x")) verdict=None
+719c719
+< CLUSTER "doas -nC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "doas -nC sh x" command_word=Some((3, "x")) verdict=None
+724c724
+< CLUSTER "doas -sC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "doas -sC sh x" command_word=Some((3, "x")) verdict=None
+743c743
+< CLUSTER "doas -LC sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "doas -LC sh x" command_word=Some((3, "x")) verdict=None
+776c776
+< CLUSTER "env -iu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "env -iu sh x" command_word=Some((3, "x")) verdict=None
+789c789
+< CLUSTER "env -vu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "env -vu sh x" command_word=Some((3, "x")) verdict=None
+820c820
+< CLUSTER "env -0u sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "env -0u sh x" command_word=Some((3, "x")) verdict=None
+838c838
+< CLUSTER "env -iC sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "env -iC sh x" command_word=Some((3, "x")) verdict=None
+851c851
+< CLUSTER "env -vC sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "env -vC sh x" command_word=Some((3, "x")) verdict=None
+882c882
+< CLUSTER "env -0C sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "env -0C sh x" command_word=Some((3, "x")) verdict=None
+954c954
+< CLUSTER "time -af sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -af sh x" command_word=Some((3, "x")) verdict=None
+965c965
+< CLUSTER "time -lf sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -lf sh x" command_word=Some((3, "x")) verdict=None
+969,970c969,970
+< CLUSTER "time -pf sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "time -qf sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -pf sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "time -qf sh x" command_word=Some((3, "x")) verdict=None
+975c975
+< CLUSTER "time -vf sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -vf sh x" command_word=Some((3, "x")) verdict=None
+1016c1016
+< CLUSTER "time -ao sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -ao sh x" command_word=Some((3, "x")) verdict=None
+1027c1027
+< CLUSTER "time -lo sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -lo sh x" command_word=Some((3, "x")) verdict=None
+1031,1032c1031,1032
+< CLUSTER "time -po sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "time -qo sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -po sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "time -qo sh x" command_word=Some((3, "x")) verdict=None
+1037c1037
+< CLUSTER "time -vo sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "time -vo sh x" command_word=Some((3, "x")) verdict=None
+1099c1099
+< CLUSTER "timeout -vs sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "timeout -vs sh x" command_word=None verdict=None
+1161c1161
+< CLUSTER "timeout -vk sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "timeout -vk sh x" command_word=None verdict=None
+1204c1204
+< CLUSTER "exec -ca sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "exec -ca sh x" command_word=Some((3, "x")) verdict=None
+1213c1213
+< CLUSTER "exec -la sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "exec -la sh x" command_word=Some((3, "x")) verdict=None
+1278,1279c1278,1279
+< CLUSTER "xargs -oI sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -pI sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -oI sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -pI sh x" command_word=Some((3, "x")) verdict=None
+1281c1281
+< CLUSTER "xargs -rI sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -rI sh x" command_word=Some((3, "x")) verdict=None
+1283c1283
+< CLUSTER "xargs -tI sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -tI sh x" command_word=Some((3, "x")) verdict=None
+1287c1287
+< CLUSTER "xargs -xI sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xI sh x" command_word=Some((3, "x")) verdict=None
+1316c1316
+< CLUSTER "xargs -0I sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0I sh x" command_word=Some((3, "x")) verdict=None
+1340,1341c1340,1341
+< CLUSTER "xargs -oL sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -pL sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -oL sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -pL sh x" command_word=Some((3, "x")) verdict=None
+1343c1343
+< CLUSTER "xargs -rL sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -rL sh x" command_word=Some((3, "x")) verdict=None
+1345c1345
+< CLUSTER "xargs -tL sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -tL sh x" command_word=Some((3, "x")) verdict=None
+1349c1349
+< CLUSTER "xargs -xL sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xL sh x" command_word=Some((3, "x")) verdict=None
+1378c1378
+< CLUSTER "xargs -0L sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0L sh x" command_word=Some((3, "x")) verdict=None
+1402,1403c1402,1403
+< CLUSTER "xargs -on sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -pn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -on sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -pn sh x" command_word=Some((3, "x")) verdict=None
+1405c1405
+< CLUSTER "xargs -rn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -rn sh x" command_word=Some((3, "x")) verdict=None
+1407c1407
+< CLUSTER "xargs -tn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -tn sh x" command_word=Some((3, "x")) verdict=None
+1411c1411
+< CLUSTER "xargs -xn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xn sh x" command_word=Some((3, "x")) verdict=None
+1440c1440
+< CLUSTER "xargs -0n sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0n sh x" command_word=Some((3, "x")) verdict=None
+1464,1465c1464,1465
+< CLUSTER "xargs -oP sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -pP sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -oP sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -pP sh x" command_word=Some((3, "x")) verdict=None
+1467c1467
+< CLUSTER "xargs -rP sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -rP sh x" command_word=Some((3, "x")) verdict=None
+1469c1469
+< CLUSTER "xargs -tP sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -tP sh x" command_word=Some((3, "x")) verdict=None
+1473c1473
+< CLUSTER "xargs -xP sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xP sh x" command_word=Some((3, "x")) verdict=None
+1502c1502
+< CLUSTER "xargs -0P sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0P sh x" command_word=Some((3, "x")) verdict=None
+1526,1527c1526,1527
+< CLUSTER "xargs -os sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -ps sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -os sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -ps sh x" command_word=Some((3, "x")) verdict=None
+1529c1529
+< CLUSTER "xargs -rs sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -rs sh x" command_word=Some((3, "x")) verdict=None
+1531c1531
+< CLUSTER "xargs -ts sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -ts sh x" command_word=Some((3, "x")) verdict=None
+1535c1535
+< CLUSTER "xargs -xs sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xs sh x" command_word=Some((3, "x")) verdict=None
+1564c1564
+< CLUSTER "xargs -0s sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0s sh x" command_word=Some((3, "x")) verdict=None
+1588,1589c1588,1589
+< CLUSTER "xargs -od sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -pd sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -od sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -pd sh x" command_word=Some((3, "x")) verdict=None
+1591c1591
+< CLUSTER "xargs -rd sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -rd sh x" command_word=Some((3, "x")) verdict=None
+1593c1593
+< CLUSTER "xargs -td sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -td sh x" command_word=Some((3, "x")) verdict=None
+1597c1597
+< CLUSTER "xargs -xd sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xd sh x" command_word=Some((3, "x")) verdict=None
+1626c1626
+< CLUSTER "xargs -0d sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0d sh x" command_word=Some((3, "x")) verdict=None
+1650,1651c1650,1651
+< CLUSTER "xargs -oE sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -pE sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -oE sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -pE sh x" command_word=Some((3, "x")) verdict=None
+1653c1653
+< CLUSTER "xargs -rE sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -rE sh x" command_word=Some((3, "x")) verdict=None
+1655c1655
+< CLUSTER "xargs -tE sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -tE sh x" command_word=Some((3, "x")) verdict=None
+1659c1659
+< CLUSTER "xargs -xE sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xE sh x" command_word=Some((3, "x")) verdict=None
+1688c1688
+< CLUSTER "xargs -0E sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0E sh x" command_word=Some((3, "x")) verdict=None
+1712,1713c1712,1713
+< CLUSTER "xargs -oa sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "xargs -pa sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -oa sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "xargs -pa sh x" command_word=Some((3, "x")) verdict=None
+1715c1715
+< CLUSTER "xargs -ra sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -ra sh x" command_word=Some((3, "x")) verdict=None
+1717c1717
+< CLUSTER "xargs -ta sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -ta sh x" command_word=Some((3, "x")) verdict=None
+1721c1721
+< CLUSTER "xargs -xa sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -xa sh x" command_word=Some((3, "x")) verdict=None
+1750c1750
+< CLUSTER "xargs -0a sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "xargs -0a sh x" command_word=Some((3, "x")) verdict=None
+1949c1949
+< CLUSTER "caffeinate -dt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -dt sh x" command_word=Some((3, "x")) verdict=None
+1954c1954
+< CLUSTER "caffeinate -it sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -it sh x" command_word=Some((3, "x")) verdict=None
+1958c1958
+< CLUSTER "caffeinate -mt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -mt sh x" command_word=Some((3, "x")) verdict=None
+1964c1964
+< CLUSTER "caffeinate -st sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -st sh x" command_word=Some((3, "x")) verdict=None
+1966c1966
+< CLUSTER "caffeinate -ut sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -ut sh x" command_word=Some((3, "x")) verdict=None
+2011c2011
+< CLUSTER "caffeinate -dw sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -dw sh x" command_word=Some((3, "x")) verdict=None
+2016c2016
+< CLUSTER "caffeinate -iw sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -iw sh x" command_word=Some((3, "x")) verdict=None
+2020c2020
+< CLUSTER "caffeinate -mw sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -mw sh x" command_word=Some((3, "x")) verdict=None
+2026c2026
+< CLUSTER "caffeinate -sw sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -sw sh x" command_word=Some((3, "x")) verdict=None
+2028c2028
+< CLUSTER "caffeinate -uw sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "caffeinate -uw sh x" command_word=Some((3, "x")) verdict=None
+2089c2089
+< CLUSTER "ionice -tc sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "ionice -tc sh x" command_word=Some((3, "x")) verdict=None
+2151c2151
+< CLUSTER "ionice -tn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "ionice -tn sh x" command_word=Some((3, "x")) verdict=None
+2213c2213
+< CLUSTER "ionice -tp sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "ionice -tp sh x" command_word=Some((3, "x")) verdict=None
+2275c2275
+< CLUSTER "ionice -tP sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "ionice -tP sh x" command_word=Some((3, "x")) verdict=None
+2337c2337
+< CLUSTER "ionice -tu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "ionice -tu sh x" command_word=Some((3, "x")) verdict=None
+2380,2441d2379
+< CLUSTER "taskset -ac sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -bc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -cc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -dc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -ec sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -fc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -gc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -hc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -ic sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -jc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -kc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -lc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -mc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -nc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -oc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -pc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -qc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -rc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -sc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -tc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -uc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -vc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -wc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -xc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -yc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -zc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Ac sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Bc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Cc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Dc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Ec sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Fc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Gc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Hc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Ic sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Jc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Kc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Lc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Mc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Nc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Oc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Pc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Qc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Rc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Sc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Tc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Uc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Vc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Wc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Xc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Yc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -Zc sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -0c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -1c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -2c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -3c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -4c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -5c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -6c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -7c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -8c sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "taskset -9c sh x" command_word=Some((3, "x")) verdict=None
+2455,2456c2393,2394
+< CLUSTER "flock -nw sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "flock -ow sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -nw sh x" command_word=None verdict=None
+> CLUSTER "flock -ow sh x" command_word=None verdict=None
+2460c2398
+< CLUSTER "flock -sw sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -sw sh x" command_word=None verdict=None
+2462c2400
+< CLUSTER "flock -uw sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -uw sh x" command_word=None verdict=None
+2465c2403
+< CLUSTER "flock -xw sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -xw sh x" command_word=None verdict=None
+2473c2411
+< CLUSTER "flock -Fw sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -Fw sh x" command_word=None verdict=None
+2517,2518c2455,2456
+< CLUSTER "flock -nE sh x" command_word=Some((3, "x")) verdict=None
+< CLUSTER "flock -oE sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -nE sh x" command_word=None verdict=None
+> CLUSTER "flock -oE sh x" command_word=None verdict=None
+2522c2460
+< CLUSTER "flock -sE sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -sE sh x" command_word=None verdict=None
+2524c2462
+< CLUSTER "flock -uE sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -uE sh x" command_word=None verdict=None
+2527c2465
+< CLUSTER "flock -xE sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -xE sh x" command_word=None verdict=None
+2535c2473
+< CLUSTER "flock -FE sh x" command_word=Some((3, "x")) verdict=None
+---
+> CLUSTER "flock -FE sh x" command_word=None verdict=None
+2571c2509
+< CLUSTER "runuser -fu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -fu sh x" command_word=Some((3, "x")) verdict=None
+2577,2578c2515,2516
+< CLUSTER "runuser -lu sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+< CLUSTER "runuser -mu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -lu sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "runuser -mu sh x" command_word=Some((3, "x")) verdict=None
+2581c2519
+< CLUSTER "runuser -pu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -pu sh x" command_word=Some((3, "x")) verdict=None
+2607c2545
+< CLUSTER "runuser -Pu sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -Pu sh x" command_word=Some((3, "x")) verdict=None
+2633c2571
+< CLUSTER "runuser -fg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -fg sh x" command_word=Some((3, "x")) verdict=None
+2639,2640c2577,2578
+< CLUSTER "runuser -lg sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+< CLUSTER "runuser -mg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -lg sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "runuser -mg sh x" command_word=Some((3, "x")) verdict=None
+2643c2581
+< CLUSTER "runuser -pg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -pg sh x" command_word=Some((3, "x")) verdict=None
+2669c2607
+< CLUSTER "runuser -Pg sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -Pg sh x" command_word=Some((3, "x")) verdict=None
+2695c2633
+< CLUSTER "runuser -fG sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -fG sh x" command_word=Some((3, "x")) verdict=None
+2701,2702c2639,2640
+< CLUSTER "runuser -lG sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+< CLUSTER "runuser -mG sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -lG sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "runuser -mG sh x" command_word=Some((3, "x")) verdict=None
+2705c2643
+< CLUSTER "runuser -pG sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -pG sh x" command_word=Some((3, "x")) verdict=None
+2731c2669
+< CLUSTER "runuser -PG sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "runuser -PG sh x" command_word=Some((3, "x")) verdict=None
+2752c2690
+< CLUSTER "nsenter -at sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "nsenter -at sh x" command_word=Some((3, "x")) verdict=None
+2783c2721
+< CLUSTER "nsenter -Ft sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "nsenter -Ft sh x" command_word=Some((3, "x")) verdict=None
+2803c2741
+< CLUSTER "nsenter -Zt sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "nsenter -Zt sh x" command_word=Some((3, "x")) verdict=None
+2817c2755
+< CLUSTER "systemd-run -dp sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -dp sh x" command_word=Some((3, "x")) verdict=None
+2830,2831c2768,2769
+< CLUSTER "systemd-run -qp sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+< CLUSTER "systemd-run -rp sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -qp sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "systemd-run -rp sh x" command_word=Some((3, "x")) verdict=None
+2833c2771
+< CLUSTER "systemd-run -tp sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -tp sh x" command_word=Some((3, "x")) verdict=None
+2846c2784
+< CLUSTER "systemd-run -Gp sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -Gp sh x" command_word=Some((3, "x")) verdict=None
+2855c2793
+< CLUSTER "systemd-run -Pp sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -Pp sh x" command_word=Some((3, "x")) verdict=None
+2858c2796
+< CLUSTER "systemd-run -Sp sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -Sp sh x" command_word=Some((3, "x")) verdict=None
+2879c2817
+< CLUSTER "systemd-run -du sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -du sh x" command_word=Some((3, "x")) verdict=None
+2892,2893c2830,2831
+< CLUSTER "systemd-run -qu sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+< CLUSTER "systemd-run -ru sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -qu sh x" command_word=Some((3, "x")) verdict=None
+> CLUSTER "systemd-run -ru sh x" command_word=Some((3, "x")) verdict=None
+2895c2833
+< CLUSTER "systemd-run -tu sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -tu sh x" command_word=Some((3, "x")) verdict=None
+2908c2846
+< CLUSTER "systemd-run -Gu sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -Gu sh x" command_word=Some((3, "x")) verdict=None
+2917c2855
+< CLUSTER "systemd-run -Pu sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -Pu sh x" command_word=Some((3, "x")) verdict=None
+2920c2858
+< CLUSTER "systemd-run -Su sh x" command_word=Some((2, "sh")) verdict=Some(UnseenCode)
+---
+> CLUSTER "systemd-run -Su sh x" command_word=Some((3, "x")) verdict=None
+2939,2940c2877,2878
+< CLUSTER "watch -bn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+< CLUSTER "watch -cn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "watch -bn sh x" command_word=Some((3, "x")) verdict=Some(Persistence)
+> CLUSTER "watch -cn sh x" command_word=Some((3, "x")) verdict=Some(Persistence)
+2942c2880
+< CLUSTER "watch -en sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "watch -en sh x" command_word=Some((3, "x")) verdict=Some(Persistence)
+2944c2882
+< CLUSTER "watch -gn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "watch -gn sh x" command_word=Some((3, "x")) verdict=Some(Persistence)
+2953c2891
+< CLUSTER "watch -pn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "watch -pn sh x" command_word=Some((3, "x")) verdict=Some(Persistence)
+2957c2895
+< CLUSTER "watch -tn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "watch -tn sh x" command_word=Some((3, "x")) verdict=Some(Persistence)
+2961c2899
+< CLUSTER "watch -xn sh x" command_word=Some((2, "sh")) verdict=Some(Persistence)
+---
+> CLUSTER "watch -xn sh x" command_word=Some((3, "x")) verdict=Some(Persistence)
+3000c2938
+< CLUSTER-COUNT 2976
+---
+> CLUSTER-COUNT 2914
+3008c2946
+< SWEEP "/usr/bin/sudo -n -C3 -nC 4 ./x -C 5" command_word=Some((4, "4")) script=None workspace=None
+---
+> SWEEP "/usr/bin/sudo -n -C3 -nC 4 ./x -C 5" command_word=Some((5, "x")) script=Some(UnseenCode) workspace=Some(Persistence)
+3072,3078c3010,3016
+< SWEEP "env -iC b --chd=b -D b " command_word=Some((2, "b")) script=None workspace=None
+< SWEEP "env -iC ~ =git log --output=.zshenv" command_word=Some((2, "~")) script=Some(Persistence) workspace=Some(Persistence)
+< SWEEP "env -iC ~ git log --output=.zshenv" command_word=Some((2, "~")) script=Some(Persistence) workspace=Some(Persistence)
+< SWEEP "env -iC ~ sh -c 'echo x >> .zshenv'" command_word=Some((2, "~")) script=Some(Persistence) workspace=Some(Persistence)
+< SWEEP "env -iC ~ sh -c 'echo x >> C:.zshenv'" command_word=Some((2, "~")) script=Some(Persistence) workspace=Some(Persistence)
+< SWEEP "env -iC ~ sh -c 'git config -f .zshenv --comment x,--get a.b v'" command_word=Some((2, "~")) script=Some(Persistence) workspace=Some(Persistence)
+< SWEEP "env -iC ~ sh -c 'git config -f C:.zshenv --comment x,--get a.b v'" command_word=Some((2, "~")) script=Some(Persistence) workspace=Some(Persistence)
+---
+> SWEEP "env -iC b --chd=b -D b " command_word=Some((5, "b")) script=None workspace=None
+> SWEEP "env -iC ~ =git log --output=.zshenv" command_word=Some((4, "log")) script=Some(Persistence) workspace=Some(Persistence)
+> SWEEP "env -iC ~ git log --output=.zshenv" command_word=Some((3, "git")) script=Some(Persistence) workspace=Some(Persistence)
+> SWEEP "env -iC ~ sh -c 'echo x >> .zshenv'" command_word=Some((3, "sh")) script=Some(Persistence) workspace=Some(Persistence)
+> SWEEP "env -iC ~ sh -c 'echo x >> C:.zshenv'" command_word=Some((3, "sh")) script=Some(Persistence) workspace=Some(Persistence)
+> SWEEP "env -iC ~ sh -c 'git config -f .zshenv --comment x,--get a.b v'" command_word=Some((3, "sh")) script=Some(Persistence) workspace=Some(Persistence)
+> SWEEP "env -iC ~ sh -c 'git config -f C:.zshenv --comment x,--get a.b v'" command_word=Some((3, "sh")) script=Some(Persistence) workspace=Some(Persistence)
+3081,3082c3019,3020
+< SWEEP "env -u git -iC ~ git config -f .zshenv core.pager sh" command_word=Some((4, "~")) script=Some(Persistence) workspace=Some(Persistence)
+< SWEEP "env -u git -iC ~ git log --output=.zshenv" command_word=Some((4, "~")) script=Some(Persistence) workspace=Some(Persistence)
+---
+> SWEEP "env -u git -iC ~ git config -f .zshenv core.pager sh" command_word=Some((5, "git")) script=Some(Persistence) workspace=Some(Persistence)
+> SWEEP "env -u git -iC ~ git log --output=.zshenv" command_word=Some((5, "git")) script=Some(Persistence) workspace=Some(Persistence)
+3125c3063
+< SWEEP "sudo --user git -D ~ git log --output=.zshenv" command_word=Some((2, "git")) script=Some(Persistence) workspace=Some(Persistence)
+---
+> SWEEP "sudo --user git -D ~ git log --output=.zshenv" command_word=Some((5, "git")) script=Some(Persistence) workspace=Some(Persistence)
+3169c3107
+< SWEEP "sudo -nC 3 ./x" command_word=Some((2, "3")) script=None workspace=None
+---
+> SWEEP "sudo -nC 3 ./x" command_word=Some((3, "x")) script=Some(UnseenCode) workspace=Some(Persistence)
+diff exit=1

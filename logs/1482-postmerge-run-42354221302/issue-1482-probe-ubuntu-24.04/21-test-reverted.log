@@ -1,0 +1,89 @@
+M  core/src/security/tainted_action/git_config.rs
+M  core/src/security/tainted_action/indirect.rs
+   Compiling codex-core v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+   Compiling codex-memories-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+   Compiling codex-web-search-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+   Compiling core_test_support v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+   Compiling codex-image-generation-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 44s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/x86_64-unknown-linux-gnu/debug/deps/codex_core-21077267e61b3ab0)
+
+running 2 tests
+test security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command ... FAILED
+test security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word ... FAILED
+
+failures:
+
+---- security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command stdout ----
+
+thread 'security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command' (18301) panicked at core/src/security/tainted_action_tests.rs:6943:9:
+assertion failed: `(left == right)`: sudo -nC 3 sh x
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+ Some(
+     (
+[31m<        2,[0m
+[31m<        "3",[0m
+[32m>        3,[0m
+[32m>        "sh",[0m
+     ),
+ )
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command
+             at ./src/security/tainted_action_tests.rs:6943:9
+   3: codex_core::security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command::{closure#0}
+             at ./src/security/tainted_action_tests.rs:6917:58
+   4: <codex_core::security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+---- security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word stdout ----
+
+thread 'security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word' (18300) panicked at core/src/security/tainted_action_tests.rs:7011:9:
+assertion failed: `(left == right)`: sudo -iu root sh x
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+ Some(
+     (
+[31m<        2,[0m
+[31m<        "root",[0m
+[32m>        3,[0m
+[32m>        "sh",[0m
+     ),
+ )
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word
+             at ./src/security/tainted_action_tests.rs:7011:9
+   3: codex_core::security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word::{closure#0}
+             at ./src/security/tainted_action_tests.rs:6989:54
+   4: <codex_core::security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+
+failures:
+    security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word
+    security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command
+
+test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 3704 filtered out; finished in 0.29s
+
+error: test failed, to rerun pass `-p codex-core --lib`
+exit=101

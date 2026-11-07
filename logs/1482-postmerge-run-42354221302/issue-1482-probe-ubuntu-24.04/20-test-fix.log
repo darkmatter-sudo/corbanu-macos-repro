@@ -1,0 +1,13 @@
+   Compiling codex-core v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 45s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/x86_64-unknown-linux-gnu/debug/deps/codex_core-21077267e61b3ab0)
+
+running 2 tests
+test security::tainted_action::tests::issue_1482_unknown_cluster_letters_keep_one_word ... ok
+test security::tainted_action::tests::issue_1482_wrapper_option_values_are_not_the_command ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 3704 filtered out; finished in 0.04s
+
+exit=0
