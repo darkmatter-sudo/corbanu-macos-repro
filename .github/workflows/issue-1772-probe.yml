@@ -176,6 +176,15 @@ jobs:
           echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/20-test-fix.log"
           # shellcheck disable=SC2086 # REVERT is a word list
           git checkout -q "$COMMIT" -- $REVERT
+          # The fix's tests live in a new file that main's tainted_action.rs
+          # does not declare: declare it again, or no test runs (run
+          # 42422234003 ran 0 tests reverted).
+          mod_file=core/src/security/tainted_action.rs
+          if [ -f core/src/security/tainted_action_redirect_tests.rs ] \
+            && ! grep -q 'mod tainted_action_redirect_tests;' "$mod_file"; then
+            printf '\n#[cfg(test)]\n#[path = "tainted_action_redirect_tests.rs"]\nmod tainted_action_redirect_tests;\n' >> "$mod_file"
+            echo "declared tainted_action_redirect_tests in reverted $mod_file" | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"
+          fi
           git status --short | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"
           cargo test --locked --target "$TARGET" -p codex-core --lib issue_1772 >> "$RUNNER_TEMP/logs/21-test-reverted.log" 2>&1
           echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"
@@ -189,7 +198,12 @@ jobs:
             git checkout -q "$FIX_COMMIT" -- .
           fi
           git status --short
-          grep -E '^test |^test result:|panicked|left:|right:|should' "$RUNNER_TEMP"/logs/2*.log | head -60
+          for log in "$RUNNER_TEMP"/logs/2*.log; do
+            if grep -q '^running 0 tests' "$log" && ! grep -q '^running [1-9]' "$log"; then
+              echo "NO TESTS RAN: $(basename "$log")" | tee -a "$log"
+            fi
+          done
+          grep -E '^test |^test result:|panicked|left:|right:|should|NO TESTS RAN' "$RUNNER_TEMP"/logs/2*.log | head -60
 
       - name: "security:: suite on the fix"
         working-directory: CorbanuTerminal/codex-rs
