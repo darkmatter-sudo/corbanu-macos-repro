@@ -50,6 +50,29 @@ fn issue_1482_items_probe() {
         ("4-control", x_ok, "sudo -E ./x"),
         ("4-control", x_ok, "sudo -u e ./x"),
         ("4-control", x_ok, "sudo -p A ./x"),
+        // Review 1 of #1719 (head 130d26e).
+        ("r1-1", x_evil, "sudo 2>&1 ./x"),
+        ("r1-1", x_evil, "2>&1 ./x"),
+        ("r1-1", x_evil, ">&2 ./x"),
+        ("r1-1", x_evil, "{fd}>log ./x"),
+        ("r1-1", x_evil, "<<EOF ./x"),
+        ("r1-2", x_evil, ">log eval ./x"),
+        ("r1-2", x_ok, ">log ./x"),
+        ("r1-2", x_ok, "2>/dev/null ls"),
+        ("r1-4", x_ok, "eval sudo -A ./x"),
+        ("r1-4", x_ok, "eval sudoedit ./x"),
+        ("r1-4", x_ok, "eval '>log ./x'"),
+        ("r1-f1", x_evil, "sudo &>log -u root ./x"),
+        ("r1-f1", sub_evil, "sudo -R &>log -C sub ./run.sh"),
+        ("r1-f2", x_ok, "sudo -R sub -A ./x"),
+        ("r1-f2", x_ok, "sudo --user root --askpass ./x"),
+        ("r1-control", x_ok, "ls 2>/dev/null"),
+        ("r1-control", x_ok, "ls 2>&1"),
+        ("r1-control", x_ok, "ls >&2"),
+        ("r1-control", x_ok, "sudo ./x 2>&1"),
+        ("r1-control", x_ok, "sudo -R sub ./x"),
+        ("r1-control", x_ok, "sudo --user root ./x"),
+        ("r1-control", x_ok, "eval sudo ./x"),
     ];
     for (tag, files, line) in issue {
         let names: Vec<&str> = files.iter().map(|(name, _)| *name).collect();
@@ -73,6 +96,13 @@ fn issue_1482_items_probe() {
         ("5-control", &["echo", "a b"]),
         ("5-control", &["bash", "-lc", "true ./x"]),
         ("5-control", &["sudo", "sh", "-c", "true ./x"]),
+        ("r1-3", &["env", "A=1 ./y", "./x"]),
+        ("r1-3", &["sudo", "-u", "root ./y", "./x"]),
+        ("r1-3", &["./{x,y}"]),
+        ("r1-3", &["true`./x`"]),
+        ("r1-3-control", &["env", "A=1", "./x"]),
+        ("r1-3-control", &["sudo", "-u", "root", "./x"]),
+        ("r1-3-control", &["./x", "a b", "{c,d}"]),
     ] {
         println!(
             "PROBE issue#{tag} argv={argv:?} files=[\"x\"] verdict={:?}",
