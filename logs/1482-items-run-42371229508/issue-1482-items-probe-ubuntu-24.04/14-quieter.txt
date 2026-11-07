@@ -1,0 +1,26 @@
+compared 1231 main / 1231 fix lines
+louder on fix: 23
+  LOUDER PROBE issue#2 "2 >log sh x"
+  LOUDER PROBE issue#2 "2>log sh x"
+  LOUDER PROBE issue#2 "<log sh x"
+  LOUDER PROBE issue#2 ">log ./x"
+  LOUDER PROBE issue#2 "env >log ./x"
+  LOUDER PROBE issue#2 "sudo -R >log -C sub ./run.sh"
+  LOUDER PROBE issue#2 "sudo 2>log ./x"
+  LOUDER PROBE issue#2 "sudo >log ./x"
+  LOUDER PROBE issue#3 "eval 'sudo -C 3 ./run.sh'"
+  LOUDER PROBE issue#3 "eval 'sudo -D sub ./run.sh'"
+  LOUDER PROBE issue#3 "eval ./x"
+  LOUDER PROBE issue#3 "eval sudo -C 3 ./run.sh"
+  LOUDER PROBE issue#4 "sudo --askpass ./x"
+  LOUDER PROBE issue#4 "sudo --edit ./x"
+  LOUDER PROBE issue#4 "sudo -A ./x"
+  LOUDER PROBE issue#4 "sudo -e ./x"
+  LOUDER PROBE issue#4 "sudo -nA ./x"
+  LOUDER PROBE issue#4 "sudo -u root -e ./x"
+  LOUDER PROBE issue#4 "sudoedit ./x"
+  LOUDER PROBE issue#5 argv=["env", "true ./x"]
+  LOUDER PROBE issue#5 argv=["sudo", "-u", "root", "true ./x"]
+  LOUDER PROBE issue#5 argv=["true ./x"]
+  LOUDER PROBE issue#5 argv=["true;./x"]
+quieter on fix: 0

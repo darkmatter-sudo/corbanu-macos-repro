@@ -1,0 +1,24 @@
+main: f3ae287bec86fa729037786abbcb82c9c2e62b00
+fix:  130d26e56a965a96de549e9ebf644cc1416e7015 (darkmatter-sudo/CorbanuTerminal)
+fix parents: 20aeaa96201347bae81d719da9e5df9238df4019 
+probe sha256: 9d1ca28d2d749e54b5ac38b85b3d3599d3a43667924769aad5848efe0dbd8f7b
+corpus sha256: e66eadbfa5d441a4edac078a95b2374eac4945b62d8c2df5de7bc00e57eb18cc
+uname: Linux x86_64
+runner: ubuntu24 image 20261101.360.1
+ .github/workflows/v8-canary.yml                    |   9 +-
+ .github/workflows/windows-security-probes.yml      |   9 +-
+ codex-rs/core/README.md                            |  10 +-
+ codex-rs/core/src/security/tainted_action.rs       |  24 +
+ .../core/src/security/tainted_action/indirect.rs   |  77 +++
+ codex-rs/core/src/security/tainted_action_tests.rs |  99 ++++
+ codex-rs/windows-sandbox-rs/src/acl.rs             |   2 +-
+ .../src/acl_delete_child_walk_tests.rs             | 398 +---------------
+ codex-rs/windows-sandbox-rs/src/acl_walk.rs        |   9 +-
+ codex-rs/windows-sandbox-rs/src/integrity.rs       |  12 -
+ codex-rs/windows-sandbox-rs/src/integrity_walk.rs  | 517 ---------------------
+ codex-rs/windows-sandbox-rs/src/setup.rs           |   5 +-
+ codex-rs/windows-sandbox-rs/src/spawn_prep.rs      |  50 +-
+ .../src/unified_exec/carve_out_link_tests.rs       |  43 +-
+ .../src/unified_exec/nested_metadata_tests.rs      | 110 -----
+ docs/sandbox.md                                    |  10 +-
+ 16 files changed, 233 insertions(+), 1151 deletions(-)
