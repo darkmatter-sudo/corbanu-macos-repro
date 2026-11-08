@@ -1,0 +1,176 @@
+declared tainted_action_redirect_tests in reverted core/src/security/tainted_action.rs
+MM core/src/security/tainted_action.rs
+M  core/src/security/tainted_action/code_variables.rs
+M  core/src/security/tainted_action/indirect.rs
+M  core/src/security/tainted_action/measure_tests.rs
+M  core/src/security/tainted_action/mktemp.rs
+M  core/src/security/tainted_action/rerun.rs
+M  core/src/security/tainted_action/shell.rs
+   Compiling codex-core v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+   Compiling core_test_support v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+   Compiling codex-image-generation-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+   Compiling codex-memories-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+   Compiling codex-web-search-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 20s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/x86_64-unknown-linux-gnu/debug/deps/codex_core-21077267e61b3ab0)
+
+running 5 tests
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_quoted_files_are_linear ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does ... FAILED
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... FAILED
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... FAILED
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask ... FAILED
+
+failures:
+
+---- security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does stdout ----
+
+thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does' (18365) panicked at core/src/security/tainted_action_redirect_tests.rs:227:5:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+ [
+     (
+         [
+[31m<            "log",[0m
+             "cd",
+             "sub",
+[32m>            "log",[0m
+         ],
+         [],
+         [],
+         [
+[31m<            [0m[1;48;5;52;31m0[0m[31m,[0m
+[32m>            [0m[1;48;5;22;32m2[0m[32m,[0m
+         ],
+         [],
+     ),
+ ]
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does
+             at ./src/security/tainted_action_redirect_tests.rs:227:5
+   3: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does::{closure#0}
+             at ./src/security/tainted_action_redirect_tests.rs:224:59
+   4: <codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+---- security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks stdout ----
+
+thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks' (18364) panicked at core/src/security/tainted_action_redirect_tests.rs:172:5:
+assertion failed: `(left == right)`: #1719 lines now quiet
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[[0m
+[31m<    ">'a b' ./x",[0m
+[31m<][0m
+[32m>[][0m
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks
+             at ./src/security/tainted_action_redirect_tests.rs:172:5
+   3: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks::{closure#0}
+             at ./src/security/tainted_action_redirect_tests.rs:160:47
+   4: <codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+---- security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask stdout ----
+
+thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask' (18367) panicked at core/src/security/tainted_action_redirect_tests.rs:147:5:
+assertion failed: `(left == right)`: #1772 lines still quiet
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[[0m
+[31m<    "item 1: 2>/dev/null cd sub && ./run.sh",[0m
+[31m<    "item 1: >log cd sub; ./run.sh",[0m
+[31m<    "item 1: >log pushd sub && ./run.sh",[0m
+[31m<    "item 1: >log $(cat x)",[0m
+[31m<    "item 1: >log `cat x`",[0m
+[31m<    "item 1: >log PATH=.:$PATH x",[0m
+[31m<    "item 1: >log export PATH=.:$PATH && x",[0m
+[31m<    "item 1: 2>/dev/null find . -exec ./x \\;",[0m
+[31m<    "item 2: >'a b' ./x",[0m
+[31m<    "item 2: >\"a b\" ./x",[0m
+[31m<    "item 2: >a\\ b ./x",[0m
+[31m<    "item 2: 2>'a b' ./x",[0m
+[31m<    "item 3: <a <b ./x",[0m
+[31m<    "item 3: sudo <a <b -A true",[0m
+[31m<    "item 3: <a <b sudo -A true",[0m
+[31m<    "item 3: sudo 3<a <b -A true",[0m
+[31m<    "item 3: sudo <<<a <<<b -A true",[0m
+[31m<    "item 4: &>log cd sub && ./run.sh",[0m
+[31m<][0m
+[32m>[][0m
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask
+             at ./src/security/tainted_action_redirect_tests.rs:147:5
+   3: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask::{closure#0}
+             at ./src/security/tainted_action_redirect_tests.rs:141:38
+   4: <codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+---- security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask stdout ----
+
+thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask' (18368) panicked at core/src/security/tainted_action_redirect_tests.rs:217:5:
+assertion failed: `(left == right)`: review lines quiet
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[[0m
+[31m<    "item 3: $(echo true >log) ./x",[0m
+[31m<][0m
+[32m>[][0m
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask
+             at ./src/security/tainted_action_redirect_tests.rs:217:5
+   3: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask::{closure#0}
+             at ./src/security/tainted_action_redirect_tests.rs:206:33
+   4: <codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+             at /home/runner/.rustup/toolchains/1.99.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+
+failures:
+    security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks
+    security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does
+    security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask
+    security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask
+
+test result: FAILED. 1 passed; 4 failed; 0 ignored; 0 measured; 3730 filtered out; finished in 0.31s
+
+error: test failed, to rerun pass `-p codex-core --lib`
+exit=101

@@ -1,0 +1,201 @@
+main lines: 1082  fix lines: 1082
+changed lines (- main, + fix):
+1,73c1,73
+< PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "pushd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "PATH=.:$PATH", "x"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "export", "PATH=.:$PATH"] stdin=None here=None writes=[0] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "find", ".", "-exec", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+< PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["pushd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=None here=None writes=[] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(Credentials)
+< PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=None here=None writes=[3] held=[2] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "git", "status"] stdin=None here=None writes=[1] held=[0]] verdict=None
+< PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "ls"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "a", "b", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+< PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ab", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls", "a", "b"] stdin=None here=None writes=[1] held=[]] verdict=None
+< PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "hi", "a", "b"] stdin=None here=None writes=[2] held=[]] verdict=None
+< PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+< PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+< PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "sudo", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+< PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "3", "a", "b", "-A", "true"] stdin=Some(3) here=None writes=[] held=[1]] verdict=None
+< PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+< PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "./x"] stdin=Some(0) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "cat"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+< PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+< PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+< PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo"] stdin=None here=None writes=[] held=[] | ["log", "-u", "root", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "sh", "x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+< PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sleep", "1"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#r1-1 "echo '>\"'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[] | ["./x"] stdin=None here=None writes=[0] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "echo \">'\" && ./x && echo \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[] | ["./x"] stdin=None here=None writes=[0] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "echo '>'; echo \"'\"; ./x; echo \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[0] held=[] | ["./x"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "printf '%s\\n' 'a>\"b'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["printf", "%sn", "a", "b"] stdin=None here=None writes=[3] held=[] | ["./x"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "echo '<\"'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[] | ["./x"] stdin=Some(0) here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "echo '2>\"'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "2"] stdin=None here=None writes=[] held=[1] | ["./x"] stdin=None here=None writes=[0] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "case a in \">'\") ;; esac; ./x; echo \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["case", "a", "in"] stdin=None here=None writes=[] held=[] | ["esac"] stdin=None here=None writes=[0] held=[] | ["./x"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "ls # >\"\n./x\n# \"" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls", "#"] stdin=None here=None writes=[] held=[] | ["./x"] stdin=None here=None writes=[0] held=[] | ["#"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "cat <<'EOF'\na >'\nEOF\n./x\necho \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "EOF"] stdin=None here=None writes=[] held=[1] | ["a"] stdin=None here=None writes=[] held=[] | ["EOF"] stdin=None here=None writes=[0] held=[] | ["./x"] stdin=None here=None writes=[] held=[] | ["echo"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "grep '>\"' f | xargs ./x '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["grep", "f"] stdin=None here=None writes=[1] held=[] | ["xargs", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+< PROBE issue#r1-1 "find . -name '>\"' -exec ./x {} + -name '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["find", ".", "-name", "-exec", "./x"] stdin=None here=None writes=[3] held=[] | ["+", "-name"] stdin=None here=None writes=[] held=[]] verdict=Some(Credentials)
+< PROBE issue#r1-2 "sh -c 'true &>f ./x'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sh", "-c", "true"] stdin=None here=None writes=[] held=[] | ["f", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-2 "dash -c 'true &>f ./x'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["dash", "-c", "true"] stdin=None here=None writes=[] held=[] | ["f", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-2 "bash -c 'true &>f ./x'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["bash", "-c", "true"] stdin=None here=None writes=[] held=[] | ["f", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-2 "true &>a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["true"] stdin=None here=None writes=[] held=[] | ["a", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-3 "$(>&2 echo true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "echo", "true"] stdin=None here=None writes=[] held=[0] | ["\u{1}unseen-output\u{1}", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-3 "`>&2 echo true` ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "echo", "true"] stdin=None here=None writes=[] held=[0] | ["\u{1}unseen-output\u{1}", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-3 "$(>log echo true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "echo", "true"] stdin=None here=None writes=[0] held=[] | ["\u{1}unseen-output\u{1}", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-3 "$(>&2 printf true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "printf", "true"] stdin=None here=None writes=[] held=[0] | ["\u{1}unseen-output\u{1}", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-3 "$(echo true >log) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "true", "log"] stdin=None here=None writes=[2] held=[] | ["true log", "./x"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#r1-3-control "$(echo ls 2>/dev/null)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "ls", "2", "/dev/null"] stdin=None here=None writes=[3] held=[2] | ["ls 2 /dev/null"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+< PROBE issue#r1-3-control "$(echo ls 2>&1)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "ls", "2", "1"] stdin=None here=None writes=[] held=[2, 3] | ["ls 2 1"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#r1-3-control "$(echo ls)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "ls"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+< PROBE issue#r1-3-control "$(echo true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "true"] stdin=None here=None writes=[] held=[] | ["true", "./x"] stdin=None here=None writes=[] held=[]] verdict=None
+---
+> PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH", "log"] stdin=[] here=[] writes=[2] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x", "2", "/dev/null"] stdin=[] here=[] writes=[5] held=[4]] verdict=Some(Credentials)
+> PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=[] here=[] writes=[] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Credentials)
+> PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "status", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2]] verdict=None
+> PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+> PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+> PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "2", "a b"] stdin=[] here=[] writes=[2] held=[1]] verdict=Some(Persistence)
+> PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "ab"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+> PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "hi", "a b"] stdin=[] here=[] writes=[2] held=[]] verdict=None
+> PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "3", "a", "b"] stdin=[4, 5] here=[] writes=[] held=[3]] verdict=Some(UnseenCode)
+> PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[] here=[3, 4] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a"] stdin=[1] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a"] stdin=[3] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+> PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+> PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[] here=[1, 2] writes=[] held=[]] verdict=None
+> PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-u", "root", "./x", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(Persistence)
+> PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sh", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(Persistence)
+> PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+> PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+> PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[] | ["log"] stdin=[] here=[] writes=[0] held=[]] verdict=None
+> PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sleep", "1"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+> PROBE issue#r1-1 "echo '>\"'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "'; ./x; echo '"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "echo \">'\" && ./x && echo \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "\" && ./x && echo \""] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "echo '>'; echo \"'\"; ./x; echo \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "; echo \"; ./x; echo "] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "printf '%s\\n' 'a>\"b'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["printf", "%sn", "a", "b'; ./x; echo '"] stdin=[] here=[] writes=[3] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "echo '<\"'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "'; ./x; echo '"] stdin=[1] here=[] writes=[] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "echo '2>\"'; ./x; echo '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "2", "'; ./x; echo '"] stdin=[] here=[] writes=[2] held=[1]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "case a in \">'\") ;; esac; ./x; echo \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["case", "a", "in", "\") ;; esac; ./x; echo \""] stdin=[] here=[] writes=[3] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "ls # >\"\n./x\n# \"" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "#", "\n./x\n# "] stdin=[] here=[] writes=[2] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "cat <<'EOF'\na >'\nEOF\n./x\necho \"'\"" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "EOF"] stdin=[] here=[] writes=[] held=[1] | ["a", "\nEOF\n./x\necho \""] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "grep '>\"' f | xargs ./x '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["grep", "' f | xargs ./x '"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-1 "find . -name '>\"' -exec ./x {} + -name '\"'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-name", "' -exec ./x {} + -name '"] stdin=[] here=[] writes=[3] held=[]] verdict=Some(Credentials)
+> PROBE issue#r1-2 "sh -c 'true &>f ./x'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sh", "-c", "true", "./x", "f"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-2 "dash -c 'true &>f ./x'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["dash", "-c", "true", "./x", "f"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-2 "bash -c 'true &>f ./x'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["bash", "-c", "true", "./x", "f"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-2 "true &>a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["true", "./x", "a"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(Persistence)
+> PROBE issue#r1-3 "$(>&2 echo true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "true", "2"] stdin=[] here=[] writes=[] held=[2] | ["\u{1}unseen-output\u{1}", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#r1-3 "`>&2 echo true` ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "true", "2"] stdin=[] here=[] writes=[] held=[2] | ["\u{1}unseen-output\u{1}", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#r1-3 "$(>log echo true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "true", "log"] stdin=[] here=[] writes=[2] held=[] | ["\u{1}unseen-output\u{1}", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#r1-3 "$(>&2 printf true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["printf", "true", "2"] stdin=[] here=[] writes=[] held=[2] | ["\u{1}unseen-output\u{1}", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#r1-3 "$(echo true >log) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "true", "log"] stdin=[] here=[] writes=[2] held=[] | ["\u{1}unseen-output\u{1}", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#r1-3-control "$(echo ls 2>/dev/null)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "ls", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["ls 2 /dev/null"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+> PROBE issue#r1-3-control "$(echo ls 2>&1)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "ls", "2", "1"] stdin=[] here=[] writes=[] held=[2, 3] | ["ls 2 1"] stdin=[] here=[] writes=[] held=[]] verdict=None
+> PROBE issue#r1-3-control "$(echo ls)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "ls"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+> PROBE issue#r1-3-control "$(echo true) ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "true"] stdin=[] here=[] writes=[] held=[] | ["true", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=None
+101c101
+< SWEEP "2>&1 ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "2>&1 ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+106c106
+< SWEEP "2>log sh x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "2>log sh x" script=Some(UnseenCode) workspace=Some(Persistence)
+110,111c110,111
+< SWEEP "<<EOF ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+< SWEEP "<log sh x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "<<EOF ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+> SWEEP "<log sh x" script=Some(UnseenCode) workspace=Some(Persistence)
+115c115
+< SWEEP ">&2 ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP ">&2 ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+123,124c123,124
+< SWEEP ">log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+< SWEEP ">log eval ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP ">log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+> SWEEP ">log eval ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+487c487
+< SWEEP "env >log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "env >log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+494c494
+< SWEEP "eval '>log ./x'" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "eval '>log ./x'" script=Some(UnseenCode) workspace=Some(Persistence)
+786c786
+< SWEEP "sudo &>log -u root ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "sudo &>log -u root ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+806,807c806,807
+< SWEEP "sudo 2>&1 ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+< SWEEP "sudo 2>log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "sudo 2>&1 ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+> SWEEP "sudo 2>log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+809c809
+< SWEEP "sudo >log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "sudo >log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+1073c1073
+< SWEEP "{fd}>log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+---
+> SWEEP "{fd}>log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+diff exit=1

@@ -1,0 +1,25 @@
+   Compiling codex-core v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+   Compiling codex-image-generation-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+   Compiling codex-web-search-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+   Compiling codex-memories-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+   Compiling core_test_support v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+warning: linker stderr: ld: __eh_frame section too large (max 16MB) to encode dwarf unwind offsets in compact unwind table, performance of exception handling might be affected
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+warning: `codex-core` (lib test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4m 24s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/aarch64-apple-darwin/debug/deps/codex_core-bae4fe48997897e0)
+
+running 5 tests
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_quoted_files_are_linear ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 3737 filtered out; finished in 2.78s
+
+exit=0
