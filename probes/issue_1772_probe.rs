@@ -2,7 +2,9 @@
 /// #1772 probe (appended by issue-1772-probe.yml, never committed upstream).
 /// Prints, for every CorbanuCore/CorbanuTerminal#1772 example (plus
 /// controls), the words and redirection positions the classifier's own
-/// lexer reads (`shell::simple_commands`, not a naive split) and the
+/// lexer reads (`shell::simple_commands`, not a naive split; from PR #1794
+/// review 2 on, that is main's reading on the fix too, as the helper
+/// lexers read) and the
 /// classifier's verdict in a workspace whose ./x, sub/run.sh are harmful.
 /// Then sweeps every corpus line (`CORBANU_1772_CORPUS`, main's
 /// tainted_action_tests.rs) that holds `<` or `>`, so main and a branch can
@@ -113,6 +115,21 @@ fn issue_1772_probe() {
         ("r1-3-control", x_ok, "$(echo ls 2>&1)"),
         ("r1-3-control", x_ok, "$(echo ls)"),
         ("r1-3-control", x_evil, "$(echo true) ./x"),
+        // PR #1794 review 2 (argv forms are in the fix's regression tests).
+        ("r2-1", x_evil, "cat x | while read l; do true; >/dev/null done; sh; done"),
+        ("r2-1", x_evil, "cat x | while read l; do true; 2>/dev/null done; sh; done"),
+        ("r2-1", x_evil, "cat x | if true; then true; >/dev/null fi; sh; fi"),
+        ("r2-1", x_evil, "cat x | case a in a) true; >/dev/null esac; sh;; esac"),
+        ("r2-3", x_ok, "git -c \"user.name=x>'a g\\it'\" status"),
+        ("r2-4", x_evil, "$(2>log echo) ./x"),
+        ("r2-4", x_evil, "$(2>&1 echo) ./x"),
+        ("r2-4", x_evil, "$(<f echo) ./x"),
+        ("r2-4", x_evil, "$(<<<a echo) ./x"),
+        ("r2-4", x_evil, "$(2>log printf '') ./x"),
+        ("r2-4", x_evil, "`2>log echo` ./x"),
+        ("r2-5", x_ok, "grep -n \"<<<<<<<\\|>>>>>>>\\|=======\" -A3 f"),
+        ("r2-6", x_ok, ">./out.txt echo hi"),
+        ("r2-noise", x_ok, "rg -n \"a|b|< 0.0\" $f | head"),
     ];
     for (tag, files, line) in issue {
         let names: Vec<&str> = files.iter().map(|(name, _)| *name).collect();

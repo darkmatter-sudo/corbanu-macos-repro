@@ -38,7 +38,7 @@ on:
       revert:
         description: Space-separated paths under codex-rs/ taken from main for the reverted run.
         required: false
-        default: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs
+        default: core/src/security/tainted_action.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/measure_tests.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs core/src/security/tainted_action/shell.rs
 
 permissions:
   contents: read
