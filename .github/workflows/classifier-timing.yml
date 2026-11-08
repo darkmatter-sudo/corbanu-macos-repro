@@ -25,6 +25,18 @@ on:
         description: Timed runs per pattern and size.
         required: false
         default: "5"
+      sizes:
+        description: Units per line (PROBE_SIZES).
+        required: false
+        default: "1000 2000 4000 8000"
+      patterns:
+        description: Patterns (PROBE_PATTERNS); empty = all five.
+        required: false
+        default: ""
+      runners:
+        description: JSON list of runners.
+        required: false
+        default: '["ubuntu-24.04", "macos-15"]'
 
 permissions:
   contents: read
@@ -34,7 +46,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [ubuntu-24.04, macos-15]
+        runner: ${{ fromJSON(inputs.runners) }}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 180
     env:
@@ -42,6 +54,8 @@ jobs:
       PROBE_REPO: ${{ inputs.probe_repo }}
       PROBE_COMMIT: ${{ inputs.probe_commit }}
       PROBE_REPS: ${{ inputs.reps }}
+      PROBE_SIZES: ${{ inputs.sizes }}
+      PROBE_PATTERNS_IN: ${{ inputs.patterns }}
       # Same job-level env as rust-ci-core-security.yml.
       CARGO_INCREMENTAL: "0"
       CORBANU_TEST_NO_NATIVE_KEYRING: "1"
@@ -103,6 +117,7 @@ jobs:
         working-directory: CorbanuTerminal
         run: |
           set -o pipefail
+          if [ -n "$PROBE_PATTERNS_IN" ]; then export PROBE_PATTERNS="$PROBE_PATTERNS_IN"; fi
           scripts/classifier_timing_probe.sh "$RUNNER_TEMP/logs/timing" 2>&1 \
             | tee "$RUNNER_TEMP/logs/03-timing.txt"
 
