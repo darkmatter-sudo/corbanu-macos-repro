@@ -1,0 +1,1054 @@
+clippy	Set up job	﻿2026-11-08T11:40:29.3511467Z Current runner version: '2.338.2'
+clippy	Set up job	2026-11-08T11:40:29.3560580Z ##[group]Runner Image Provisioner
+clippy	Set up job	2026-11-08T11:40:29.3561459Z Hosted Compute Agent
+clippy	Set up job	2026-11-08T11:40:29.3561966Z Version: 20261028.624
+clippy	Set up job	2026-11-08T11:40:29.3562514Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+clippy	Set up job	2026-11-08T11:40:29.3563154Z Build Date: 2026-10-28T21:51:42Z
+clippy	Set up job	2026-11-08T11:40:29.3563738Z Worker ID: {5facdc7d-323c-4ce4-a4bc-6e6e7e968de2}
+clippy	Set up job	2026-11-08T11:40:29.3564789Z Region: westus3
+clippy	Set up job	2026-11-08T11:40:29.3565280Z Cloud: Azure
+clippy	Set up job	2026-11-08T11:40:29.3565720Z ##[endgroup]
+clippy	Set up job	2026-11-08T11:40:29.3567072Z ##[group]Operating System
+clippy	Set up job	2026-11-08T11:40:29.3567639Z Microsoft Windows Server 2022
+clippy	Set up job	2026-11-08T11:40:29.3568183Z 10.0.20348
+clippy	Set up job	2026-11-08T11:40:29.3568643Z Datacenter
+clippy	Set up job	2026-11-08T11:40:29.3569088Z ##[endgroup]
+clippy	Set up job	2026-11-08T11:40:29.3569562Z ##[group]Runner Image
+clippy	Set up job	2026-11-08T11:40:29.3570057Z Image: windows-2022
+clippy	Set up job	2026-11-08T11:40:29.3570544Z Version: 20261101.353.1
+clippy	Set up job	2026-11-08T11:40:29.3571500Z Included Software: https://github.com/actions/runner-images/blob/win22/20261101.353/images/windows/Windows2022-Readme.md
+clippy	Set up job	2026-11-08T11:40:29.3573324Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20261101.353
+clippy	Set up job	2026-11-08T11:40:29.3574158Z ##[endgroup]
+clippy	Set up job	2026-11-08T11:40:29.3575225Z ##[group]GITHUB_TOKEN Permissions
+clippy	Set up job	2026-11-08T11:40:29.3577395Z Contents: read
+clippy	Set up job	2026-11-08T11:40:29.3577922Z Metadata: read
+clippy	Set up job	2026-11-08T11:40:29.3578433Z ##[endgroup]
+clippy	Set up job	2026-11-08T11:40:29.3580591Z Secret source: Actions
+clippy	Set up job	2026-11-08T11:40:29.3581519Z Cache mode: write
+clippy	Set up job	2026-11-08T11:40:29.3582172Z Prepare workflow directory
+clippy	Set up job	2026-11-08T11:40:29.4061823Z Prepare all required actions
+clippy	Set up job	2026-11-08T11:40:29.4127893Z Complete job name: clippy
+clippy	Clone commits	﻿2026-11-08T11:40:29.5940751Z ##[group]Run set -euo pipefail
+clippy	Clone commits	2026-11-08T11:40:29.5941939Z ^[[36;1mset -euo pipefail^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5942515Z ^[[36;1mgit config --global core.symlinks false^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5943188Z ^[[36;1mgit init -q CorbanuTerminal^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5943765Z ^[[36;1mcd CorbanuTerminal^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5944726Z ^[[36;1mfor c in 21b238bd1b3d3797fff359057e8e42bbbae91856 dbf58a8e5af59fa2d031b394e38b5dedd1c6c328; do^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5945974Z ^[[36;1m  git fetch -q --depth 1 "https://github.com/darkmatter-sudo/CorbanuTerminal.git" "$c"^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5946918Z ^[[36;1mdone^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5947933Z ^[[36;1mgit checkout -q "$(echo 21b238bd1b3d3797fff359057e8e42bbbae91856 dbf58a8e5af59fa2d031b394e38b5dedd1c6c328 | cut -d' ' -f1)"^[[0m
+clippy	Clone commits	2026-11-08T11:40:29.5967584Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+clippy	Clone commits	2026-11-08T11:40:29.5968717Z env:
+clippy	Clone commits	2026-11-08T11:40:29.5969146Z   CARGO_INCREMENTAL: 0
+clippy	Clone commits	2026-11-08T11:40:29.5969643Z ##[endgroup]
+clippy	Clone commits	2026-11-08T11:40:51.3653058Z error: unable to create file qa/security-levels/milestones/aggressive-20261011-rerun/runs/G28/collected/evidence/used-home-r14/product-home/sessions/2026/10/12/rollout-2026-10-12T04-17-23-01a12fd4-e1f7-7290-8f41-b32c81e9586e.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.3656439Z error: unable to create file qa/security-levels/milestones/aggressive-20261011-rerun/runs/G28/collected/evidence/used-home-r14/product-home/sessions/2026/10/12/rollout-2026-10-12T04-18-05-01a12fd5-865e-7e82-a538-701a033902c5.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.3658764Z error: unable to create file qa/security-levels/milestones/aggressive-20261011-rerun/runs/G28/collected/evidence/used-home-r14/product-home/sessions/2026/10/12/rollout-2026-10-12T04-18-42-01a12fd6-1786-7411-b5dc-6335782ca35f.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.3876888Z error: unable to create file qa/security-levels/milestones/aggressive-20261011-rerun/runs/G28/collected/evidence/used-home-r15/product-home/sessions/2026/10/12/rollout-2026-10-12T04-23-13-01a12fda-3b8d-7861-a071-479f46ce3800.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.3879776Z error: unable to create file qa/security-levels/milestones/aggressive-20261011-rerun/runs/G28/collected/evidence/used-home-r15/product-home/sessions/2026/10/12/rollout-2026-10-12T04-23-35-01a12fda-8f8d-7a13-8c03-75d2204ea26e.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.8495601Z error: unable to create file qa/security-levels/milestones/aggressive-20261013-third/runs/G28d/collected/evidence/attempt1-setup-error/product-home/sessions/2026/10/13/rollout-2026-10-13T18-20-17-01a137fe-f224-7ac1-94b1-a27f50c08228.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.8499588Z error: unable to create file qa/security-levels/milestones/aggressive-20261013-third/runs/G28d/collected/evidence/attempt1-setup-error/product-home/sessions/2026/10/13/rollout-2026-10-13T18-21-45-01a13800-482f-7572-a462-92ce2b7cef40.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.8741708Z error: unable to create file qa/security-levels/milestones/aggressive-20261013-third/runs/G28d/collected/evidence/attempt2-setup-error/product-home-empty/sessions/2026/10/13/rollout-2026-10-13T18-31-09-01a13808-e58e-7e00-a76f-6ec031c93957.jsonl: Filename too long
+clippy	Clone commits	2026-11-08T11:40:51.8745382Z error: unable to create file qa/security-levels/milestones/aggressive-20261013-third/runs/G28d/collected/evidence/attempt2-setup-error/product-home-empty/shell_snapshots/01a13808-e58e-7e00-a76f-6ec031c93957.1791941469607167000.sh: Filename too long
+clippy	Toolchain	﻿2026-11-08T11:40:55.1706874Z ##[group]Run set -euo pipefail
+clippy	Toolchain	2026-11-08T11:40:55.1707629Z ^[[36;1mset -euo pipefail^[[0m
+clippy	Toolchain	2026-11-08T11:40:55.1708147Z ^[[36;1mrustup show active-toolchain || rustup toolchain install^[[0m
+clippy	Toolchain	2026-11-08T11:40:55.1708651Z ^[[36;1mrustc -V; cargo -V; cargo clippy -V^[[0m
+clippy	Toolchain	2026-11-08T11:40:55.1722040Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+clippy	Toolchain	2026-11-08T11:40:55.1722566Z env:
+clippy	Toolchain	2026-11-08T11:40:55.1722889Z   CARGO_INCREMENTAL: 0
+clippy	Toolchain	2026-11-08T11:40:55.1723226Z ##[endgroup]
+clippy	Toolchain	2026-11-08T11:40:57.9790055Z info: syncing channel updates for 1.99.1-x86_64-pc-windows-msvc
+clippy	Toolchain	2026-11-08T11:40:59.2311578Z info: latest update on 2026-10-15 for version 1.99.1 (58cf8f9c3 2026-10-13)
+clippy	Toolchain	2026-11-08T11:40:59.2773291Z info: downloading 6 components
+clippy	Toolchain	2026-11-08T11:41:18.8419476Z warn: the missing active toolchain `1.99.1-x86_64-pc-windows-msvc` has been auto-installed
+clippy	Toolchain	2026-11-08T11:41:18.8421691Z warn: auto-installation is deprecated for most `rustup` commands
+clippy	Toolchain	2026-11-08T11:41:18.8422720Z warn: scripts relying on this behavior in `rustup` may stop working in the future
+clippy	Toolchain	2026-11-08T11:41:18.8423757Z warn: to install the active toolchain, use `rustup install` instead
+clippy	Toolchain	2026-11-08T11:41:18.8424576Z warn: see <https://github.com/rust-lang/rustup/issues/4836> for more info
+clippy	Toolchain	2026-11-08T11:41:18.8425993Z 1.99.1-x86_64-pc-windows-msvc (overridden by 'D:\a\corbanu-macos-repro\corbanu-macos-repro\CorbanuTerminal\codex-rs\rust-toolchain.toml')
+clippy	Toolchain	2026-11-08T11:41:21.1014742Z rustc 1.99.1 (58cf8f9c3 2026-10-13)
+clippy	Toolchain	2026-11-08T11:41:22.5092094Z cargo 1.99.1 (5f94df478 2026-08-27)
+clippy	Toolchain	2026-11-08T11:41:23.1834436Z clippy 0.1.99 (58cf8f9c35 2026-10-13)
+clippy	cargo clippy per commit	﻿2026-11-08T11:41:23.2389515Z ##[group]Run set -uo pipefail
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2390298Z ^[[36;1mset -uo pipefail^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2390626Z ^[[36;1mstatus=0^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2391190Z ^[[36;1mfor c in 21b238bd1b3d3797fff359057e8e42bbbae91856 dbf58a8e5af59fa2d031b394e38b5dedd1c6c328; do^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2391756Z ^[[36;1m  git checkout -q "$c"^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2392088Z ^[[36;1m  echo "=== commit $(git rev-parse HEAD)"^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2392744Z ^[[36;1m  cargo clippy -p "codex-core" --target x86_64-pc-windows-msvc --tests -- -D warnings 2>&1 | grep -v '^ *\(Compiling\|Checking\) '^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2393384Z ^[[36;1m  rc=${PIPESTATUS[0]}^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2393747Z ^[[36;1m  echo "=== RESULT $(git rev-parse HEAD) clippy exit $rc"^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2394185Z ^[[36;1m  [ "$rc" -eq 0 ] || status=1^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2394479Z ^[[36;1mdone^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2394832Z ^[[36;1mecho "=== overall status $status (nonzero if any commit failed)"^[[0m
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2408253Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2408832Z env:
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2409970Z   CARGO_INCREMENTAL: 0
+clippy	cargo clippy per commit	2026-11-08T11:41:23.2410258Z ##[endgroup]
+clippy	cargo clippy per commit	2026-11-08T11:41:23.8374672Z === commit 21b238bd1b3d3797fff359057e8e42bbbae91856
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5357611Z     Updating git repository `https://github.com/openai-oss-forks/crossterm`
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5358925Z     Updating git repository `https://github.com/openai-oss-forks/tokio-tungstenite`
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5359941Z     Updating git repository `https://github.com/openai-oss-forks/tungstenite-rs`
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5360690Z     Updating crates.io index
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5361380Z     Updating git repository `https://github.com/dzbarsky/rules_rust`
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5362314Z     Updating git repository `https://github.com/helix-editor/nucleo.git`
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5363919Z  Downloading crates ...
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5364415Z   Downloaded actix-router v0.5.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5364888Z   Downloaded adler2 v2.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5365892Z   Downloaded arrayvec v0.7.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5367069Z   Downloaded actix-utils v3.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5367655Z   Downloaded aead v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5368191Z   Downloaded asn1-rs-derive v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5368730Z   Downloaded allocative_derive v0.3.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5369273Z   Downloaded assert-json-diff v2.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5369804Z   Downloaded atomic v0.5.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5370297Z   Downloaded event-listener-strategy v0.5.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5370918Z   Downloaded aws-smithy-runtime-api-macros v1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5371503Z   Downloaded error-code v3.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5371998Z   Downloaded atomic-waker v1.1.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5372503Z   Downloaded env_filter v1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5373047Z   Downloaded block-buffer v0.12.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5373543Z   Downloaded arrayref v0.3.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5374028Z   Downloaded anstyle-wincon v3.0.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5374533Z   Downloaded embedded-io v0.6.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5375044Z   Downloaded block-buffer v0.10.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5375608Z   Downloaded aws-smithy-observability v0.1.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5376171Z   Downloaded anstyle-query v1.1.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5376568Z   Downloaded base16ct v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5376918Z   Downloaded asn1-rs-impl v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5377234Z   Downloaded atoi v2.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5377528Z   Downloaded beef v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5378490Z   Downloaded block-padding v0.3.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5378864Z   Downloaded aws-smithy-query v0.60.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5379277Z   Downloaded bech32 v0.9.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5379599Z   Downloaded bytestring v1.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5379922Z   Downloaded base64-simd v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5380231Z   Downloaded elliptic-curve v0.13.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5380561Z   Downloaded cached_proc_macro v0.25.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5381047Z   Downloaded embedded-io v0.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5381424Z   Downloaded endian-type v0.1.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5384533Z   Downloaded equivalent v1.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5384837Z   Downloaded etcetera v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5385190Z   Downloaded assert_matches v1.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5385508Z   Downloaded async-channel v2.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5385827Z   Downloaded byteorder-lite v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5386177Z   Downloaded Inflector v0.11.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5386473Z   Downloaded actix-server v2.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5386798Z   Downloaded actix-service v2.0.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5387093Z   Downloaded env_home v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5387410Z   Downloaded eventsource-stream v0.2.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5387727Z   Downloaded itoa v1.0.17
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5388019Z   Downloaded actix-rt v2.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5388313Z   Downloaded age-core v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5388608Z   Downloaded anstyle v1.0.13
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5388923Z   Downloaded aws-smithy-http v0.62.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5389284Z   Downloaded bit-vec v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5389576Z   Downloaded allocative v0.3.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5389902Z   Downloaded annotate-snippets v0.9.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5390457Z   Downloaded anstream v0.6.21
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5390788Z   Downloaded anstyle-parse v0.2.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5391116Z   Downloaded anyhow v1.0.103
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5391419Z   Downloaded assert_cmd v2.1.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5391723Z   Downloaded async-trait v0.1.92
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5392048Z   Downloaded asynk-strim v0.1.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5392372Z   Downloaded autocfg v1.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5392690Z   Downloaded aws-credential-types v1.2.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5393073Z   Downloaded aws-smithy-async v1.2.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5393422Z   Downloaded aws-smithy-json v0.61.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5393768Z   Downloaded aws-smithy-xml v0.60.13
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5394125Z   Downloaded axum-core v0.5.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5394435Z   Downloaded base64ct v1.8.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5394730Z   Downloaded bit-set v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5395029Z   Downloaded bitflags v1.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5395329Z   Downloaded bm25 v2.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5395623Z   Downloaded bytemuck_derive v1.10.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5395935Z   Downloaded byteorder v1.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5396229Z   Downloaded bytes-utils v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5396542Z   Downloaded ecdsa v0.16.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5396953Z   Downloaded fluent-langneg v0.13.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5397386Z   Downloaded fnv v1.0.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5397792Z   Downloaded kstring v2.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5398217Z   Downloaded logos-derive v0.15.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5398686Z   Downloaded mime v0.3.17
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5399121Z   Downloaded nibble_vec v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5399572Z   Downloaded ahash v0.8.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5399992Z   Downloaded ascii v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5400428Z   Downloaded filedescriptor v0.8.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5400894Z   Downloaded float-cmp v0.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5401384Z   Downloaded form_urlencoded v1.2.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5401852Z   Downloaded futures-core v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5402413Z   Downloaded futures-macro v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5402918Z   Downloaded aws-types v1.3.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5403457Z   Downloaded blake2 v0.10.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5403975Z   Downloaded bzip2 v0.6.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5404484Z   Downloaded find-crate v0.6.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5404898Z   Downloaded fslock v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5405390Z   Downloaded nonempty v0.12.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5405824Z   Downloaded fd-lock v4.0.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5406228Z   Downloaded fluent v0.16.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5406636Z   Downloaded fxhash v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5407092Z   Downloaded gix-config-value v0.17.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5407582Z   Downloaded litemap v0.8.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5408037Z   Downloaded litrs v1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5408528Z   Downloaded maybe-async v0.2.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5409061Z   Downloaded allocator-api2 v0.2.21
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5409578Z   Downloaded arc-swap v1.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5410075Z   Downloaded aws-runtime v1.5.17
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5412008Z   Downloaded aws-sdk-signin v1.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5412483Z   Downloaded basic-toml v0.1.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5412936Z   Downloaded bitflags v2.13.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5413372Z   Downloaded bumpalo v3.19.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5413772Z   Downloaded bytemuck v1.25.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5414076Z   Downloaded bytes v1.11.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5414395Z   Downloaded futures-sink v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5414729Z   Downloaded gethostname v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5415029Z   Downloaded ghash v0.5.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5415355Z   Downloaded gix-actor v0.40.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5415664Z   Downloaded gix-bitmap v0.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5415995Z   Downloaded gix-chunk v0.7.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5416287Z   Downloaded gix-command v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5416598Z   Downloaded gix-hashtable v0.13.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5416910Z   Downloaded gix-ignore v0.19.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5417208Z   Downloaded gix-lock v21.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5417511Z   Downloaded gix-negotiate v0.29.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5417838Z   Downloaded jsonwebtoken v9.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5418341Z   Downloaded maplit v1.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5418647Z   Downloaded nu-ansi-term v0.50.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5418959Z   Downloaded option-ext v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5419268Z   Downloaded aes v0.8.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5419587Z   Downloaded asn1-rs v0.7.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5419883Z   Downloaded aws-sdk-sso v1.91.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5420200Z   Downloaded aws-sdk-ssooidc v1.93.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5420520Z   Downloaded aws-sigv4 v1.3.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5420844Z   Downloaded aws-smithy-http-client v1.1.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5421221Z   Downloaded aws-smithy-runtime v1.9.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5421563Z   Downloaded aws-smithy-runtime-api v1.12.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5421873Z   Downloaded aws-smithy-types v1.4.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5422146Z   Downloaded backtrace v0.3.76
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5422394Z   Downloaded base64 v0.21.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5422656Z   Downloaded base64 v0.22.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5422933Z   Downloaded base64 v0.23.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5423232Z   Downloaded borsh v1.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5423539Z   Downloaded cached v0.56.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5423833Z   Downloaded endian-type v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5424105Z   Downloaded enum-as-inner v0.6.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5424393Z   Downloaded extended v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5424657Z   Downloaded faster-hex v0.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5424930Z   Downloaded fastrand v2.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5425197Z   Downloaded find-msvc-tools v0.1.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5425497Z   Downloaded futures-executor v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5425797Z   Downloaded futures-io v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5426094Z   Downloaded generic-array v0.14.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5426363Z   Downloaded gix-archive v0.30.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5426631Z   Downloaded gix-attributes v0.31.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5426919Z   Downloaded gix-date v0.15.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5427229Z   Downloaded gix-discover v0.49.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5427645Z   Downloaded gix-error v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5428101Z   Downloaded gix-fs v0.19.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5428546Z   Downloaded gix-glob v0.24.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5428857Z   Downloaded gix-hash v0.23.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5429184Z   Downloaded gix-packetline v0.21.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5429554Z   Downloaded gix-pathspec v0.16.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5429863Z   Downloaded itertools v0.14.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5430333Z   Downloaded md-5 v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5431039Z   Downloaded num-conv v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5431516Z   Downloaded oid-registry v0.8.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5432053Z   Downloaded opentelemetry v0.33.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5432641Z   Downloaded opentelemetry-otlp v0.33.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5433172Z   Downloaded pagable_derive v0.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5433506Z   Downloaded parking v2.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5433818Z   Downloaded parking_lot v0.12.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5434146Z   Downloaded parking_lot_core v0.9.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5434510Z   Downloaded pin-project-lite v0.2.16
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5435087Z   Downloaded pin-utils v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5435454Z   Downloaded pkcs8 v0.10.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5435766Z   Downloaded predicates v3.1.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5436206Z   Downloaded strong_hash_derive v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5436728Z   Downloaded strsim v0.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5437145Z   Downloaded actix-http v3.11.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5437514Z   Downloaded actix-web v4.12.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5437996Z   Downloaded aes-gcm v0.10.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5438345Z   Downloaded aho-corasick v1.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5438686Z   Downloaded aws-config v1.8.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5439163Z   Downloaded aws-lc-rs v1.18.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5439476Z   Downloaded aws-sdk-sts v1.95.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5439780Z   Downloaded axum v0.8.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5440083Z   Downloaded blake3 v1.8.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5440379Z   Downloaded bstr v1.12.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5440669Z   Downloaded either v1.15.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5440988Z   Downloaded encode_unicode v1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5441326Z   Downloaded env_logger v0.11.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5442636Z   Downloaded erased-serde v0.3.31
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5442965Z   Downloaded erased-serde v0.4.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5443329Z   Downloaded event-listener v5.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5443641Z   Downloaded fdeflate v0.3.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5443930Z   Downloaded ff v0.13.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5444216Z   Downloaded filetime v0.2.27
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5444514Z   Downloaded findshlibs v0.10.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5444818Z   Downloaded fluent-bundle v0.15.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5445138Z   Downloaded fluent-syntax v0.11.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5445456Z   Downloaded fluent-uri v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5445761Z   Downloaded foldhash v0.1.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5446064Z   Downloaded foldhash v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5446345Z   Downloaded fs_extra v1.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5446674Z   Downloaded futures v0.3.31
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5446988Z   Downloaded futures-channel v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5447316Z   Downloaded futures-task v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5447635Z   Downloaded getrandom v0.2.17
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5447948Z   Downloaded getrandom v0.4.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5448248Z   Downloaded gif v0.14.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5448546Z   Downloaded gix-commitgraph v0.35.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5448867Z   Downloaded gix-diff v0.61.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5449172Z   Downloaded gix-features v0.46.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5449483Z   Downloaded gix-filter v0.28.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5449803Z   Downloaded gix-index v0.49.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5450127Z   Downloaded gix-object v0.58.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5450464Z   Downloaded gix-path v0.11.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5450778Z   Downloaded gix-protocol v0.59.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5451081Z   Downloaded ml-kem v0.2.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5451404Z   Downloaded proc-macro-error2 v2.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5451742Z   Downloaded prodash v31.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5452043Z   Downloaded prost v0.14.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5452334Z   Downloaded prost-derive v0.14.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5452647Z   Downloaded prost-types v0.14.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5453009Z   Downloaded quote v1.0.45
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5453313Z   Downloaded rama-tcp v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5453662Z   Downloaded rama-tls-rustls v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5454006Z   Downloaded rama-udp v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5454333Z   Downloaded rayon-core v1.13.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5454647Z   Downloaded rcgen v0.14.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5454938Z   Downloaded sentry-contexts v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5455277Z   Downloaded sentry-core v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5455583Z   Downloaded stringprep v0.1.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5455885Z   Downloaded strong_hash v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5456172Z   Downloaded strsim v0.11.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5456478Z   Downloaded tokio-graceful v0.2.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5456795Z   Downloaded tokio-macros v2.7.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5457101Z   Downloaded bzip2-sys v0.1.13+1.0.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5457413Z   Downloaded fancy-regex v0.16.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5457906Z   Downloaded fixed_decimal v0.7.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5458208Z   Downloaded flate2 v1.1.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5458508Z   Downloaded flume v0.12.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5458858Z   Downloaded futures-intrusive v0.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5459202Z   Downloaded futures-util v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5459520Z   Downloaded getrandom v0.3.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5459813Z   Downloaded gix v0.81.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5460101Z   Downloaded gix-blame v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5460400Z   Downloaded gix-config v0.54.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5460701Z   Downloaded gix-dir v0.23.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5461000Z   Downloaded gix-odb v0.78.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5461306Z   Downloaded gix-pack v0.68.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5461603Z   Downloaded libc v0.2.186
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5461907Z   Downloaded proptest v1.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5462234Z   Downloaded radix_trie v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5462542Z   Downloaded radix_trie v0.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5462843Z   Downloaded rayon v1.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5463136Z   Downloaded rfc6979 v0.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5463427Z   Downloaded semver v1.0.28
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5463880Z   Downloaded sentry-backtrace v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5464218Z   Downloaded tracing-core v0.1.36
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5464541Z   Downloaded tracing-log v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5464878Z   Downloaded tracing-opentelemetry v0.34.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5465239Z   Downloaded tracing-subscriber v0.3.22
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5465566Z   Downloaded urlencoding v2.1.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5465887Z   Downloaded utf-8 v0.7.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5466169Z   Downloaded utf8parse v0.2.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5466456Z   Downloaded encoding_rs v0.8.35
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5466748Z   Downloaded gix-merge v0.14.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5467027Z   Downloaded resolv-conf v0.7.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5467328Z   Downloaded rmcp-macros v3.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5467620Z   Downloaded salsa20 v0.10.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5467901Z   Downloaded same-file v1.0.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5468201Z   Downloaded schemafy_core v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5468524Z   Downloaded schemafy_lib v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5468827Z   Downloaded schemars v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5469170Z   Downloaded schemars_derive v0.8.22
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5469495Z   Downloaded schemars_derive v1.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5469811Z   Downloaded scopeguard v1.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5470118Z   Downloaded scrypt v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5470397Z   Downloaded sdd v3.0.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5470680Z   Downloaded sec1 v0.7.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5470968Z   Downloaded secrecy v0.10.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5471257Z   Downloaded self_cell v0.10.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5471679Z   Downloaded self_cell v1.2.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5472119Z   Downloaded sentry v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5472551Z   Downloaded sentry-actix v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5473009Z   Downloaded streaming-iterator v0.1.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5473330Z   Downloaded tinyvec_macros v0.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5473753Z   Downloaded utf8_iter v1.0.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5474192Z   Downloaded uuid v1.20.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5474603Z   Downloaded vcpkg v0.2.15
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5474921Z   Downloaded version_check v0.9.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5475220Z   Downloaded vsimd v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5475501Z   Downloaded wait-timeout v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5475797Z   Downloaded walkdir v2.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5476076Z   Downloaded want v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5476349Z   Downloaded web-time v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5476662Z   Downloaded zstd v0.14.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5476943Z   Downloaded zstd-safe v8.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5477247Z   Downloaded zstd-sys v2.1.2+zstd.1.5.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5477574Z   Downloaded zune-core v0.5.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5477871Z   Downloaded zune-jpeg v0.5.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5478161Z   Downloaded darling v0.23.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5478455Z   Downloaded darling_core v0.20.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5478767Z   Downloaded darling_core v0.21.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5479069Z   Downloaded darling_core v0.23.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5480347Z   Downloaded darling_macro v0.20.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5480667Z   Downloaded darling_macro v0.21.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5481180Z   Downloaded darling_macro v0.23.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5482751Z   Downloaded deadpool-runtime v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5483375Z   Downloaded debugid v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5483827Z   Downloaded gix-tempfile v21.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5484291Z   Downloaded rmcp v3.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5484794Z   Downloaded rustversion v1.0.22
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5485339Z   Downloaded rustyline v14.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5485783Z   Downloaded ryu v1.0.22
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5486211Z   Downloaded scc v2.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5486638Z   Downloaded schannel v0.1.28
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5487111Z   Downloaded schemafy v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5487581Z   Downloaded schemars v0.8.22
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5488101Z   Downloaded schemars v1.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5488653Z   Downloaded stop-words v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5489110Z   Downloaded tinystr v0.8.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5489538Z   Downloaded tinyvec v1.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5489858Z   Downloaded age v0.11.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5490417Z   Downloaded dashmap v6.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5490747Z   Downloaded data-encoding v2.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5491103Z   Downloaded deadpool v0.12.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5491442Z   Downloaded debugserver-types v0.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5491806Z   Downloaded deflate64 v0.1.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5492116Z   Downloaded der v0.7.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5492423Z   Downloaded der-parser v10.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5492771Z   Downloaded deranged v0.5.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5493070Z   Downloaded derivative v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5493376Z   Downloaded gix-quote v0.7.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5493690Z   Downloaded gix-ref v0.61.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5493987Z   Downloaded gix-refspec v0.39.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5494302Z   Downloaded gix-revision v0.43.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5494616Z   Downloaded gix-revwalk v0.29.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5494929Z   Downloaded gix-sec v0.13.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5495250Z   Downloaded gix-shallow v0.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5495567Z   Downloaded gix-status v0.28.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5495884Z   Downloaded gix-submodule v0.28.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5496246Z   Downloaded gix-trace v0.1.18
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5496542Z   Downloaded gix-transport v0.55.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5496862Z   Downloaded gix-traverse v0.55.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5497176Z   Downloaded gix-url v0.35.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5497483Z   Downloaded gix-utils v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5497801Z   Downloaded gix-validate v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5498115Z   Downloaded gix-worktree v0.50.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5498448Z   Downloaded gix-worktree-state v0.28.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5498808Z   Downloaded gix-worktree-stream v0.30.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5499157Z   Downloaded glob v0.3.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5499462Z   Downloaded globset v0.4.18
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5499802Z   Downloaded group v0.13.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5500097Z   Downloaded h2 v0.4.16
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5500407Z   Downloaded hash32 v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5500700Z   Downloaded hash32 v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5501008Z   Downloaded hashbrown v0.12.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5501320Z   Downloaded hashbrown v0.14.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5501616Z   Downloaded hashbrown v0.15.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5501917Z   Downloaded hashbrown v0.16.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5502216Z   Downloaded hashbrown v0.17.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5502521Z   Downloaded proc-macro2 v1.0.106
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5502878Z   Downloaded psl v2.1.184
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5503200Z   Downloaded psl-types v2.0.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5503508Z   Downloaded publicsuffix v2.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5503833Z   Downloaded pulldown-cmark v0.10.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5504157Z   Downloaded ref-cast v1.0.25
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5504539Z   Downloaded ref-cast-impl v1.0.25
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5505043Z   Downloaded sentry-debug-images v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5505432Z   Downloaded sentry-panic v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5506130Z   Downloaded sha2 v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5506824Z   Downloaded sharded-slab v0.1.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5507224Z   Downloaded shared_library v0.1.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5507669Z   Downloaded shell-words v1.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5508129Z   Downloaded shlex v1.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5508525Z   Downloaded signature v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5509851Z   Downloaded simple_asn1 v0.6.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5510424Z   Downloaded slab v0.4.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5510880Z   Downloaded smallvec v1.15.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5511353Z   Downloaded socket2 v0.5.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5511820Z   Downloaded spki v0.7.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5512300Z   Downloaded tracing-appender v0.2.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5512833Z   Downloaded tracing-attributes v0.1.31
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5513361Z   Downloaded tracing-test v0.2.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5513783Z   Downloaded tracing-test-macro v0.2.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5514347Z   Downloaded unicode-xid v0.2.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5514855Z   Downloaded universal-hash v0.5.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5515350Z   Downloaded untrusted v0.7.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5515815Z   Downloaded untrusted v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5516386Z   Downloaded moka v0.12.13
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5516713Z   Downloaded simd-adler32 v0.3.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5517060Z   Downloaded similar v2.7.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5517393Z   Downloaded smol_str v0.3.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5517722Z   Downloaded socket2 v0.6.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5518059Z   Downloaded sorted_vector_map v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5518409Z   Downloaded spin v0.9.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5518752Z   Downloaded sqlx v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5519057Z   Downloaded tracing v0.1.44
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5519407Z   Downloaded tree-sitter-bash v0.25.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5519792Z   Downloaded unicode-normalization v0.1.25
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5520201Z   Downloaded unicode-properties v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5520591Z   Downloaded unicode-segmentation v1.12.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5520970Z   Downloaded unsafe-libyaml v0.2.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5521310Z   Downloaded ureq v3.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5521752Z   Downloaded ureq-proto v0.5.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5522085Z   Downloaded url v2.5.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5522418Z   Downloaded webbrowser v1.2.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5522761Z   Downloaded webpki-root-certs v1.0.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5523122Z   Downloaded cached_proc_macro_types v0.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5523470Z   Downloaded cc v1.2.55
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5523791Z   Downloaded cfg-if v1.0.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5524089Z   Downloaded ring v0.17.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5524373Z   Downloaded sha3 v0.10.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5524656Z   Downloaded tokio v1.53.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5524952Z   Downloaded tree-sitter v0.25.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5525268Z   Downloaded unicode-width v0.1.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5525595Z   Downloaded webpki-roots v1.0.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5525933Z   Downloaded cfg_aliases v0.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5526247Z   Downloaded cfg_aliases v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5526556Z   Downloaded chacha20 v0.9.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5526870Z   Downloaded chacha20 v0.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5527195Z   Downloaded chacha20poly1305 v0.10.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5527568Z   Downloaded chardetng v0.1.17
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5527879Z   Downloaded chrono v0.4.43
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5528184Z   Downloaded chunked_transfer v1.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5528527Z   Downloaded cipher v0.4.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5528828Z   Downloaded clap v4.5.58
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5529123Z   Downloaded clap_builder v4.5.58
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5529524Z   Downloaded clap_derive v4.5.55
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5529997Z   Downloaded convert_case v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5530451Z   Downloaded convert_case v0.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5530913Z   Downloaded cookie v0.18.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5531387Z   Downloaded cookie-factory v0.3.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5531867Z   Downloaded cookie_store v0.22.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5532327Z   Downloaded cpufeatures v0.2.17
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5533069Z   Downloaded cpufeatures v0.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5533555Z   Downloaded crc v3.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5533985Z   Downloaded crc-catalog v2.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5534796Z   Downloaded crc32fast v1.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5535326Z   Downloaded critical-section v1.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5535852Z   Downloaded crossbeam-channel v0.5.15
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5536374Z   Downloaded crossbeam-deque v0.8.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5536869Z   Downloaded crossbeam-epoch v0.9.20
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5537407Z   Downloaded crossbeam-queue v0.3.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5537883Z   Downloaded crossbeam-utils v0.8.21
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5538384Z   Downloaded derive_more v1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5538870Z   Downloaded derive_more v2.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5539314Z   Downloaded derive_more-impl v1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5539803Z   Downloaded derive_more-impl v2.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5540287Z   Downloaded deunicode v1.6.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5540748Z   Downloaded diff v0.1.13
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5541174Z   Downloaded difflib v0.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5541631Z   Downloaded digest v0.10.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5542106Z   Downloaded digest v0.11.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5542593Z   Downloaded hashlink v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5543070Z   Downloaded percent-encoding v2.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5545014Z   Downloaded pin-project v1.1.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5545541Z   Downloaded pin-project-internal v1.1.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5546073Z   Downloaded pkg-config v0.3.32
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5546757Z   Downloaded png v0.18.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5547357Z   Downloaded polyval v0.6.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5547807Z   Downloaded portable-atomic v1.13.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5548294Z   Downloaded postcard v1.1.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5548743Z   Downloaded powerfmt v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5549314Z   Downloaded ppv-lite86 v0.2.21
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5549909Z   Downloaded predicates-core v1.0.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5550413Z   Downloaded pretty_assertions v1.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5550938Z   Downloaded proc-macro-crate v3.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5551506Z   Downloaded quickcheck v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5551958Z   Downloaded quinn-proto v0.11.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5552435Z   Downloaded try-lock v0.2.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5552899Z   Downloaded zerofrom v0.1.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5553432Z   Downloaded zerofrom-derive v0.1.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5553939Z   Downloaded zmij v1.0.19
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5554509Z   Downloaded pem-rfc7468 v0.7.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5554823Z   Downloaded poly1305 v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5555181Z   Downloaded portable-pty v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5555507Z   Downloaded potential_utf v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5556044Z   Downloaded predicates-tree v1.0.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5556380Z   Downloaded primeorder v0.13.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5556723Z   Downloaded proc-macro-error-attr2 v2.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5557085Z   Downloaded process-wrap v9.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5557452Z   Downloaded quick-error v2.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5557878Z   Downloaded quick-xml v0.41.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5558176Z   Downloaded quinn v0.11.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5558474Z   Downloaded quinn-udp v0.5.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5558847Z   Downloaded rama-dns v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5559168Z   Downloaded rama-error v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5559526Z   Downloaded rama-http-backend v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5559904Z   Downloaded rama-http-core v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5560262Z   Downloaded rama-http-headers v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5560614Z   Downloaded rama-macros v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5560947Z   Downloaded rama-net v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5561278Z   Downloaded rama-socks5 v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5561612Z   Downloaded rand v0.10.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5561909Z   Downloaded rand_chacha v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5562210Z   Downloaded rand_chacha v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5562557Z   Downloaded rand_core v0.6.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5562875Z   Downloaded rand_core v0.9.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5563182Z   Downloaded sentry-tracing v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5563516Z   Downloaded sentry-types v0.46.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5563826Z   Downloaded sqlx-macros v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5564438Z   Downloaded sqlx-postgres v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5564775Z   Downloaded stable_deref_trait v1.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5565108Z   Downloaded ts-rs v11.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5565403Z   Downloaded zeroize v1.8.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5565712Z   Downloaded zeroize_derive v1.4.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5566021Z   Downloaded zerotrie v0.2.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5566347Z   Downloaded zerovec v0.11.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5566648Z   Downloaded zerovec-derive v0.11.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5566953Z   Downloaded zip v9.0.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5567239Z   Downloaded zlib-rs v0.5.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5567522Z   Downloaded zlib-rs v0.6.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5567816Z   Downloaded zopfli v0.8.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5568121Z   Downloaded crypto_secretbox v0.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5568431Z   Downloaded csv-core v0.1.13
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5568714Z   Downloaded ctor v1.0.13
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5569006Z   Downloaded ctr v0.9.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5569303Z   Downloaded ctutils v0.4.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5569657Z   Downloaded curve25519-dalek v4.1.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5570004Z   Downloaded curve25519-dalek-derive v0.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5570494Z   Downloaded darling v0.20.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5570794Z   Downloaded darling v0.21.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5571112Z   Downloaded rama-http v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5571427Z   Downloaded regex v1.12.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5571733Z   Downloaded sqlx-core v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5572042Z   Downloaded sqlx-macros-core v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5572367Z   Downloaded sqlx-mysql v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5572668Z   Downloaded sqlx-sqlite v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5572965Z   Downloaded sse-stream v0.2.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5573294Z   Downloaded starlark_derive v0.14.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5573609Z   Downloaded starlark_map v0.14.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5573923Z   Downloaded pxfm v0.1.27
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5574221Z   Downloaded rama-core v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5574543Z   Downloaded rama-utils v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5574864Z   Downloaded rand v0.8.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5575149Z   Downloaded rand v0.9.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5575447Z   Downloaded regex-automata v0.4.13
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5575774Z   Downloaded serial2 v0.2.33
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5576062Z   Downloaded serial_test v3.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5576408Z   Downloaded serial_test_derive v3.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5576719Z   Downloaded sha1 v0.10.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5576996Z   Downloaded sha1 v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5577267Z   Downloaded sha1_smol v1.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5577562Z   Downloaded sha2 v0.10.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5577833Z   Downloaded starlark v0.14.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5578133Z   Downloaded csv v1.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5578417Z   Downloaded sha1-checked v0.10.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5578710Z   Downloaded winnow v0.7.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5579001Z   Downloaded winreg v0.10.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5579287Z   Downloaded writeable v0.6.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5579580Z   Downloaded aws-lc-sys v0.45.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5579945Z   Downloaded windows_x86_64_msvc v0.52.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5580280Z   Downloaded winreg v0.50.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5580573Z   Downloaded wiremock v0.6.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5580879Z   Downloaded x25519-dalek v2.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5581188Z   Downloaded x509-parser v0.18.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5581506Z   Downloaded xmlparser v0.13.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5581824Z   Downloaded yansi v1.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5582116Z   Downloaded yasna v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5582402Z   Downloaded yoke v0.8.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5582706Z   Downloaded yoke-derive v0.8.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5583019Z   Downloaded const-oid v0.9.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5583391Z   Downloaded const_format_proc_macros v0.2.34
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5583746Z   Downloaded constant_time_eq v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5584086Z   Downloaded libbz2-rs-sys v0.2.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5584397Z   Downloaded link-section v0.19.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5584725Z   Downloaded linktime-proc-macro v0.2.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5585135Z   Downloaded local-waker v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5586371Z   Downloaded lock_api v0.4.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5586701Z   Downloaded lock_free_hashtable v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5587022Z   Downloaded log v0.4.29
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5587326Z   Downloaded logos-codegen v0.15.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5587673Z   Downloaded lru v0.18.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5588013Z   Downloaded opentelemetry-appender-tracing v0.33.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5588407Z   Downloaded opentelemetry-http v0.33.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5588804Z   Downloaded opentelemetry-semantic-conventions v0.33.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5589189Z   Downloaded os_info v3.14.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5589486Z   Downloaded outref v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5589786Z   Downloaded p256 v0.13.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5590080Z   Downloaded pagable v0.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5590399Z   Downloaded paste v1.0.15
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5590683Z   Downloaded pastey v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5590972Z   Downloaded pbkdf2 v0.12.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5591298Z   Downloaded pem v3.0.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5591604Z   Downloaded rama-http-types v0.3.0-alpha.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5591963Z   Downloaded tree-sitter-language v0.1.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5592452Z   Downloaded triomphe v0.1.15
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5592749Z   Downloaded weezl v0.1.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5593046Z   Downloaded which v8.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5593342Z   Downloaded whoami v1.6.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5593625Z   Downloaded whoami v2.1.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5593939Z   Downloaded windows_x86_64_msvc v0.53.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5594270Z   Downloaded winsafe v0.0.19
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5594564Z   Downloaded zerocopy v0.8.37
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5594901Z   Downloaded const_format v0.2.35
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5595218Z   Downloaded jiff-static v0.2.23
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5595524Z   Downloaded jiff-tzdb v0.1.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5595841Z   Downloaded jiff-tzdb-platform v0.1.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5596175Z   Downloaded jobserver v0.1.34
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5596463Z   Downloaded jsonptr v0.7.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5596747Z   Downloaded keccak v0.1.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5597030Z   Downloaded kem v0.3.0-pre.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5597332Z   Downloaded keyring v3.6.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5597630Z   Downloaded language-tags v0.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5597951Z   Downloaded lazy_static v1.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5598303Z   Downloaded opentelemetry-proto v0.33.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5598641Z   Downloaded opentelemetry_sdk v0.33.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5598978Z   Downloaded starlark_syntax v0.14.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5599318Z   Downloaded sys-locale v0.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5599623Z   Downloaded tempfile v3.27.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5599938Z   Downloaded thiserror v1.0.69
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5600262Z   Downloaded jiff v0.2.23
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5600553Z   Downloaded logos v0.15.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5600837Z   Downloaded rust-embed v8.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5601134Z   Downloaded strum v0.27.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5601419Z   Downloaded strum_macros v0.27.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5601747Z   Downloaded strum_macros v0.28.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5602046Z   Downloaded subtle v2.6.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5602337Z   Downloaded symphonia v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5602671Z   Downloaded symphonia-bundle-mp3 v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5603016Z   Downloaded symphonia-common v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5603340Z   Downloaded symphonia-core v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5603671Z   Downloaded symphonia-format-isomp4 v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5604033Z   Downloaded symphonia-format-mkv v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5604371Z   Downloaded symphonia-format-ogg v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5604716Z   Downloaded symphonia-format-riff v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5605085Z   Downloaded symphonia-metadata v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5605408Z   Downloaded syn v1.0.109
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5605697Z   Downloaded syn v2.0.117
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5605975Z   Downloaded syn v3.0.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5606258Z   Downloaded sync_wrapper v1.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5606575Z   Downloaded synstructure v0.13.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5606886Z   Downloaded tagptr v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5607364Z   Downloaded take_mut v0.2.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5607663Z   Downloaded tar v0.4.45
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5607958Z   Downloaded termcolor v1.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5608255Z   Downloaded termtree v0.5.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5608576Z   Downloaded test-case v3.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5608884Z   Downloaded test-case-core v3.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5609212Z   Downloaded test-case-macros v3.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5609547Z   Downloaded test-log-macros v0.2.19
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5609867Z   Downloaded textwrap v0.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5610179Z   Downloaded thiserror v2.0.18
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5610505Z   Downloaded thiserror-impl v1.0.69
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5610823Z   Downloaded thiserror-impl v2.0.18
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5611160Z   Downloaded thiserror-impl-no-std v2.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5611497Z   Downloaded thread_local v1.1.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5611810Z   Downloaded time-core v0.1.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5612141Z   Downloaded tokio-rustls v0.26.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5612447Z   Downloaded tokio-test v0.4.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5612769Z   Downloaded tokio-util v0.7.18
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5613165Z   Downloaded toml v0.5.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5613458Z   Downloaded tonic v0.14.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5613746Z   Downloaded clap_lex v1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5614038Z   Downloaded clatter v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5614338Z   Downloaded clipboard-win v5.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5614645Z   Downloaded clru v0.6.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5614912Z   Downloaded cmake v0.1.57
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5615184Z   Downloaded cmov v0.5.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5615484Z   Downloaded cmp_any v0.8.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5615771Z   Downloaded cobs v0.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5616046Z   Downloaded color_quant v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5616340Z   Downloaded colorchoice v1.0.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5616640Z   Downloaded concurrent-queue v2.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5616964Z   Downloaded console v0.16.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5617243Z   Downloaded dirs v6.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5617524Z   Downloaded dirs-next v2.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5617811Z   Downloaded dirs-sys v0.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5618113Z   Downloaded dirs-sys-next v0.1.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5618428Z   Downloaded display_container v0.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5618784Z   Downloaded displaydoc v0.2.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5619095Z   Downloaded document-features v0.2.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5619404Z   Downloaded dotenvy v0.15.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5619700Z   Downloaded downcast-rs v1.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5620001Z   Downloaded dunce v1.0.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5620289Z   Downloaded hybrid-array v0.4.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5620601Z   Downloaded hyper v1.8.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5620900Z   Downloaded hyper-rustls v0.27.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5621222Z   Downloaded hyper-timeout v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5621539Z   Downloaded hyper-tls v0.6.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5621840Z   Downloaded icu_plurals v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5622166Z   Downloaded icu_plurals_data v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5622477Z   Downloaded ident_case v1.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5622762Z   Downloaded idna v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5623043Z   Downloaded idna_adapter v1.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5623370Z   Downloaded serde_path_to_error v0.1.20
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5623690Z   Downloaded serde_repr v0.1.20
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5623994Z   Downloaded serde_spanned v1.0.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5624307Z   Downloaded serde_urlencoded v0.7.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5624618Z   Downloaded test-log v0.2.19
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5624911Z   Downloaded thiserror-no-std v2.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5625227Z   Downloaded time v0.3.47
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5625539Z   Downloaded time-macros v0.2.27
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5625839Z   Downloaded tiny_http v0.12.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5626141Z   Downloaded tokio-native-tls v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5626459Z   Downloaded tokio-stream v0.1.19
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5626772Z   Downloaded toml v0.9.11+spec-1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5627106Z   Downloaded toml_datetime v0.7.5+spec-1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5627461Z   Downloaded toml_edit v0.23.10+spec-1.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5627986Z   Downloaded toml_edit v0.24.0+spec-1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5628332Z   Downloaded toml_parser v1.0.6+spec-1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5628669Z   Downloaded toml_writer v1.0.6+spec-1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5629016Z   Downloaded tonic-prost v0.14.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5629321Z   Downloaded tonic-types v0.14.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5629626Z   Downloaded tower-http v0.6.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5629927Z   Downloaded tower-layer v0.3.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5630228Z   Downloaded tower-service v0.3.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5630535Z   Downloaded ts-rs-macros v11.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5630830Z   Downloaded typed-path v0.12.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5631118Z   Downloaded typeid v1.0.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5631392Z   Downloaded typenum v1.20.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5631675Z   Downloaded unarray v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5631966Z   Downloaded icu_properties v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5632326Z   Downloaded icu_properties_data v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5632655Z   Downloaded icu_provider v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5632960Z   Downloaded ignore v0.4.25
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5633258Z   Downloaded image v0.25.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5633660Z   Downloaded image-webp v0.2.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5633954Z   Downloaded imara-diff v0.1.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5634257Z   Downloaded imara-diff v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5634565Z   Downloaded rand_xorshift v0.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5634876Z   Downloaded rust-embed-impl v8.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5635204Z   Downloaded rust-embed-utils v8.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5635527Z   Downloaded rustc-hash v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5635846Z   Downloaded rustc-hash v2.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5636139Z   Downloaded rustc_version v0.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5636451Z   Downloaded rusticata-macros v4.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5636784Z   Downloaded rustls-native-certs v0.8.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5637114Z   Downloaded sequence_trie v0.3.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5637434Z   Downloaded serde_html_form v0.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5637743Z   Downloaded serde_ignored v0.1.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5638051Z   Downloaded actix-codec v0.5.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5638413Z   Downloaded serde_yaml v0.9.34+deprecated
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5638774Z   Downloaded static_assertions v1.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5639125Z   Downloaded static_interner v0.1.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5639446Z   Downloaded type-map v0.5.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5639749Z   Downloaded unic-langid-impl v0.9.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5640063Z   Downloaded unicase v2.9.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5640360Z   Downloaded unicode-bidi v0.3.18
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5640658Z   Downloaded unicode-bom v2.0.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5640959Z   Downloaded unicode-ident v1.0.22
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5641265Z   Downloaded widestring v1.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5641556Z   Downloaded wildcard v0.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5641846Z   Downloaded wildmatch v2.6.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5642130Z   Downloaded winapi-util v0.1.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5642473Z   Downloaded windows-collections v0.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5642787Z   Downloaded windows-core v0.58.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5643099Z   Downloaded windows-core v0.62.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5643398Z   Downloaded windows-future v0.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5643792Z   Downloaded const-hex v1.17.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5644105Z   Downloaded crypto-bigint v0.5.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5644421Z   Downloaded crypto-common v0.1.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5644753Z   Downloaded crypto-common v0.2.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5645065Z   Downloaded multimap v0.10.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5645381Z   Downloaded native-tls v0.2.14
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5645711Z   Downloaded normalize-line-endings v0.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5646073Z   Downloaded rand_core v0.10.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5646375Z   Downloaded regex-lite v0.1.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5646678Z   Downloaded rustc-demangle v0.1.27
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5647009Z   Downloaded rustls-pki-types v1.14.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5647337Z   Downloaded rustls-webpki v0.103.16
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5647651Z   Downloaded serde_core v1.0.228
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5647946Z   Downloaded serde_derive v1.0.228
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5648464Z   Downloaded serde_derive_internals v0.29.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5648805Z   Downloaded mime_guess v2.0.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5649109Z   Downloaded mio v1.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5649389Z   Downloaded nom v7.1.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5649706Z   Downloaded notify v8.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5650006Z   Downloaded serde v1.0.228
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5650296Z   Downloaded serde_json v1.0.149
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5650615Z   Downloaded serde_with_macros v3.17.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5650941Z   Downloaded tower v0.5.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5651226Z   Downloaded unic-langid v0.9.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5651551Z   Downloaded minimal-lexical v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5651865Z   Downloaded miniz_oxide v0.8.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5652167Z   Downloaded moxcms v0.7.11
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5652438Z   Downloaded nom v8.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5652731Z   Downloaded reqwest v0.12.28
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5653052Z   Downloaded reqwest v0.13.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5653335Z   Downloaded serde_with v3.17.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5653630Z   Downloaded winapi v0.3.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5653912Z   Downloaded nix v0.28.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5654312Z   Downloaded notify-types v2.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5654615Z   Downloaded num-bigint v0.4.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5654936Z   Downloaded num-complex v0.4.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5655239Z   Downloaded num-integer v0.1.46
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5655543Z   Downloaded num-traits v0.2.19
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5655834Z   Downloaded num_cpus v1.17.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5656115Z   Downloaded oauth2 v5.0.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5656435Z   Downloaded regex-syntax v0.8.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5656729Z   Downloaded rustls v0.23.46
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5657030Z   Downloaded libsqlite3-sys v0.37.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5657344Z   Downloaded windows-implement v0.60.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5657659Z   Downloaded matchers v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5657947Z   Downloaded md5 v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5658225Z   Downloaded memmap2 v0.9.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5658527Z   Downloaded memoffset v0.9.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5658837Z   Downloaded rust-stemmers v1.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5659161Z   Downloaded windows-interface v0.58.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5659486Z   Downloaded lru-slab v0.1.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5659811Z   Downloaded lsp-types v0.97.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5660119Z   Downloaded matchit v0.8.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5660406Z   Downloaded matchit v0.9.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5660699Z   Downloaded memchr v2.8.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5660994Z   Downloaded windows-implement v0.58.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5661329Z   Downloaded windows-interface v0.59.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5661649Z   Downloaded windows-link v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5661964Z   Downloaded windows-numerics v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5664182Z   Downloaded windows-registry v0.6.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5664696Z   Downloaded http-body-util v0.1.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5665199Z   Downloaded http-range-header v0.4.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5665727Z   Downloaded httparse v1.10.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5666191Z   Downloaded httpdate v1.0.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5666598Z   Downloaded hybrid-array v0.2.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5666970Z   Downloaded iana-time-zone v0.1.65
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5667321Z   Downloaded icu_collections v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5667669Z   Downloaded icu_normalizer v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5667999Z   Downloaded inout v0.1.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5668320Z   Downloaded intl_pluralrules v7.0.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5668660Z   Downloaded io-close v0.3.7
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5668997Z   Downloaded is_terminal_polyfill v1.70.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5669390Z   Downloaded icu_decimal v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5669714Z   Downloaded icu_decimal_data v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5670050Z   Downloaded icu_normalizer_data v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5670386Z   Downloaded intl-memoizer v0.5.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5670705Z   Downloaded inventory v0.3.24
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5671023Z   Downloaded io_tee v0.1.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5671330Z   Downloaded ipconfig v0.3.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5671647Z   Downloaded ipnet v2.11.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5672226Z   Downloaded icu_locale v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5672546Z   Downloaded icu_locale_core v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5672891Z   Downloaded icu_locale_data v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5673274Z   Downloaded indexmap v2.14.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5673600Z   Downloaded hostname v0.4.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5673901Z   Downloaded windows-result v0.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5674224Z   Downloaded windows-result v0.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5674558Z   Downloaded windows-strings v0.1.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5674887Z   Downloaded windows-strings v0.5.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5675219Z   Downloaded windows-targets v0.48.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5675565Z   Downloaded windows-targets v0.52.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5675898Z   Downloaded windows-targets v0.53.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5676235Z   Downloaded windows-threading v0.2.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5676570Z   Downloaded crypto_box v0.9.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5676980Z   Downloaded dupe v0.9.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5677276Z   Downloaded dupe_derive v0.9.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5677588Z   Downloaded dyn-clone v1.0.20
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5677890Z   Downloaded ed25519 v2.2.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5678327Z   Downloaded headers-core v0.3.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5678643Z   Downloaded heck v0.5.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5678936Z   Downloaded hex v0.4.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5679231Z   Downloaded home v0.5.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5679537Z   Downloaded http-body v0.4.6
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5679868Z   Downloaded http-body v1.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5680227Z   Downloaded i18n-config v0.4.8
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5680543Z   Downloaded i18n-embed-fl v0.9.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5680871Z   Downloaded i18n-embed-impl v0.8.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5681242Z   Downloaded impl-more v0.1.9
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5681560Z   Downloaded include_dir v0.7.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5681906Z   Downloaded include_dir_macros v0.7.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5682327Z   Downloaded iri-string v0.7.10
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5682853Z   Downloaded hmac v0.12.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5683206Z   Downloaded hmac v0.13.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5683506Z   Downloaded i18n-embed v0.15.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5683811Z   Downloaded indenter v0.3.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5684124Z   Downloaded indexmap v1.9.3
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5684420Z   Downloaded headers v0.4.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5684716Z   Downloaded heapless v0.8.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5685016Z   Downloaded insta v1.48.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5685330Z   Downloaded ed25519-dalek v2.2.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5685670Z   Downloaded heapless v0.7.17
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5686001Z   Downloaded hickory-resolver v0.25.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5686342Z   Downloaded http v0.2.12
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5686663Z   Downloaded http v1.4.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5686953Z   Downloaded hyper-util v0.1.20
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5687247Z   Downloaded hkdf v0.12.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5687533Z   Downloaded hkdf v0.13.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5687834Z   Downloaded once_cell_polyfill v1.70.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5688169Z   Downloaded opaque-debug v0.3.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5688486Z   Downloaded once_cell v1.21.4
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5688809Z   Downloaded hickory-proto v0.25.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5689164Z   Downloaded windows_x86_64_msvc v0.48.5
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5689509Z   Downloaded windows-sys v0.59.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5689838Z   Downloaded windows-sys v0.60.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5690184Z   Downloaded windows-sys v0.61.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5690500Z   Downloaded windows-sys v0.52.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5690846Z   Downloaded windows-sys v0.48.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5691158Z   Downloaded windows v0.62.2
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5691482Z   Downloaded windows v0.58.0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5785462Z     Finished `dev` profile [unoptimized + debuginfo] target(s) in 9m 35s
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5786696Z warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5787816Z note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+clippy	cargo clippy per commit	2026-11-08T11:50:59.5825054Z === RESULT 21b238bd1b3d3797fff359057e8e42bbbae91856 clippy exit 0
+clippy	cargo clippy per commit	2026-11-08T11:50:59.8328957Z === commit dbf58a8e5af59fa2d031b394e38b5dedd1c6c328
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0188998Z error[E0432]: unresolved import `super::tainted_action_redirect_tests::HOME`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0189776Z    --> core\src\security\tainted_action_reading_tests.rs:270:9
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0190189Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0191025Z 270 |     use super::tainted_action_redirect_tests::HOME;
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0191494Z     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0191860Z     |                                               |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0192431Z     |                                               no `HOME` in `security::tainted_action::tainted_action_redirect_tests`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0192908Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0193149Z note: found an item that was configured out
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0193574Z    --> core\src\security\tainted_action_redirect_tests.rs:13:18
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0193967Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0194205Z  12 | #[cfg(unix)]
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0194473Z     |       ---- the item is gated here
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0195215Z  13 | pub(super) const HOME: &str = "/home/fixture/.corbanu";
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0195600Z     |                  ^^^^
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0195770Z 
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0196069Z error[E0432]: unresolved import `super::tainted_action_redirect_tests::action_in`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0196641Z    --> core\src\security\tainted_action_reading_tests.rs:271:9
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0197013Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0197290Z 271 |     use super::tainted_action_redirect_tests::action_in;
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0197697Z     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0198065Z     |                                               |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0198638Z     |                                               no `action_in` in `security::tainted_action::tainted_action_redirect_tests`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0199127Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0199366Z note: found an item that was configured out
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0199770Z    --> core\src\security\tainted_action_redirect_tests.rs:53:15
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0200147Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0200329Z  52 | #[cfg(unix)]
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0200666Z     |       ---- the item is gated here
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0201119Z  53 | pub(super) fn action_in(work: &Path, argv: &[&str]) -> ApprovalAction {
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0201599Z     |               ^^^^^^^^^
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0201808Z 
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0202099Z error[E0432]: unresolved import `super::tainted_action_redirect_tests::workspace`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0202654Z    --> core\src\security\tainted_action_reading_tests.rs:272:9
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0203015Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0203267Z 272 |     use super::tainted_action_redirect_tests::workspace;
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0203595Z     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^---------
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0203886Z     |                                               |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0204324Z     |                                               no `workspace` in `security::tainted_action::tainted_action_redirect_tests`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0204740Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0204939Z note: found an item that was configured out
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0205279Z    --> core\src\security\tainted_action_redirect_tests.rs:37:15
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0205564Z     |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0205730Z  36 | #[cfg(unix)]
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0206089Z     |       ---- the item is gated here
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0206430Z  37 | pub(super) fn workspace(files: &[(&str, &str)]) -> tempfile::TempDir {
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0206771Z     |               ^^^^^^^^^
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0206909Z 
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0207001Z error: unused import: `super::*`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0207286Z  --> core\src\security\tainted_action_redirect_tests.rs:9:5
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0207573Z   |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0207744Z 9 | use super::*;
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0207929Z   |     ^^^^^^^^
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0208103Z   |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0208532Z   = note: `-D unused-imports` implied by `-D warnings`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0208893Z   = help: to override `-D warnings` add `#[allow(unused_imports)]`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0209127Z 
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0209261Z error: unused import: `pretty_assertions::assert_eq`
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0209595Z   --> core\src\security\tainted_action_redirect_tests.rs:10:5
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0209872Z    |
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0210066Z 10 | use pretty_assertions::assert_eq;
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0210311Z    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0210462Z 
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0210634Z For more information about this error, try `rustc --explain E0432`.
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0211064Z error: could not compile `codex-core` (lib test) due to 5 previous errors
+clippy	cargo clippy per commit	2026-11-08T11:52:31.0377530Z ##[error]Process completed with exit code 101.
+clippy	Complete job	﻿2026-11-08T11:52:31.0517296Z Cleaning up orphan processes
+clippy	Complete job	2026-11-08T11:52:31.0831811Z Terminate orphan process: pid (576) (vctip)
