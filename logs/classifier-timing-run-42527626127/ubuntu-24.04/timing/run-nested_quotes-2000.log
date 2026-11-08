@@ -1,0 +1,35 @@
+warning: unused import: `futures::FutureExt`
+  --> core/src/accounting_chat_tests.rs:19:5
+   |
+19 | use futures::FutureExt;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `lock_state_for_accounting_fixture` is never used
+    --> core/src/session/turn.rs:4125:25
+     |
+4124 | impl Session {
+     | ------------ method in this implementation
+4125 |     pub(crate) async fn lock_state_for_accounting_fixture(&self) -> impl Drop + '_ {
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Denied` is never constructed
+   --> core/src/accounting_chat_tests.rs:219:8
+    |
+219 | struct Denied;
+    |        ^^^^^^
+
+
+running 1 test
+probe	nested_quotes	2000	16006	warmup	3771245	Some(UnseenCode)
+probe	nested_quotes	2000	16006	1	3175364	Some(UnseenCode)
+probe	nested_quotes	2000	16006	2	3233840	Some(UnseenCode)
+probe	nested_quotes	2000	16006	3	3174152	Some(UnseenCode)
+probe	nested_quotes	2000	16006	4	3196835	Some(UnseenCode)
+probe	nested_quotes	2000	16006	5	3194623	Some(UnseenCode)
+.
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3753 filtered out; finished in 0.02s
+
