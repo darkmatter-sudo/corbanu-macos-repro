@@ -1,0 +1,17 @@
+main:  f048967c21137e1b3e74b2db3cc4afbb7c34c10a
+probe: 100df4acf0dffd3932db0c524cdb6a65865dbf2c (darkmatter-sudo/CorbanuTerminal)
+probe parents: f048967c21137e1b3e74b2db3cc4afbb7c34c10a 
+ codex-rs/core/src/security/tainted_action.rs       |   4 +
+ .../src/security/tainted_action_timing_probe.rs    | 141 +++++++++++++++++++++
+ scripts/classifier_timing_probe.sh                 | 125 ++++++++++++++++++
+ 3 files changed, 270 insertions(+)
+uname: Linux runnervm7aw5e 7.0.0-1017-azure #17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+runner: ubuntu24 image 20261101.360.1
+CARGO_INCREMENTAL=0
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=16
+CARGO_PROFILE_RELEASE_LTO=false
+RUST_MIN_STACK=8388608
+model name	: AMD EPYC 7763 64-Core Processor
+4
+Mem:           15983        1083       13118          42        2159       14900
+merged tree: 100df4acf0dffd3932db0c524cdb6a65865dbf2c

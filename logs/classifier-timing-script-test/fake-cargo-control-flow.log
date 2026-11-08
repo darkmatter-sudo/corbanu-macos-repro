@@ -1,0 +1,48 @@
+# 2026-11-08T23:33:41Z classifier_timing_probe.sh control-flow test with a fake cargo (no Rust build); script sha256 b48d921b261fb0844aeae91654b3033c03de0c5f250671fb982eb6e2e341b8fd
+## fake cargo
+#!/bin/bash
+case " $* " in *" --no-run "*) echo "fake build"; exit 0;; esac
+[ "$PROBE_UNITS" = 3 ] && sleep 5
+[ "$PROBE_PATTERN" = crash ] && exit 3
+for r in warmup $(seq 1 "$PROBE_REPS"); do printf 'probe\t%s\t%s\t%s\t%s\t%s\tNone\n' "$PROBE_PATTERN" "$PROBE_UNITS" 10 "$r" $((PROBE_UNITS*1000000)); done
+## A: GNU timeout on PATH, PROBE_SIZES='1 2 3' PROBE_REPS=2 PROBE_TIMEOUT=2 PROBE_PATTERNS='ok crash' -> rc 1
+== build: cargo test --release -p codex-core --lib --no-run
+fake build
+ok 1: ok
+ok 2: ok
+ok 3: TIMEOUT
+crash 1: EXIT 3
+crash 2: EXIT 3
+crash 3: TIMEOUT
+| pattern | 1 median ms | 2 median ms | 3 median ms | doubling ratios | verdict |
+|---|---|---|---|---|---|
+| ok | 1.000 | 2.000 | TIMEOUT | 2.00 | incomplete (see cells) |
+| crash | EXIT 3 | EXIT 3 | TIMEOUT |  | incomplete (see cells) |
+
+Verdicts on each line (classifier result):
+- ok: None
+- crash: none
+some runs exited with an error; see <tmp>/outA/status.tsv
+## A status.tsv
+ok	1	ok	0.02
+ok	2	ok	0.04
+ok	3	TIMEOUT	2.04
+crash	1	EXIT 3	0.02
+crash	2	EXIT 3	0.05
+crash	3	TIMEOUT	2.04
+## B: PATH without timeout/gtimeout (awk bash cargo cat cut dirname env grep mkdir perl python3 seq sleep tee ), PROBE_PATTERNS=ok -> rc 0
+== build: cargo test --release -p codex-core --lib --no-run
+fake build
+ok 1: ok
+ok 2: ok
+ok 3: TIMEOUT
+| pattern | 1 median ms | 2 median ms | 3 median ms | doubling ratios | verdict |
+|---|---|---|---|---|---|
+| ok | 1.000 | 2.000 | TIMEOUT | 2.00 | incomplete (see cells) |
+
+Verdicts on each line (classifier result):
+- ok: None
+## B status.tsv
+ok	1	ok	0.04
+ok	2	ok	0.05
+ok	3	TIMEOUT	2.02
