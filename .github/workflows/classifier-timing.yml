@@ -1,0 +1,108 @@
+name: classifier-timing
+
+# Task "Benchmark Untested CorbanuTerminal Classifier Input Patterns":
+# wall-clock timings of CorbanuTerminal's command-safety classifier on a
+# release build for nested command substitutions, alias chains, arithmetic
+# with many terms, extglob alternatives and nested quotes at 1k/2k/4k/8k
+# units. Builds CorbanuCore/CorbanuTerminal `commit` with the probe commit
+# from `probe_repo` merged in, runs scripts/classifier_timing_probe.sh and
+# uploads every raw log. Nothing is posted upstream.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: CorbanuCore/CorbanuTerminal main commit.
+        required: true
+      probe_repo:
+        description: Repo (owner/name) holding the probe commit.
+        required: true
+        default: darkmatter-sudo/CorbanuTerminal
+      probe_commit:
+        description: Probe commit in probe_repo.
+        required: true
+      reps:
+        description: Timed runs per pattern and size.
+        required: false
+        default: "5"
+
+permissions:
+  contents: read
+
+jobs:
+  timing:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, macos-15]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 180
+    env:
+      COMMIT: ${{ inputs.commit }}
+      PROBE_REPO: ${{ inputs.probe_repo }}
+      PROBE_COMMIT: ${{ inputs.probe_commit }}
+      PROBE_REPS: ${{ inputs.reps }}
+      # Same job-level env as rust-ci-core-security.yml.
+      CARGO_INCREMENTAL: "0"
+      CORBANU_TEST_NO_NATIVE_KEYRING: "1"
+      RUST_MIN_STACK: "8388608"
+    steps:
+      - name: Install Linux build dependencies
+        if: ${{ runner.os == 'Linux' }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update -y
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends pkg-config libcap-dev
+
+      - name: Clone and check out
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/logs"
+          git clone https://github.com/CorbanuCore/CorbanuTerminal.git CorbanuTerminal
+          cd CorbanuTerminal
+          git checkout -q "$COMMIT"
+          git fetch -q "https://github.com/$PROBE_REPO.git" "$PROBE_COMMIT"
+          {
+            echo "main:  $(git rev-parse HEAD)"
+            echo "probe: $(git rev-parse "$PROBE_COMMIT") ($PROBE_REPO)"
+            echo "probe parents: $(git rev-parse "$PROBE_COMMIT^@" | tr '\n' ' ')"
+            git diff --stat "$COMMIT" "$PROBE_COMMIT"
+            echo "uname: $(uname -a)"
+            echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+            if [ "$RUNNER_OS" = Linux ]; then
+              grep -m1 'model name' /proc/cpuinfo; nproc; free -m | sed -n 2p
+            else
+              sysctl -n machdep.cpu.brand_string hw.ncpu hw.memsize; sw_vers
+            fi
+          } 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"
+          git -c user.name=probe -c user.email=probe@invalid merge -q --no-edit "$PROBE_COMMIT"
+          git log -1 --format='merged tree: %H' | tee -a "$RUNNER_TEMP/logs/00-environment.txt"
+
+      - name: Toolchain
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          rustup show active-toolchain || rustup toolchain install
+          { rustc -V; cargo -V; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"
+
+      - name: Probe self-test
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -o pipefail
+          cargo test --release -p codex-core --lib -- \
+            security::tainted_action::tainted_action_timing_probe 2>&1 \
+            | tee "$RUNNER_TEMP/logs/02-selftest.txt"
+
+      - name: Timings
+        working-directory: CorbanuTerminal
+        run: |
+          set -o pipefail
+          scripts/classifier_timing_probe.sh "$RUNNER_TEMP/logs/timing" 2>&1 \
+            | tee "$RUNNER_TEMP/logs/03-timing.txt"
+
+      - name: Upload logs
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: classifier-timing-${{ matrix.runner }}
+          path: ${{ runner.temp }}/logs
