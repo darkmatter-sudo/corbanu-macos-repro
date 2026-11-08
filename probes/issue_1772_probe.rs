@@ -85,6 +85,34 @@ fn issue_1772_probe() {
         ("4-control", x_ok, "ls &>>log"),
         ("4-control", x_ok, "ls & >log"),
         ("4-control", x_ok, "sleep 1 & ls"),
+        // PR #1794 review 1, item 1: the quoted-file scan starting at a
+        // quote that is not a redirection's.
+        ("r1-1", x_evil, "echo '>\"'; ./x; echo '\"'"),
+        ("r1-1", x_evil, "echo \">'\" && ./x && echo \"'\""),
+        ("r1-1", x_evil, "echo '>'; echo \"'\"; ./x; echo \"'\""),
+        ("r1-1", x_evil, "printf '%s\\n' 'a>\"b'; ./x; echo '\"'"),
+        ("r1-1", x_evil, "echo '<\"'; ./x; echo '\"'"),
+        ("r1-1", x_evil, "echo '2>\"'; ./x; echo '\"'"),
+        ("r1-1", x_evil, "case a in \">'\") ;; esac; ./x; echo \"'\""),
+        ("r1-1", x_evil, "ls # >\"\n./x\n# \""),
+        ("r1-1", x_evil, "cat <<'EOF'\na >'\nEOF\n./x\necho \"'\""),
+        ("r1-1", x_evil, "grep '>\"' f | xargs ./x '\"'"),
+        ("r1-1", x_evil, "find . -name '>\"' -exec ./x {} + -name '\"'"),
+        // Review 1, item 2: `&>` under shells that split it.
+        ("r1-2", x_evil, "sh -c 'true &>f ./x'"),
+        ("r1-2", x_evil, "dash -c 'true &>f ./x'"),
+        ("r1-2", x_evil, "bash -c 'true &>f ./x'"),
+        ("r1-2", x_evil, "true &>a ./x"),
+        // Review 1, item 3: a substitution whose stdout is redirected.
+        ("r1-3", x_evil, "$(>&2 echo true) ./x"),
+        ("r1-3", x_evil, "`>&2 echo true` ./x"),
+        ("r1-3", x_evil, "$(>log echo true) ./x"),
+        ("r1-3", x_evil, "$(>&2 printf true) ./x"),
+        ("r1-3", x_evil, "$(echo true >log) ./x"),
+        ("r1-3-control", x_ok, "$(echo ls 2>/dev/null)"),
+        ("r1-3-control", x_ok, "$(echo ls 2>&1)"),
+        ("r1-3-control", x_ok, "$(echo ls)"),
+        ("r1-3-control", x_evil, "$(echo true) ./x"),
     ];
     for (tag, files, line) in issue {
         let names: Vec<&str> = files.iter().map(|(name, _)| *name).collect();
