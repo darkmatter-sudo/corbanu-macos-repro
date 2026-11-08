@@ -51,7 +51,8 @@ jobs:
       - name: cargo clippy per commit
         working-directory: CorbanuTerminal/codex-rs
         run: |
-          set -uo pipefail
+          # Actions' bash runs with -e; keep going so every commit is reported.
+          set +e -uo pipefail
           status=0
           for c in ${{ inputs.commits }}; do
             git checkout -q "$c"
@@ -62,3 +63,4 @@ jobs:
             [ "$rc" -eq 0 ] || status=1
           done
           echo "=== overall status $status (nonzero if any commit failed)"
+          exit "$status"
