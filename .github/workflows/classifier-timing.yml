@@ -46,6 +46,11 @@ jobs:
       CARGO_INCREMENTAL: "0"
       CORBANU_TEST_NO_NATIVE_KEYRING: "1"
       RUST_MIN_STACK: "8388608"
+      # Same release overrides as corbanu-terminal-release.yml. Run 1 used
+      # Cargo.toml's thin LTO: the ubuntu-24.04 runner was shut down while
+      # linking codex-core's test binary (exit 143).
+      CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "16"
+      CARGO_PROFILE_RELEASE_LTO: "false"
     steps:
       - name: Install Linux build dependencies
         if: ${{ runner.os == 'Linux' }}
@@ -69,6 +74,7 @@ jobs:
             git diff --stat "$COMMIT" "$PROBE_COMMIT"
             echo "uname: $(uname -a)"
             echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"
+            env | grep -E '^(CARGO_PROFILE|RUST_MIN_STACK|CARGO_INCREMENTAL)' | sort
             if [ "$RUNNER_OS" = Linux ]; then
               grep -m1 'model name' /proc/cpuinfo; nproc; free -m | sed -n 2p
             else
