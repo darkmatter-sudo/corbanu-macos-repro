@@ -1,0 +1,20 @@
+main:  f048967c21137e1b3e74b2db3cc4afbb7c34c10a
+probe: 100df4acf0dffd3932db0c524cdb6a65865dbf2c (darkmatter-sudo/CorbanuTerminal)
+probe parents: f048967c21137e1b3e74b2db3cc4afbb7c34c10a 
+ codex-rs/core/src/security/tainted_action.rs       |   4 +
+ .../src/security/tainted_action_timing_probe.rs    | 141 +++++++++++++++++++++
+ scripts/classifier_timing_probe.sh                 | 125 ++++++++++++++++++
+ 3 files changed, 270 insertions(+)
+uname: Darwin sat12-dp151-b69a57fa-d89e-4913-b7e0-9b9bac7f2541-1A375E008950.local 24.6.0 Darwin Kernel Version 24.6.0: Sun Oct 11 23:44:11 PDT 2026; root:xnu-11417.140.69.713.47~2/RELEASE_ARM64_VMAPPLE arm64
+runner: macos15 image 20261104.0514.1
+CARGO_INCREMENTAL=0
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=16
+CARGO_PROFILE_RELEASE_LTO=false
+RUST_MIN_STACK=8388608
+Apple M1 (Virtual)
+3
+7516192768
+ProductName:		macOS
+ProductVersion:		15.8.2
+BuildVersion:		24H232
+merged tree: 100df4acf0dffd3932db0c524cdb6a65865dbf2c

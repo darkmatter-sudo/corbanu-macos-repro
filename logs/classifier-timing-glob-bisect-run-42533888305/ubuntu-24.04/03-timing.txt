@@ -1,0 +1,67 @@
+== build: cargo test --release -p codex-core --lib --no-run
+warning: unused import: `futures::FutureExt`
+  --> core/src/accounting_chat_tests.rs:19:5
+   |
+19 | use futures::FutureExt;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `lock_state_for_accounting_fixture` is never used
+    --> core/src/session/turn.rs:4125:25
+     |
+4124 | impl Session {
+     | ------------ method in this implementation
+4125 |     pub(crate) async fn lock_state_for_accounting_fixture(&self) -> impl Drop + '_ {
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Denied` is never constructed
+   --> core/src/accounting_chat_tests.rs:219:8
+    |
+219 | struct Denied;
+    |        ^^^^^^
+
+warning: `codex-core` (lib test) generated 3 warnings
+    Finished `release` profile [optimized + debuginfo] target(s) in 1.53s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+  Executable unittests src/lib.rs (target/release/deps/codex_core-759aa748df341ab9)
+glob_alternatives 2030: ok
+glob_alternatives 2031: ok
+glob_alternatives 2032: ok
+glob_alternatives 2033: ok
+glob_alternatives 2034: ok
+glob_alternatives 2035: ok
+glob_alternatives 2036: ok
+glob_alternatives 2037: ok
+glob_alternatives 2038: ok
+glob_alternatives 2039: ok
+glob_alternatives 2040: ok
+glob_alternatives 2041: ok
+glob_alternatives 2042: ok
+glob_alternatives 2043: ok
+glob_alternatives 2044: ok
+glob_alternatives 2045: ok
+glob_alternatives 2046: ok
+glob_alternatives 2047: ok
+glob_alternatives 2048: ok
+glob_alternatives 2049: ok
+glob_alternatives 2050: ok
+glob_alternatives 2051: ok
+glob_alternatives 2052: ok
+glob_alternatives 2053: ok
+glob_alternatives 2054: ok
+glob_alternatives 2055: ok
+glob_alternatives 2056: ok
+glob_alternatives 2057: ok
+glob_alternatives 2058: ok
+glob_alternatives 2059: ok
+glob_alternatives 2060: ok
+| pattern | 2030 median ms | 2031 median ms | 2032 median ms | 2033 median ms | 2034 median ms | 2035 median ms | 2036 median ms | 2037 median ms | 2038 median ms | 2039 median ms | 2040 median ms | 2041 median ms | 2042 median ms | 2043 median ms | 2044 median ms | 2045 median ms | 2046 median ms | 2047 median ms | 2048 median ms | 2049 median ms | 2050 median ms | 2051 median ms | 2052 median ms | 2053 median ms | 2054 median ms | 2055 median ms | 2056 median ms | 2057 median ms | 2058 median ms | 2059 median ms | 2060 median ms | doubling ratios | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| glob_alternatives | 22.217 | 22.602 | 22.656 | 22.906 | 22.212 | 22.851 | 22.311 | 22.484 | 22.705 | 22.774 | 22.394 | 22.186 | 22.082 | 23.136 | 22.989 | 22.140 | 23.160 | 22.688 | 22.533 | 22.496 | 22.655 | 22.484 | 22.468 | 22.895 | 26.365 | 22.907 | 22.941 | 22.564 | 22.291 | 22.499 | 23.729 | 1.02, 1.00, 1.01, 0.97, 1.03, 0.98, 1.01, 1.01, 1.00, 0.98, 0.99, 1.00, 1.05, 0.99, 0.96, 1.05, 0.98, 0.99, 1.00, 1.01, 0.99, 1.00, 1.02, 1.15, 0.87, 1.00, 0.98, 0.99, 1.01, 1.05 | linear |
+
+Verdicts on each line (classifier result):
+- glob_alternatives: None, Some(UnseenCode)

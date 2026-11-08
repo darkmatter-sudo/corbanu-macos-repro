@@ -1,0 +1,6 @@
+| pattern | 2030 median ms | 2031 median ms | 2032 median ms | 2033 median ms | 2034 median ms | 2035 median ms | 2036 median ms | 2037 median ms | 2038 median ms | 2039 median ms | 2040 median ms | 2041 median ms | 2042 median ms | 2043 median ms | 2044 median ms | 2045 median ms | 2046 median ms | 2047 median ms | 2048 median ms | 2049 median ms | 2050 median ms | 2051 median ms | 2052 median ms | 2053 median ms | 2054 median ms | 2055 median ms | 2056 median ms | 2057 median ms | 2058 median ms | 2059 median ms | 2060 median ms | doubling ratios | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| glob_alternatives | 22.217 | 22.602 | 22.656 | 22.906 | 22.212 | 22.851 | 22.311 | 22.484 | 22.705 | 22.774 | 22.394 | 22.186 | 22.082 | 23.136 | 22.989 | 22.140 | 23.160 | 22.688 | 22.533 | 22.496 | 22.655 | 22.484 | 22.468 | 22.895 | 26.365 | 22.907 | 22.941 | 22.564 | 22.291 | 22.499 | 23.729 | 1.02, 1.00, 1.01, 0.97, 1.03, 0.98, 1.01, 1.01, 1.00, 0.98, 0.99, 1.00, 1.05, 0.99, 0.96, 1.05, 0.98, 0.99, 1.00, 1.01, 0.99, 1.00, 1.02, 1.15, 0.87, 1.00, 0.98, 0.99, 1.01, 1.05 | linear |
+
+Verdicts on each line (classifier result):
+- glob_alternatives: None, Some(UnseenCode)
