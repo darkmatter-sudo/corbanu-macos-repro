@@ -1,0 +1,19 @@
+   Compiling codex-core v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+   Compiling core_test_support v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+   Compiling codex-image-generation-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+   Compiling codex-memories-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+   Compiling codex-web-search-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 56s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/x86_64-unknown-linux-gnu/debug/deps/codex_core-21077267e61b3ab0)
+
+running 4 tests
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_quoted_files_are_linear ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 3728 filtered out; finished in 0.08s
+
+exit=0

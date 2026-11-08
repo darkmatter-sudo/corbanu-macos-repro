@@ -1,0 +1,21 @@
+compared 1061 main / 1061 fix lines
+louder on fix: 18
+  LOUDER PROBE issue#1 "2>/dev/null cd sub && ./run.sh"
+  LOUDER PROBE issue#1 "2>/dev/null find . -exec ./x \\;"
+  LOUDER PROBE issue#1 ">log $(cat x)"
+  LOUDER PROBE issue#1 ">log PATH=.:$PATH x"
+  LOUDER PROBE issue#1 ">log `cat x`"
+  LOUDER PROBE issue#1 ">log cd sub; ./run.sh"
+  LOUDER PROBE issue#1 ">log export PATH=.:$PATH && x"
+  LOUDER PROBE issue#1 ">log pushd sub && ./run.sh"
+  LOUDER PROBE issue#2 "2>'a b' ./x"
+  LOUDER PROBE issue#2 ">'a b' ./x"
+  LOUDER PROBE issue#2 ">\"a b\" ./x"
+  LOUDER PROBE issue#2 ">a\\ b ./x"
+  LOUDER PROBE issue#3 "<a <b ./x"
+  LOUDER PROBE issue#3 "<a <b sudo -A true"
+  LOUDER PROBE issue#3 "sudo 3<a <b -A true"
+  LOUDER PROBE issue#3 "sudo <<<a <<<b -A true"
+  LOUDER PROBE issue#3 "sudo <a <b -A true"
+  LOUDER PROBE issue#4 "&>log cd sub && ./run.sh"
+quieter on fix: 0

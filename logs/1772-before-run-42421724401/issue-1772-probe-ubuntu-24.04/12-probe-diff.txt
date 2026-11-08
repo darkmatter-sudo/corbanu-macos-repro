@@ -1,0 +1,3 @@
+main lines: 1062  fix lines: 1062
+changed lines (- main, + fix):
+diff exit=0

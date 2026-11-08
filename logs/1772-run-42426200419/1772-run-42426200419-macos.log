@@ -1,0 +1,964 @@
+probe (macos-15, aarch64-apple-darwin)	Set up job	﻿2026-11-07T23:39:05.0335050Z Current runner version: '2.338.2'
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0348760Z ##[group]Runner Image Provisioner
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0349250Z Hosted Compute Agent
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0349590Z Version: 20261103.629
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0349970Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0350420Z Build Date: 2026-11-03T17:26:59Z
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0350970Z Worker ID: {19f3624e-89ff-45f1-b462-60b11aebde2d}
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0351440Z Region: westus
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0351760Z Cloud: MacCloud
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0352080Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0352830Z ##[group]Operating System
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0353190Z macOS
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0353480Z 15.8.2
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0353770Z 24H232
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0354060Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0354380Z ##[group]Runner Image
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0354720Z Image: macos-15-arm64
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0355050Z Version: 20261104.0514.1
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0355730Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20261104.0514/images/macos/macos-15-arm64-Readme.md
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0356720Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20261104.0514
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0357330Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0357980Z ##[group]GITHUB_TOKEN Permissions
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0358850Z Contents: read
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0359180Z Metadata: read
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0359520Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0360660Z Secret source: Actions
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0361160Z Cache mode: write
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0361550Z Prepare workflow directory
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0655350Z Prepare all required actions
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.0697200Z Getting action download info
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.3312010Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.5266100Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+probe (macos-15, aarch64-apple-darwin)	Set up job	2026-11-07T23:39:05.6860410Z Complete job name: probe (macos-15, aarch64-apple-darwin)
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	﻿2026-11-07T23:39:05.7311710Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7312340Z with:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7312620Z   path: repro
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7312960Z   repository: darkmatter-sudo/corbanu-macos-repro
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7315350Z   token: ***
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7315630Z   ssh-strict: true
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7315920Z   ssh-user: git
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7316220Z   persist-credentials: true
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7316540Z   clean: true
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7316840Z   sparse-checkout-cone-mode: true
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7317190Z   fetch-depth: 1
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7317470Z   fetch-tags: false
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7317820Z   show-progress: true
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7318130Z   lfs: false
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7318430Z   submodules: false
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7318750Z   set-safe-directory: true
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7319190Z env:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7319510Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7319980Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7320650Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7321130Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7322370Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7323580Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7324030Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7324370Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7339410Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7339740Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:05.7340120Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1220220Z Syncing repository: darkmatter-sudo/corbanu-macos-repro
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1222060Z ##[group]Getting Git version info
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1223390Z Working directory is '/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro'
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1224470Z [command]/opt/homebrew/bin/git version
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1474920Z git version 2.56.0
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1489420Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1496440Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/a2ddfca7-a31f-46dd-a3f7-dba902a8ce72/.gitconfig'
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1503110Z Temporarily overriding HOME='/Users/runner/work/_temp/a2ddfca7-a31f-46dd-a3f7-dba902a8ce72' before making global git config changes
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1504480Z Adding repository directory to the temporary git global config as a safe directory
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1507030Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1604090Z ##[group]Initializing the repository
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1609120Z [command]/opt/homebrew/bin/git init /Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1821490Z hint: Using 'master' as the name for the initial branch. This default branch name
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1827060Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1872890Z hint: to use in all of your new repositories, which will suppress this warning,
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1873930Z hint: call:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1874470Z hint:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1875040Z hint: 	git config --global init.defaultBranch <name>
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1875680Z hint:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1876240Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1877070Z hint: 'development'. The just-created branch can be renamed via this command:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1877750Z hint:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1878200Z hint: 	git branch -m <name>
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1879400Z hint:
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1880040Z hint: Disable this message with "git config set advice.defaultBranchName false"
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1881070Z Initialized empty Git repository in /Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro/.git/
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1892870Z [command]/opt/homebrew/bin/git remote add origin https://github.com/darkmatter-sudo/corbanu-macos-repro
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1934180Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1935060Z ##[group]Disabling automatic garbage collection
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.1935770Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.2007680Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.2008580Z ##[group]Setting up auth
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.2009440Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.2050230Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.2994620Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.3046650Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.3748790Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.3803950Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.3804680Z ##[group]Fetching the repository
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:06.3809510Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +de6e29baf870ce2158dbffda09e2242257a0e10f:refs/remotes/origin/main
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0241770Z From https://github.com/darkmatter-sudo/corbanu-macos-repro
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0243140Z  * [new ref]         de6e29baf870ce2158dbffda09e2242257a0e10f -> origin/main
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0245300Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0246110Z ##[group]Determining the checkout info
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0247390Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0248890Z [command]/opt/homebrew/bin/git sparse-checkout disable
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0321300Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0373520Z ##[group]Checking out the ref
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0375990Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0830600Z Switched to a new branch 'main'
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0835800Z branch 'main' set up to track 'origin/main'.
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0838800Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0922320Z [command]/opt/homebrew/bin/git log -1 --format=%H
+probe (macos-15, aarch64-apple-darwin)	Check out this repo (probe source)	2026-11-07T23:39:07.0975310Z de6e29baf870ce2158dbffda09e2242257a0e10f
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	﻿2026-11-07T23:39:07.1148550Z ##[group]Run set -euo pipefail
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1149500Z ^[[36;1mset -euo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1150310Z ^[[36;1mmkdir -p "$RUNNER_TEMP/logs"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1151640Z ^[[36;1mgit clone https://github.com/CorbanuCore/CorbanuTerminal.git CorbanuTerminal^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1152990Z ^[[36;1mcd CorbanuTerminal^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1153800Z ^[[36;1mgit checkout -q "$COMMIT"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1154900Z ^[[36;1mgit fetch -q "https://github.com/$FIX_REPO.git" "$FIX_COMMIT"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1156720Z ^[[36;1mif [ -n "$PREV_COMMIT" ]; then git fetch -q "https://github.com/$FIX_REPO.git" "$PREV_COMMIT"; fi^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1159080Z ^[[36;1mcp codex-rs/core/src/security/tainted_action_tests.rs "$RUNNER_TEMP/corpus.rs"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1160530Z ^[[36;1m{^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1161330Z ^[[36;1m  echo "main: $(git rev-parse HEAD)"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1162420Z ^[[36;1m  echo "fix:  $(git rev-parse "$FIX_COMMIT") ($FIX_REPO)"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1163840Z ^[[36;1m  echo "fix parents: $(git rev-parse "$FIX_COMMIT^@" | tr '\n' ' ')"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1165460Z ^[[36;1m  if [ -n "$PREV_COMMIT" ]; then echo "prev: $(git rev-parse "$PREV_COMMIT")"; fi^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1167220Z ^[[36;1m  echo "probe sha256: $(shasum -a 256 ../repro/probes/issue_1772_probe.rs | cut -d' ' -f1)"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1169000Z ^[[36;1m  echo "corpus sha256: $(shasum -a 256 "$RUNNER_TEMP/corpus.rs" | cut -d' ' -f1)"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1170350Z ^[[36;1m  echo "uname: $(uname -sm)"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1171430Z ^[[36;1m  echo "runner: ${ImageOS:-?} image ${ImageVersion:-?}"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1172580Z ^[[36;1m  git diff --stat "$COMMIT" "$FIX_COMMIT"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1173650Z ^[[36;1m} 2>&1 | tee "$RUNNER_TEMP/logs/00-environment.txt"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1226740Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1227540Z env:
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1228280Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1229360Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1230420Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1231630Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1235080Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1238200Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1238940Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1239600Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1240360Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1240980Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1241630Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:07.1603320Z Cloning into 'CorbanuTerminal'...
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.4467500Z Updating files:  17% (6537/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.5206760Z Updating files:  18% (6840/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.5819590Z Updating files:  19% (7220/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.6518240Z Updating files:  20% (7600/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.7259210Z Updating files:  21% (7980/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.7688970Z Updating files:  22% (8360/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.8332110Z Updating files:  23% (8740/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:30.9535790Z Updating files:  24% (9120/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.0146910Z Updating files:  25% (9500/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.0960590Z Updating files:  26% (9880/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.1557860Z Updating files:  27% (10260/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.2412150Z Updating files:  28% (10640/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.3258090Z Updating files:  29% (11020/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.3454900Z Updating files:  29% (11339/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.4539590Z Updating files:  30% (11400/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.5203110Z Updating files:  31% (11780/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.5836190Z Updating files:  32% (12160/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.6802630Z Updating files:  33% (12540/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.7322300Z Updating files:  34% (12919/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.7738340Z Updating files:  35% (13299/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.8168600Z Updating files:  36% (13679/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.8529450Z Updating files:  37% (14059/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.8980410Z Updating files:  38% (14439/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.9439160Z Updating files:  39% (14819/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:31.9761250Z Updating files:  40% (15199/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.0256940Z Updating files:  41% (15579/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.0750130Z Updating files:  42% (15959/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.1095260Z Updating files:  43% (16339/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.1483140Z Updating files:  44% (16719/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.2024270Z Updating files:  45% (17099/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.2441260Z Updating files:  46% (17479/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.2890490Z Updating files:  47% (17859/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.3258200Z Updating files:  48% (18239/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.3608530Z Updating files:  48% (18423/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.4046690Z Updating files:  49% (18619/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.4769160Z Updating files:  50% (18999/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.5959180Z Updating files:  51% (19379/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.6393910Z Updating files:  52% (19759/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.7111100Z Updating files:  53% (20139/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.8072140Z Updating files:  54% (20519/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:32.9178350Z Updating files:  55% (20899/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.0237340Z Updating files:  56% (21279/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.1209940Z Updating files:  57% (21659/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.1637070Z Updating files:  58% (22039/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.2746060Z Updating files:  59% (22419/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.3222470Z Updating files:  60% (22799/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.3256030Z Updating files:  61% (23179/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.3665610Z Updating files:  61% (23216/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.4231530Z Updating files:  62% (23559/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.4880570Z Updating files:  63% (23939/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.5510350Z Updating files:  64% (24319/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.6075670Z Updating files:  65% (24699/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.7552190Z Updating files:  66% (25079/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.8329320Z Updating files:  67% (25458/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:33.9334540Z Updating files:  68% (25838/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.0261580Z Updating files:  69% (26218/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.1332170Z Updating files:  70% (26598/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.2180920Z Updating files:  71% (26978/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.3186030Z Updating files:  72% (27358/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.3264060Z Updating files:  73% (27738/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.3740520Z Updating files:  73% (27807/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.4189670Z Updating files:  74% (28118/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.4748220Z Updating files:  75% (28498/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.5860780Z Updating files:  76% (28878/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.6386530Z Updating files:  77% (29258/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.6840300Z Updating files:  78% (29638/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.7373040Z Updating files:  79% (30018/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.7837360Z Updating files:  80% (30398/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.8299340Z Updating files:  81% (30778/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.8725850Z Updating files:  82% (31158/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.9068230Z Updating files:  83% (31538/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:34.9828870Z Updating files:  84% (31918/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.0399240Z Updating files:  85% (32298/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.0915390Z Updating files:  86% (32678/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.1343720Z Updating files:  87% (33058/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.1764720Z Updating files:  88% (33438/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.2648300Z Updating files:  89% (33818/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.3068840Z Updating files:  90% (34198/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.3259110Z Updating files:  91% (34578/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.3495170Z Updating files:  91% (34745/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.3953330Z Updating files:  92% (34958/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.4357250Z Updating files:  93% (35338/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.4967770Z Updating files:  94% (35718/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.5279880Z Updating files:  95% (36098/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.5583050Z Updating files:  96% (36478/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.5953760Z Updating files:  97% (36858/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.7026870Z Updating files:  98% (37238/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.7552420Z Updating files:  99% (37618/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.7554330Z Updating files: 100% (37997/37997)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:35.7556760Z Updating files: 100% (37997/37997), done.
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9038040Z main: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9087790Z fix:  b94f746254d5ba29a23b8eeb85608cee051b9e18 (darkmatter-sudo/CorbanuTerminal)
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9154610Z fix parents: abd0445416e1a47a05bf42d1368fdc75dd520115 
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9205850Z prev: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9658370Z probe sha256: b23efa1195e799b87b0f8e5fc397d335438abae0ede660382e16e299d8ef71d7
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9826970Z corpus sha256: 10b9a4623a4a970ab5321fe692d04305d8a9581857d6a1c7401d555fdbbd7253
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9855400Z uname: Darwin arm64
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9855880Z runner: macos15 image 20261104.0514.1
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9960890Z  codex-rs/core/src/security/tainted_action.rs       |  28 +-
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9961360Z  .../src/security/tainted_action/code_variables.rs  |   4 +-
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9961880Z  .../core/src/security/tainted_action/indirect.rs   |  39 ++-
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9962270Z  .../core/src/security/tainted_action/mktemp.rs     |   5 +-
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9962720Z  codex-rs/core/src/security/tainted_action/rerun.rs |   5 +-
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9963430Z  codex-rs/core/src/security/tainted_action/shell.rs | 169 +++++++++++-
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9964090Z  .../src/security/tainted_action_redirect_tests.rs  | 298 +++++++++++++++++++++
+probe (macos-15, aarch64-apple-darwin)	Clone and check out	2026-11-07T23:39:36.9964580Z  7 files changed, 517 insertions(+), 31 deletions(-)
+probe (macos-15, aarch64-apple-darwin)	Toolchain	﻿2026-11-07T23:39:37.0231190Z ##[group]Run set -euo pipefail
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0231540Z ^[[36;1mset -euo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0232120Z ^[[36;1mrustup show active-toolchain || rustup toolchain install^[[0m
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0232490Z ^[[36;1mrustup target add "$TARGET"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0232960Z ^[[36;1m{ rustc -V; cargo -V; } | tee "$RUNNER_TEMP/logs/01-toolchain.txt"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0274610Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0274870Z env:
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0275070Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0275370Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0275670Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0276070Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0277030Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0277950Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0278130Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0278400Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0278590Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0278760Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.0278930Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.1475670Z info: syncing channel updates for 1.99.1-aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.3595450Z info: latest update on 2026-10-15 for version 1.99.1 (58cf8f9c3 2026-10-13)
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:37.3601020Z info: downloading 6 components
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:44.9618100Z warn: the missing active toolchain `1.99.1-aarch64-apple-darwin` has been auto-installed
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:44.9622570Z 1.99.1-aarch64-apple-darwin (overridden by '/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/rust-toolchain.toml')
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:44.9623490Z warn: auto-installation is deprecated for most `rustup` commands
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:44.9624340Z warn: scripts relying on this behavior in `rustup` may stop working in the future
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:44.9624950Z warn: to install the active toolchain, use `rustup install` instead
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:44.9625640Z warn: see <https://github.com/rust-lang/rustup/issues/4836> for more info
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:45.0486510Z info: component rust-std is up to date
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:45.1216240Z rustc 1.99.1 (58cf8f9c3 2026-10-13)
+probe (macos-15, aarch64-apple-darwin)	Toolchain	2026-11-07T23:39:45.2292290Z cargo 1.99.1 (5f94df478 2026-08-27)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	﻿2026-11-07T23:39:45.2603740Z ##[group]Run set +e -uo pipefail
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2604110Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2604770Z ^[[36;1mcat ../../repro/probes/issue_1772_probe.rs >> core/src/security/tainted_action_tests.rs^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2605400Z ^[[36;1mCORBANU_1772_CORPUS="$RUNNER_TEMP/corpus.rs" \^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2606060Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1772_probe -- --ignored --nocapture --test-threads=1 \^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2606680Z ^[[36;1m  > "$RUNNER_TEMP/logs/10-probe-main.log" 2>&1^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2607060Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/10-probe-main.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2607480Z ^[[36;1mgit checkout -- .^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2608170Z ^[[36;1mgrep -E '^(PROBE|SWEEP-COUNT|CLUSTER-COUNT)' "$RUNNER_TEMP/logs/10-probe-main.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2661400Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2661760Z env:
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2662600Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2663310Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2663710Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2664700Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2666010Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2667140Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2667550Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2667790Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2668100Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2668330Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:39:45.2668630Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:58.3651980Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1310500Z PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1313080Z PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1314730Z PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "pushd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1316340Z PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1335240Z PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1336880Z PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "PATH=.:$PATH", "x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1338140Z PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "export", "PATH=.:$PATH"] stdin=None here=None writes=[0] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1340010Z PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "find", ".", "-exec", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1342120Z PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1343440Z PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1344940Z PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1346650Z PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["pushd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1348310Z PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1350160Z PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1355110Z PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1356410Z PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=None here=None writes=[] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1360860Z PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1362160Z PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1363830Z PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=None here=None writes=[3] held=[2] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1365560Z PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "git", "status"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1369590Z PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "ls"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1370800Z PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1372750Z PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1373960Z PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1374890Z PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1375720Z PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "a", "b", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1376950Z PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1378020Z PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ab", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1378940Z PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls", "a", "b"] stdin=None here=None writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1380040Z PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "hi", "a", "b"] stdin=None here=None writes=[2] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1380940Z PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1382000Z PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1383340Z PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "sudo", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1384390Z PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "3", "a", "b", "-A", "true"] stdin=Some(3) here=None writes=[] held=[1]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1385570Z PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1386580Z PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "./x"] stdin=Some(0) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1387750Z PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1389270Z PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "cat"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1390270Z PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1391300Z PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1392360Z PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1393440Z PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo"] stdin=None here=None writes=[] held=[] | ["log", "-u", "root", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1394850Z PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "sh", "x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1395930Z PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1396990Z PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1397960Z PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1399200Z PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1400240Z PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1401460Z PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sleep", "1"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on main	2026-11-07T23:52:59.1402440Z SWEEP-COUNT 1012
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	﻿2026-11-07T23:52:59.1610020Z ##[group]Run set +e -uo pipefail
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1610480Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1610920Z ^[[36;1mgit checkout -q "$FIX_COMMIT"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1611940Z ^[[36;1mcat ../../repro/probes/issue_1772_probe.rs >> core/src/security/tainted_action_tests.rs^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1612430Z ^[[36;1mCORBANU_1772_CORPUS="$RUNNER_TEMP/corpus.rs" \^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1613330Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1772_probe -- --ignored --nocapture --test-threads=1 \^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1613950Z ^[[36;1m  > "$RUNNER_TEMP/logs/11-probe-fix.log" 2>&1^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1614840Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/11-probe-fix.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1615330Z ^[[36;1mgit checkout -- .^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.1615900Z ^[[36;1mgrep -E '^(PROBE|SWEEP-COUNT|CLUSTER-COUNT)' "$RUNNER_TEMP/logs/11-probe-fix.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5985080Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5985540Z env:
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5985880Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5986980Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5987340Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5987930Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5989990Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5991040Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5991430Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5991740Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5992090Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5992400Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:52:59.5992810Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.4603680Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6190440Z PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6192760Z PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6194300Z PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6195640Z PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6197090Z PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6198440Z PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6199590Z PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH", "log"] stdin=[] here=[] writes=[2] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6200820Z PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x", "2", "/dev/null"] stdin=[] here=[] writes=[5] held=[4]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6203560Z PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6204840Z PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6206150Z PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6207440Z PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6219040Z PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6221670Z PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6223420Z PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6224680Z PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=[] here=[] writes=[] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6225990Z PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6227260Z PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6228720Z PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6232890Z PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "status", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6234270Z PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6235510Z PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6243130Z PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6244490Z PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6246340Z PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6247480Z PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "2", "a b"] stdin=[] here=[] writes=[2] held=[1]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6251450Z PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6252720Z PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "ab"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6253880Z PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6255130Z PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "hi", "a b"] stdin=[] here=[] writes=[2] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6256610Z PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6257740Z PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6259060Z PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6263960Z PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "3", "a", "b"] stdin=[4, 5] here=[] writes=[] held=[3]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6265320Z PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[] here=[3, 4] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6266690Z PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a"] stdin=[1] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6268760Z PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a"] stdin=[3] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6270650Z PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6276040Z PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6277190Z PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[] here=[1, 2] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6278550Z PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6279610Z PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-u", "root", "./x", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6281210Z PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sh", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6282920Z PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6284190Z PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6285120Z PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6286460Z PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6288030Z PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[] | ["log"] stdin=[] here=[] writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6289230Z PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sleep", "1"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on fix	2026-11-07T23:59:21.6290010Z SWEEP-COUNT 1012
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	﻿2026-11-07T23:59:21.6526680Z ##[group]Run set +e -uo pipefail
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6527720Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6528140Z ^[[36;1mgit checkout -q "$PREV_COMMIT"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6528820Z ^[[36;1mcat ../../repro/probes/issue_1772_probe.rs >> core/src/security/tainted_action_tests.rs^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6529320Z ^[[36;1mCORBANU_1772_CORPUS="$RUNNER_TEMP/corpus.rs" \^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6529920Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1772_probe -- --ignored --nocapture --test-threads=1 \^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6530570Z ^[[36;1m  > "$RUNNER_TEMP/logs/13-probe-prev.log" 2>&1^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6531370Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/13-probe-prev.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6531790Z ^[[36;1mgit checkout -- .^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6665420Z ^[[36;1mgrep -E '^PROBE issue#' "$RUNNER_TEMP/logs/13-probe-prev.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6945990Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6946210Z env:
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6946480Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6947350Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6947610Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6947920Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6948850Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6949790Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6950000Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6950200Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6950590Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6950760Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-07T23:59:21.6950950Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.7862850Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9661940Z PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9667670Z PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9670070Z PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9671990Z PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9673430Z PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9674810Z PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9681890Z PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH", "log"] stdin=[] here=[] writes=[2] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9683470Z PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x", "2", "/dev/null"] stdin=[] here=[] writes=[5] held=[4]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9685620Z PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9687020Z PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9688280Z PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9689690Z PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9691320Z PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9692590Z PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9693980Z PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9695300Z PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=[] here=[] writes=[] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9696720Z PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9698190Z PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9699550Z PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9701040Z PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "status", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9702170Z PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9703640Z PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9705160Z PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9706130Z PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9707470Z PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9708500Z PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "2", "a b"] stdin=[] here=[] writes=[2] held=[1]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9709420Z PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9710590Z PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "ab"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9711640Z PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9713060Z PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "hi", "a b"] stdin=[] here=[] writes=[2] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9714220Z PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9715390Z PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9716760Z PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9718200Z PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "3", "a", "b"] stdin=[4, 5] here=[] writes=[] held=[3]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9719320Z PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[] here=[3, 4] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9720740Z PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a"] stdin=[1] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9721880Z PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a"] stdin=[3] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9723290Z PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9724590Z PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9725660Z PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[] here=[1, 2] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9727100Z PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9728400Z PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-u", "root", "./x", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9729930Z PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sh", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9731560Z PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9732630Z PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9733850Z PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9734890Z PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9736410Z PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[] | ["log"] stdin=[] here=[] writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Probe on previous fix commit	2026-11-08T00:03:54.9737850Z PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sleep", "1"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	﻿2026-11-08T00:03:54.9993780Z ##[group]Run set +e -uo pipefail
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9994220Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9994720Z ^[[36;1mcd "$RUNNER_TEMP/logs"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9995140Z ^[[36;1mgrep -E '^(PROBE|SWEEP|CLUSTER)' 10-probe-main.log > main.lines^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9995800Z ^[[36;1mgrep -E '^(PROBE|SWEEP|CLUSTER)' 11-probe-fix.log > fix.lines^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9996480Z ^[[36;1m{^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9996900Z ^[[36;1m  echo "main lines: $(wc -l < main.lines)  fix lines: $(wc -l < fix.lines)"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9997620Z ^[[36;1m  echo "changed lines (- main, + fix):"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9997990Z ^[[36;1m  diff main.lines fix.lines^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9998480Z ^[[36;1m  echo "diff exit=$?"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9998790Z ^[[36;1m} | tee 12-probe-diff.txt^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:54.9999600Z ^[[36;1mpython3 "$GITHUB_WORKSPACE/repro/probes/quieter.py" main.lines fix.lines | tee 14-quieter.txt^[[0m
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0218090Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0218790Z env:
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0219780Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0220470Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0220970Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0222280Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0327810Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0328960Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0329490Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0329840Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0330350Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0330780Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.0331130Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2365400Z main lines:     1062  fix lines:     1062
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2365870Z changed lines (- main, + fix):
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2441760Z 1,49c1,49
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2442770Z < PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2444280Z < PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2446310Z < PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "pushd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2448180Z < PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2449580Z < PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2450930Z < PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "PATH=.:$PATH", "x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2455850Z < PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "export", "PATH=.:$PATH"] stdin=None here=None writes=[0] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2459520Z < PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "find", ".", "-exec", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2460890Z < PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2462270Z < PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2463820Z < PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2466570Z < PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["pushd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2468770Z < PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2470270Z < PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2471860Z < PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2473360Z < PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=None here=None writes=[] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2474920Z < PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2476710Z < PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2478190Z < PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=None here=None writes=[3] held=[2] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2480030Z < PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "git", "status"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2481210Z < PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "ls"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2482850Z < PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2484850Z < PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2485740Z < PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2486970Z < PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2487940Z < PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "a", "b", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2489180Z < PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2490500Z < PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ab", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2491550Z < PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls", "a", "b"] stdin=None here=None writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2492980Z < PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "hi", "a", "b"] stdin=None here=None writes=[2] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2494430Z < PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2495750Z < PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2497100Z < PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "sudo", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2498560Z < PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "3", "a", "b", "-A", "true"] stdin=Some(3) here=None writes=[] held=[1]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2499850Z < PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2502450Z < PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "./x"] stdin=Some(0) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2503810Z < PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2507270Z < PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "cat"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2510790Z < PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2512210Z < PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2516060Z < PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2518780Z < PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo"] stdin=None here=None writes=[] held=[] | ["log", "-u", "root", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2522690Z < PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "sh", "x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2524800Z < PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2526820Z < PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2530890Z < PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2532920Z < PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2534960Z < PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2536750Z < PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sleep", "1"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2538870Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2540080Z > PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2541980Z > PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2544580Z > PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2548010Z > PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2550010Z > PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2552590Z > PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2555630Z > PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH", "log"] stdin=[] here=[] writes=[2] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2558730Z > PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x", "2", "/dev/null"] stdin=[] here=[] writes=[5] held=[4]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2562550Z > PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2567280Z > PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2570560Z > PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2573530Z > PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub"] stdin=[] here=[] writes=[] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2575320Z > PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2576630Z > PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2577950Z > PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2579060Z > PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=[] here=[] writes=[] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2580400Z > PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2581530Z > PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2582840Z > PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2584180Z > PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["git", "status", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2585130Z > PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2586180Z > PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2587660Z > PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2588600Z > PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2589550Z > PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2590360Z > PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "2", "a b"] stdin=[] here=[] writes=[2] held=[1]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2591280Z > PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2592590Z > PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "ab"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2593380Z > PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "a b"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2594380Z > PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["echo", "hi", "a b"] stdin=[] here=[] writes=[2] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2595240Z > PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2596200Z > PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2597420Z > PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[3, 4] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2598470Z > PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "3", "a", "b"] stdin=[4, 5] here=[] writes=[] held=[3]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2599380Z > PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a", "b"] stdin=[] here=[3, 4] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2600760Z > PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "a"] stdin=[1] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2601640Z > PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-A", "true", "a"] stdin=[3] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2602510Z > PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2603380Z > PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[1, 2] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2604190Z > PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "a", "b"] stdin=[] here=[1, 2] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2605120Z > PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2606670Z > PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sudo", "-u", "root", "./x", "log"] stdin=[] here=[] writes=[4] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2609360Z > PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sh", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2610500Z > PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2611800Z > PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["./x", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2614140Z > PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2616240Z > PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2618660Z > PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[] | ["log"] stdin=[] here=[] writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2621360Z > PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["sleep", "1"] stdin=[] here=[] writes=[] held=[] | ["ls"] stdin=[] here=[] writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2622940Z 77c77
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2623600Z < SWEEP "2>&1 ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2624790Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2625420Z > SWEEP "2>&1 ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2626700Z 82c82
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2627840Z < SWEEP "2>log sh x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2628650Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2629280Z > SWEEP "2>log sh x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2630030Z 86,87c86,87
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2630610Z < SWEEP "<<EOF ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2631580Z < SWEEP "<log sh x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2632360Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2632980Z > SWEEP "<<EOF ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2634020Z > SWEEP "<log sh x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2634850Z 91c91
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2635390Z < SWEEP ">&2 ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2636380Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2636760Z > SWEEP ">&2 ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2637110Z 99,100c99,100
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2637350Z < SWEEP ">log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2639570Z < SWEEP ">log eval ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2639930Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2640160Z > SWEEP ">log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2640550Z > SWEEP ">log eval ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2640870Z 464c464
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2641120Z < SWEEP "env >log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2641450Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2641750Z > SWEEP "env >log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2642100Z 471c471
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2642370Z < SWEEP "eval '>log ./x'" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2642700Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2643370Z > SWEEP "eval '>log ./x'" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2643700Z 766c766
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2644010Z < SWEEP "sudo &>log -u root ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2644600Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2644860Z > SWEEP "sudo &>log -u root ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2645170Z 786,787c786,787
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2645450Z < SWEEP "sudo 2>&1 ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2645860Z < SWEEP "sudo 2>log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2646210Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2646430Z > SWEEP "sudo 2>&1 ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2646810Z > SWEEP "sudo 2>log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2647110Z 789c789
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2647330Z < SWEEP "sudo >log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2647620Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2647840Z > SWEEP "sudo >log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2648130Z 1053c1053
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2648350Z < SWEEP "{fd}>log ./x" script=Some(UnseenCode) workspace=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2648630Z ---
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2648830Z > SWEEP "{fd}>log ./x" script=Some(UnseenCode) workspace=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.2649230Z diff exit=1
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4874430Z compared 1061 main / 1061 fix lines
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4955080Z louder on fix: 18
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4955480Z   LOUDER PROBE issue#1 "2>/dev/null cd sub && ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4956120Z   LOUDER PROBE issue#1 "2>/dev/null find . -exec ./x \\;"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4956630Z   LOUDER PROBE issue#1 ">log $(cat x)"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4956880Z   LOUDER PROBE issue#1 ">log PATH=.:$PATH x"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4957170Z   LOUDER PROBE issue#1 ">log `cat x`"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4957710Z   LOUDER PROBE issue#1 ">log cd sub; ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4958200Z   LOUDER PROBE issue#1 ">log export PATH=.:$PATH && x"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4960390Z   LOUDER PROBE issue#1 ">log pushd sub && ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4961350Z   LOUDER PROBE issue#2 "2>'a b' ./x"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4962140Z   LOUDER PROBE issue#2 ">'a b' ./x"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4962860Z   LOUDER PROBE issue#2 ">\"a b\" ./x"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4963540Z   LOUDER PROBE issue#2 ">a\\ b ./x"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4964240Z   LOUDER PROBE issue#3 "<a <b ./x"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4964940Z   LOUDER PROBE issue#3 "<a <b sudo -A true"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4965720Z   LOUDER PROBE issue#3 "sudo 3<a <b -A true"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4966500Z   LOUDER PROBE issue#3 "sudo <<<a <<<b -A true"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4967250Z   LOUDER PROBE issue#3 "sudo <a <b -A true"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4968050Z   LOUDER PROBE issue#4 "&>log cd sub && ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Diff main vs fix	2026-11-08T00:03:55.4968770Z quieter on fix: 0
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	﻿2026-11-08T00:03:55.5290570Z ##[group]Run set +e -uo pipefail
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5290870Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5291060Z ^[[36;1mgit checkout -q "$FIX_COMMIT"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5291490Z ^[[36;1mcargo test --locked --target "$TARGET" -p codex-core --lib issue_1772 > "$RUNNER_TEMP/logs/20-test-fix.log" 2>&1^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5291980Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/20-test-fix.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5292310Z ^[[36;1m# shellcheck disable=SC2086 # REVERT is a word list^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5292590Z ^[[36;1mgit checkout -q "$COMMIT" -- $REVERT^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5292890Z ^[[36;1m# The fix's tests live in a new file that main's tainted_action.rs^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5293240Z ^[[36;1m# does not declare: declare it again, or no test runs (run^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5293520Z ^[[36;1m# 42422234003 ran 0 tests reverted).^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5293770Z ^[[36;1mmod_file=core/src/security/tainted_action.rs^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5294090Z ^[[36;1mif [ -f core/src/security/tainted_action_redirect_tests.rs ] \^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5294540Z ^[[36;1m  && ! grep -q 'mod tainted_action_redirect_tests;' "$mod_file"; then^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5295160Z ^[[36;1m  printf '\n#[cfg(test)]\n#[path = "tainted_action_redirect_tests.rs"]\nmod tainted_action_redirect_tests;\n' >> "$mod_file"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5295830Z ^[[36;1m  echo "declared tainted_action_redirect_tests in reverted $mod_file" | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5296250Z ^[[36;1mfi^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5296480Z ^[[36;1mgit status --short | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5297010Z ^[[36;1mcargo test --locked --target "$TARGET" -p codex-core --lib issue_1772 >> "$RUNNER_TEMP/logs/21-test-reverted.log" 2>&1^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5297510Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/21-test-reverted.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5297810Z ^[[36;1mgit checkout -q "$FIX_COMMIT" -- .^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5298030Z ^[[36;1mif [ -n "$PREV_COMMIT" ]; then^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5298350Z ^[[36;1m  # shellcheck disable=SC2086 # REVERT is a word list^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5298680Z ^[[36;1m  git checkout -q "$PREV_COMMIT" -- $REVERT^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5299000Z ^[[36;1m  git status --short | tee -a "$RUNNER_TEMP/logs/22-test-prev-code.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5299520Z ^[[36;1m  cargo test --locked --target "$TARGET" -p codex-core --lib issue_1772 >> "$RUNNER_TEMP/logs/22-test-prev-code.log" 2>&1^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5300030Z ^[[36;1m  echo "exit=$?" | tee -a "$RUNNER_TEMP/logs/22-test-prev-code.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5300330Z ^[[36;1m  git checkout -q "$FIX_COMMIT" -- .^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5300540Z ^[[36;1mfi^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5300670Z ^[[36;1mgit status --short^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5300870Z ^[[36;1mfor log in "$RUNNER_TEMP"/logs/2*.log; do^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5301200Z ^[[36;1m  if grep -q '^running 0 tests' "$log" && ! grep -q '^running [1-9]' "$log"; then^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5301570Z ^[[36;1m    echo "NO TESTS RAN: $(basename "$log")" | tee -a "$log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5301990Z ^[[36;1m  fi^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5302120Z ^[[36;1mdone^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5302470Z ^[[36;1mgrep -E '^test |^test result:|panicked|left:|right:|should|NO TESTS RAN' "$RUNNER_TEMP"/logs/2*.log | head -60^[[0m
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5346280Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5346500Z env:
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5346710Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5347040Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5347310Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5347590Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5348500Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5349360Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5350130Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5350300Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5350480Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5350620Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:03:55.5350780Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:46.7519850Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:46.9098640Z declared tainted_action_redirect_tests in reverted core/src/security/tainted_action.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:48.2551130Z MM core/src/security/tainted_action.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:48.2553190Z M  core/src/security/tainted_action/code_variables.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:48.2556180Z M  core/src/security/tainted_action/indirect.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:48.2564030Z M  core/src/security/tainted_action/mktemp.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:48.2568430Z M  core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:07:48.2569350Z M  core/src/security/tainted_action/shell.rs
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:13:32.7135870Z exit=101
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:47.4340150Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8414230Z /Users/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8416550Z /Users/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_quoted_files_are_linear ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8417960Z /Users/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8420480Z /Users/runner/work/_temp/logs/20-test-fix.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8421610Z /Users/runner/work/_temp/logs/20-test-fix.log:test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 3735 filtered out; finished in 1.80s
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8430140Z /Users/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_quoted_files_are_linear ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8431470Z /Users/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... FAILED
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8433030Z /Users/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... FAILED
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8434330Z /Users/runner/work/_temp/logs/21-test-reverted.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does ... FAILED
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8440960Z /Users/runner/work/_temp/logs/21-test-reverted.log:thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask' (217844) panicked at core/src/security/tainted_action_redirect_tests.rs:141:5:
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8442980Z /Users/runner/work/_temp/logs/21-test-reverted.log:thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks' (217823) panicked at core/src/security/tainted_action_redirect_tests.rs:166:5:
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8462330Z /Users/runner/work/_temp/logs/21-test-reverted.log:thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does' (217824) panicked at core/src/security/tainted_action_redirect_tests.rs:176:5:
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8467330Z /Users/runner/work/_temp/logs/21-test-reverted.log:test result: FAILED. 1 passed; 3 failed; 0 ignored; 0 measured; 3735 filtered out; finished in 2.39s
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8472760Z /Users/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_lexer_reads_redirections_as_the_shell_does ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8474120Z /Users/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_quoted_files_are_linear ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8478520Z /Users/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8492040Z /Users/runner/work/_temp/logs/22-test-prev-code.log:test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... ok
+probe (macos-15, aarch64-apple-darwin)	Regression test on the fix, and with the fix reverted	2026-11-08T00:19:49.8493440Z /Users/runner/work/_temp/logs/22-test-prev-code.log:test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 3735 filtered out; finished in 1.80s
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	﻿2026-11-08T00:19:49.9201810Z ##[group]Run set +e -uo pipefail
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9206820Z ^[[36;1mset +e -uo pipefail^[[0m
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9207250Z ^[[36;1mgit checkout -q "$FIX_COMMIT"^[[0m
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9208370Z ^[[36;1mcargo build --locked --target "$TARGET" -p codex-code-mode-host -p codex-rmcp-client --bins > /dev/null 2>&1 || true^[[0m
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9212520Z ^[[36;1mcargo test --locked --target "$TARGET" -p codex-core --lib -- security:: > "$RUNNER_TEMP/logs/30-security-fix.log" 2>&1^[[0m
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9217330Z ^[[36;1mecho "exit=$?" | tee -a "$RUNNER_TEMP/logs/30-security-fix.log"^[[0m
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9219550Z ^[[36;1mgrep -E '^test result:|FAILED|^failures:' "$RUNNER_TEMP/logs/30-security-fix.log" | head -40^[[0m
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9943180Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9946010Z env:
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9948220Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9950770Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9956400Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9958510Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9961340Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9963320Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9964150Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9964790Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9966100Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9972480Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:19:49.9977900Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:28:13.2709780Z exit=0
+probe (macos-15, aarch64-apple-darwin)	security:: suite on the fix	2026-11-08T00:28:13.2857180Z test result: ok. 809 passed; 0 failed; 5 ignored; 0 measured; 2925 filtered out; finished in 247.54s
+probe (macos-15, aarch64-apple-darwin)	Summary	﻿2026-11-08T00:28:13.3130270Z ##[group]Run cd "$RUNNER_TEMP/logs" || exit 0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.3130730Z ^[[36;1mcd "$RUNNER_TEMP/logs" || exit 0^[[0m
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.3131300Z ^[[36;1m# 4*.log (fmt/clippy) exist only on Linux: a missing file must not fail the summary.^[[0m
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.3131870Z ^[[36;1mgrep -h '^exit=\|exit=' 1*.log 2*.log 3*.log 4*.log 2>/dev/null || true^[[0m
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.3132310Z ^[[36;1mgrep -h '^test result:' 2*.log 3*.log 2>/dev/null^[[0m
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.3132650Z ^[[36;1mcat 14-quieter.txt 2>/dev/null^[[0m
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.3133020Z ^[[36;1mcat 12-probe-diff.txt 2>/dev/null | head -60^[[0m
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4638300Z shell: /bin/bash -e {0}
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4646210Z env:
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4646560Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4646920Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4647290Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4647650Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4648670Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4649680Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4649910Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4650280Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4650630Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4650850Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.4651120Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5367680Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5368600Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5368960Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5369350Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5369800Z exit=101
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5370190Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5370560Z exit=0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5418600Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 3735 filtered out; finished in 1.80s
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5420280Z test result: FAILED. 1 passed; 3 failed; 0 ignored; 0 measured; 3735 filtered out; finished in 2.39s
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5421740Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 3735 filtered out; finished in 1.80s
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5423330Z test result: ok. 809 passed; 0 failed; 5 ignored; 0 measured; 2925 filtered out; finished in 247.54s
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5455060Z compared 1061 main / 1061 fix lines
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5456460Z louder on fix: 18
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5456940Z   LOUDER PROBE issue#1 "2>/dev/null cd sub && ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5457440Z   LOUDER PROBE issue#1 "2>/dev/null find . -exec ./x \\;"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5457930Z   LOUDER PROBE issue#1 ">log $(cat x)"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5458250Z   LOUDER PROBE issue#1 ">log PATH=.:$PATH x"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5458610Z   LOUDER PROBE issue#1 ">log `cat x`"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5458890Z   LOUDER PROBE issue#1 ">log cd sub; ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5459350Z   LOUDER PROBE issue#1 ">log export PATH=.:$PATH && x"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5459920Z   LOUDER PROBE issue#1 ">log pushd sub && ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5460310Z   LOUDER PROBE issue#2 "2>'a b' ./x"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5460770Z   LOUDER PROBE issue#2 ">'a b' ./x"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5461130Z   LOUDER PROBE issue#2 ">\"a b\" ./x"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5461500Z   LOUDER PROBE issue#2 ">a\\ b ./x"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5461830Z   LOUDER PROBE issue#3 "<a <b ./x"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5462180Z   LOUDER PROBE issue#3 "<a <b sudo -A true"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5462590Z   LOUDER PROBE issue#3 "sudo 3<a <b -A true"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5462900Z   LOUDER PROBE issue#3 "sudo <<<a <<<b -A true"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5463230Z   LOUDER PROBE issue#3 "sudo <a <b -A true"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5463540Z   LOUDER PROBE issue#4 "&>log cd sub && ./run.sh"
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5463920Z quieter on fix: 0
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5500970Z main lines:     1062  fix lines:     1062
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5502190Z changed lines (- main, + fix):
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5503710Z 1,49c1,49
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5505060Z < PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5507590Z < PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5519830Z < PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "pushd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5521530Z < PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5522710Z < PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["log", "\u{1}unseen-output\u{1}"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5523820Z < PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "PATH=.:$PATH", "x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5525010Z < PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "export", "PATH=.:$PATH"] stdin=None here=None writes=[0] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5526320Z < PROBE issue#1 "2>/dev/null find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "find", ".", "-exec", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5527490Z < PROBE issue#1 ">log git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5528710Z < PROBE issue#1-control "cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5530080Z < PROBE issue#1-control "cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5531450Z < PROBE issue#1-control "pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["pushd", "sub"] stdin=None here=None writes=[] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5532750Z < PROBE issue#1-control "$(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5534140Z < PROBE issue#1-control "`cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "x"] stdin=None here=None writes=[] held=[] | ["\u{1}unseen-output\u{1}"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5535260Z < PROBE issue#1-control "PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["PATH=.:$PATH", "x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5536780Z < PROBE issue#1-control "export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["export", "PATH=.:$PATH"] stdin=None here=None writes=[] held=[] | ["x"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5538010Z < PROBE issue#1-control "find . -exec ./x \\;" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["find", ".", "-exec", "./x"] stdin=None here=None writes=[] held=[]] verdict=Some(Credentials)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5539200Z < PROBE issue#1-control "git -c core.pager=./x log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["git", "-c", "core.pager=./x", "log"] stdin=None here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5540550Z < PROBE issue#1-control "cd sub 2>/dev/null && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=None here=None writes=[3] held=[2] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5541850Z < PROBE issue#1-control "2>/dev/null git status" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "git", "status"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5542860Z < PROBE issue#1-control ">log ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "ls"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5543970Z < PROBE issue#1-control "2>/dev/null cd sub && ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "/dev/null", "cd", "sub"] stdin=None here=None writes=[1] held=[0] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5545040Z < PROBE issue#2 ">'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5546490Z < PROBE issue#2 ">\"a b\" ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5547480Z < PROBE issue#2 ">a\\ b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5548310Z < PROBE issue#2 "2>'a b' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["2", "a", "b", "./x"] stdin=None here=None writes=[1] held=[0]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5549260Z < PROBE issue#2-control ">log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5550300Z < PROBE issue#2-control ">'ab' ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ab", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5551270Z < PROBE issue#2-control "ls >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls", "a", "b"] stdin=None here=None writes=[1] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5552230Z < PROBE issue#2-control "echo hi >'a b'" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["echo", "hi", "a", "b"] stdin=None here=None writes=[2] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5553150Z < PROBE issue#3 "<a <b ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "./x"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5554120Z < PROBE issue#3 "sudo <a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5555430Z < PROBE issue#3 "<a <b sudo -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "sudo", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5556390Z < PROBE issue#3 "sudo 3<a <b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "3", "a", "b", "-A", "true"] stdin=Some(3) here=None writes=[] held=[1]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5557440Z < PROBE issue#3 "sudo <<<a <<<b -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "b", "-A", "true"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5558650Z < PROBE issue#3-control "<a ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "./x"] stdin=Some(0) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5559670Z < PROBE issue#3-control "sudo <a -A true" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo", "a", "-A", "true"] stdin=Some(1) here=None writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5560600Z < PROBE issue#3-control "<a <b cat" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["a", "b", "cat"] stdin=Some(1) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5561540Z < PROBE issue#3-control "cat <a <b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=Some(2) here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5562440Z < PROBE issue#3-control "cat <<<a <<<b" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["cat", "a", "b"] stdin=None here=Some(2) writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5563330Z < PROBE issue#4 "&>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5564620Z < PROBE issue#4 "sudo &>log -u root ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sudo"] stdin=None here=None writes=[] held=[] | ["log", "-u", "root", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5565750Z < PROBE issue#4 "&>log sh x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "sh", "x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5566900Z < PROBE issue#4 "&>log cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "cd", "sub"] stdin=None here=None writes=[0] held=[] | ["./run.sh"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5568060Z < PROBE issue#4 "&>>log ./x" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["log", "./x"] stdin=None here=None writes=[0] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5569030Z < PROBE issue#4-control "ls &>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5570180Z < PROBE issue#4-control "ls &>>log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5571300Z < PROBE issue#4-control "ls & >log" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[] | ["log"] stdin=None here=None writes=[0] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5572410Z < PROBE issue#4-control "sleep 1 & ls" files=["x"] lexed=[["bash", "-lc"] stdin=None here=None writes=[] held=[] | ["sleep", "1"] stdin=None here=None writes=[] held=[] | ["ls"] stdin=None here=None writes=[] held=[]] verdict=None
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5573440Z ---
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5574150Z > PROBE issue#1 "2>/dev/null cd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "2", "/dev/null"] stdin=[] here=[] writes=[3] held=[2] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5575420Z > PROBE issue#1 ">log cd sub; ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5576820Z > PROBE issue#1 ">log pushd sub && ./run.sh" files=["run.sh", "sub/run.sh"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["pushd", "sub", "log"] stdin=[] here=[] writes=[2] held=[] | ["./run.sh"] stdin=[] here=[] writes=[] held=[]] verdict=Some(Persistence)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5578050Z > PROBE issue#1 ">log $(cat x)" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5579170Z > PROBE issue#1 ">log `cat x`" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["cat", "x"] stdin=[] here=[] writes=[] held=[] | ["\u{1}unseen-output\u{1}", "log"] stdin=[] here=[] writes=[1] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5580240Z > PROBE issue#1 ">log PATH=.:$PATH x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["PATH=.:$PATH", "x", "log"] stdin=[] here=[] writes=[2] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Summary	2026-11-08T00:28:13.5581340Z > PROBE issue#1 ">log export PATH=.:$PATH && x" files=["x"] lexed=[["bash", "-lc"] stdin=[] here=[] writes=[] held=[] | ["export", "PATH=.:$PATH", "log"] stdin=[] here=[] writes=[2] held=[] | ["x"] stdin=[] here=[] writes=[] held=[]] verdict=Some(UnseenCode)
+probe (macos-15, aarch64-apple-darwin)	Upload logs	﻿2026-11-08T00:28:13.5753840Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5754310Z with:
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5754510Z   name: issue-1772-probe-macos-15
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5754730Z   path: /Users/runner/work/_temp/logs
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5754970Z   retention-days: 30
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5755150Z   if-no-files-found: warn
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5755330Z   compression-level: 6
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5755520Z   overwrite: false
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5755720Z   include-hidden-files: false
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5755900Z env:
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5756080Z   COMMIT: 29530d2cb9986dd3a4d05a9c707444f06c3ab22e
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5756410Z   FIX_REPO: darkmatter-sudo/CorbanuTerminal
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5756690Z   FIX_COMMIT: b94f746254d5ba29a23b8eeb85608cee051b9e18
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5757010Z   PREV_COMMIT: abd0445416e1a47a05bf42d1368fdc75dd520115
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5757910Z   REVERT: core/src/security/tainted_action.rs core/src/security/tainted_action/indirect.rs core/src/security/tainted_action/shell.rs core/src/security/tainted_action/code_variables.rs core/src/security/tainted_action/mktemp.rs core/src/security/tainted_action/rerun.rs
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5758870Z   TARGET: aarch64-apple-darwin
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5759070Z   CARGO_INCREMENTAL: 0
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5759250Z   CORBANU_TEST_NO_NATIVE_KEYRING: 1
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5759490Z   RUST_BACKTRACE: 1
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5759650Z   RUST_MIN_STACK: 8388608
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:13.5759820Z ##[endgroup]
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.1650470Z (node:24724) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.1652100Z (Use `node --trace-deprecation ...` to show where the warning was created)
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.1731060Z With the provided path, there will be 13 files uploaded
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.1754830Z Artifact name is valid!
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.1756660Z Root directory input is valid!
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.5302060Z Beginning upload of artifact content to blob storage
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.5780830Z (node:24724) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.7622140Z Uploaded bytes 94352
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.8007870Z Finished uploading artifact content to blob storage!
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.8009150Z SHA256 digest of uploaded artifact zip is 9287cf4187d6629a2ab5ad9df9dd698d1151e0731b2d6ae84fcc6f67fa886380
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:14.8010210Z Finalizing artifact upload
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:15.2057040Z Artifact issue-1772-probe-macos-15.zip successfully finalized. Artifact ID 13596514788
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:15.2059810Z Artifact issue-1772-probe-macos-15 has been successfully uploaded! Final size is 94352 bytes. Artifact ID is 13596514788
+probe (macos-15, aarch64-apple-darwin)	Upload logs	2026-11-08T00:28:15.2071090Z Artifact download URL: https://github.com/darkmatter-sudo/corbanu-macos-repro/actions/runs/42426200419/artifacts/13596514788
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	﻿2026-11-08T00:28:15.2396230Z Post job cleanup.
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.3771060Z [command]/opt/homebrew/bin/git version
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.3949720Z git version 2.56.0
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.3992430Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/4045f0cb-ee12-4276-9dc4-f836b4fbe62e/.gitconfig'
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.4000290Z Temporarily overriding HOME='/Users/runner/work/_temp/4045f0cb-ee12-4276-9dc4-f836b4fbe62e' before making global git config changes
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.4002300Z Adding repository directory to the temporary git global config as a safe directory
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.4005680Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/repro
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.4096620Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.4164200Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.5191430Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.5261600Z http.https://github.com/.extraheader
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.5275340Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+probe (macos-15, aarch64-apple-darwin)	Post Check out this repo (probe source)	2026-11-08T00:28:15.5369090Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+probe (macos-15, aarch64-apple-darwin)	Complete job	﻿2026-11-08T00:28:15.6854870Z Cleaning up orphan processes
+probe (macos-15, aarch64-apple-darwin)	Complete job	2026-11-08T00:28:18.4033360Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
