@@ -1,0 +1,64 @@
+name: windows-clippy-check
+
+# CorbanuCore/CorbanuTerminal PR CI runs `cargo clippy --tests -D warnings`
+# on windows-2022 (rust-ci-lint-build.yml). This job runs the same lint for
+# codex-core, on each listed commit, with the repo's pinned toolchain, and
+# reports pass/fail per commit (a fail-before commit is expected to fail).
+# Nothing is posted upstream.
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "owner/repo holding the commits"
+        default: "darkmatter-sudo/CorbanuTerminal"
+      commits:
+        description: "space-separated full commit SHAs"
+        required: true
+      package:
+        description: "cargo package to lint"
+        default: "codex-core"
+
+permissions:
+  contents: read
+
+jobs:
+  clippy:
+    runs-on: windows-2022
+    timeout-minutes: 150
+    env:
+      CARGO_INCREMENTAL: "0"
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Clone commits
+        run: |
+          set -euo pipefail
+          git config --global core.symlinks false
+          git init -q CorbanuTerminal
+          cd CorbanuTerminal
+          for c in ${{ inputs.commits }}; do
+            git fetch -q --depth 1 "https://github.com/${{ inputs.repo }}.git" "$c"
+          done
+          git checkout -q "$(echo ${{ inputs.commits }} | cut -d' ' -f1)"
+      - name: Toolchain
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -euo pipefail
+          rustup show active-toolchain || rustup toolchain install
+          rustc -V; cargo -V; cargo clippy -V
+      - name: cargo clippy per commit
+        working-directory: CorbanuTerminal/codex-rs
+        run: |
+          set -uo pipefail
+          status=0
+          for c in ${{ inputs.commits }}; do
+            git checkout -q "$c"
+            echo "=== commit $(git rev-parse HEAD)"
+            cargo clippy -p "${{ inputs.package }}" --target x86_64-pc-windows-msvc --tests -- -D warnings 2>&1 | grep -v '^ *\(Compiling\|Checking\) '
+            rc=${PIPESTATUS[0]}
+            echo "=== RESULT $(git rev-parse HEAD) clippy exit $rc"
+            [ "$rc" -eq 0 ] || status=1
+          done
+          echo "=== overall status $status (nonzero if any commit failed)"
