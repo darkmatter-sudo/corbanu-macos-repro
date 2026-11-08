@@ -1,0 +1,59 @@
+fmt	Set up job	﻿2026-11-08T11:21:19.3517396Z Current runner version: '2.338.2'
+fmt	Set up job	2026-11-08T11:21:19.3536961Z ##[group]Runner Image Provisioner
+fmt	Set up job	2026-11-08T11:21:19.3537576Z Hosted Compute Agent
+fmt	Set up job	2026-11-08T11:21:19.3538119Z Version: 20261028.624
+fmt	Set up job	2026-11-08T11:21:19.3538519Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+fmt	Set up job	2026-11-08T11:21:19.3538978Z Build Date: 2026-10-28T21:51:42Z
+fmt	Set up job	2026-11-08T11:21:19.3539501Z Worker ID: {781a34d2-28a9-4215-8106-28d113dffb30}
+fmt	Set up job	2026-11-08T11:21:19.3539922Z Region: westus2
+fmt	Set up job	2026-11-08T11:21:19.3540350Z Cloud: Azure
+fmt	Set up job	2026-11-08T11:21:19.3540700Z ##[endgroup]
+fmt	Set up job	2026-11-08T11:21:19.3541488Z ##[group]Operating System
+fmt	Set up job	2026-11-08T11:21:19.3541927Z Ubuntu
+fmt	Set up job	2026-11-08T11:21:19.3542248Z 24.04.5
+fmt	Set up job	2026-11-08T11:21:19.3542553Z LTS
+fmt	Set up job	2026-11-08T11:21:19.3542915Z ##[endgroup]
+fmt	Set up job	2026-11-08T11:21:19.3543252Z ##[group]Runner Image
+fmt	Set up job	2026-11-08T11:21:19.3543703Z Image: ubuntu-24.04
+fmt	Set up job	2026-11-08T11:21:19.3544056Z Version: 20261101.360.1
+fmt	Set up job	2026-11-08T11:21:19.3544666Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+fmt	Set up job	2026-11-08T11:21:19.3545731Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+fmt	Set up job	2026-11-08T11:21:19.3546390Z ##[endgroup]
+fmt	Set up job	2026-11-08T11:21:19.3547040Z ##[group]GITHUB_TOKEN Permissions
+fmt	Set up job	2026-11-08T11:21:19.3548447Z Contents: read
+fmt	Set up job	2026-11-08T11:21:19.3548803Z Metadata: read
+fmt	Set up job	2026-11-08T11:21:19.3549167Z ##[endgroup]
+fmt	Set up job	2026-11-08T11:21:19.3550552Z Secret source: Actions
+fmt	Set up job	2026-11-08T11:21:19.3551107Z Cache mode: write
+fmt	Set up job	2026-11-08T11:21:19.3551614Z Prepare workflow directory
+fmt	Set up job	2026-11-08T11:21:19.3762264Z Prepare all required actions
+fmt	Set up job	2026-11-08T11:21:19.3828516Z Complete job name: fmt
+fmt	Checkout target commit	﻿2026-11-08T11:21:19.4589110Z ##[group]Run git init -q CorbanuTerminal
+fmt	Checkout target commit	2026-11-08T11:21:19.4589759Z ^[[36;1mgit init -q CorbanuTerminal^[[0m
+fmt	Checkout target commit	2026-11-08T11:21:19.4590164Z ^[[36;1mcd CorbanuTerminal^[[0m
+fmt	Checkout target commit	2026-11-08T11:21:19.4590985Z ^[[36;1mgit fetch -q --depth 1 "https://github.com/darkmatter-sudo/CorbanuTerminal.git" "dbf58a8e5af59fa2d031b394e38b5dedd1c6c328"^[[0m
+fmt	Checkout target commit	2026-11-08T11:21:19.4591690Z ^[[36;1mgit checkout -q FETCH_HEAD^[[0m
+fmt	Checkout target commit	2026-11-08T11:21:19.4592084Z ^[[36;1mgit rev-parse HEAD^[[0m
+fmt	Checkout target commit	2026-11-08T11:21:19.4809667Z shell: /usr/bin/bash -e {0}
+fmt	Checkout target commit	2026-11-08T11:21:19.4810602Z ##[endgroup]
+fmt	Checkout target commit	2026-11-08T11:21:27.0507506Z dbf58a8e5af59fa2d031b394e38b5dedd1c6c328
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	﻿2026-11-08T11:21:27.0577587Z ##[group]Run rustup component add rustfmt
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.0577974Z ^[[36;1mrustup component add rustfmt^[[0m
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.0578160Z ^[[36;1mrustfmt --version^[[0m
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.0578408Z ^[[36;1mrustfmt --edition 2024 --check "core/src/security/tainted_action_reading_tests.rs"^[[0m
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.0578730Z ^[[36;1mecho "RUSTFMT_OK core/src/security/tainted_action_reading_tests.rs"^[[0m
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.0594502Z shell: /usr/bin/bash -e {0}
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.0594684Z ##[endgroup]
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.1032948Z info: syncing channel updates for 1.99.1-x86_64-unknown-linux-gnu
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.3984041Z info: latest update on 2026-10-15 for version 1.99.1 (58cf8f9c3 2026-10-13)
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:27.3988473Z info: downloading 6 components
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.3318498Z warn: the missing active toolchain `1.99.1-x86_64-unknown-linux-gnu` has been auto-installed
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.3319041Z warn: auto-installation is deprecated for most `rustup` commands
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.3319337Z warn: scripts relying on this behavior in `rustup` may stop working in the future
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.3319719Z warn: to install the active toolchain, use `rustup install` instead
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.3320057Z warn: see <https://github.com/rust-lang/rustup/issues/4836> for more info
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.3595379Z info: component rustfmt is up to date
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.3942442Z rustfmt 1.10.0-stable (58cf8f9c35 2026-10-13)
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.4165368Z Warning: can't set `imports_granularity = Item`, unstable features are only available in nightly channel.
+fmt	rustfmt --check (repo toolchain + rustfmt.toml)	2026-11-08T11:21:35.4189807Z RUSTFMT_OK core/src/security/tainted_action_reading_tests.rs
+fmt	Complete job	﻿2026-11-08T11:21:35.4255342Z Cleaning up orphan processes

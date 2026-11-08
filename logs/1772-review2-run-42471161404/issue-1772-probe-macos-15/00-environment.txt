@@ -1,0 +1,18 @@
+main: 7218a2db477a1025f0cd671796376c85b96d0eb1
+fix:  c23fec92915c0487dc6528b322b9be8b493385b5 (darkmatter-sudo/CorbanuTerminal)
+fix parents: d7e2311492d05d9d8904f993334b4026a76fdb7a 
+prev: ec5450e96c4bc09c56198650d84aa690c3f8dce5
+probe sha256: 5f9fbac5c9d015e28bb54aa0ba7d2477942a3b6427a810d5cb42b6b14d3faaaa
+corpus sha256: 038df7af0362c7271b59aeda7b9890feb9c67d371b369df35d7fea470e551e94
+uname: Darwin arm64
+runner: macos15 image 20261104.0514.1
+ codex-rs/core/src/security/tainted_action.rs       | 100 ++++--
+ .../src/security/tainted_action/code_variables.rs  |   4 +-
+ .../core/src/security/tainted_action/indirect.rs   |  53 +++-
+ .../src/security/tainted_action/measure_tests.rs   |   7 +-
+ .../core/src/security/tainted_action/mktemp.rs     |   5 +-
+ codex-rs/core/src/security/tainted_action/rerun.rs |   5 +-
+ codex-rs/core/src/security/tainted_action/shell.rs | 259 +++++++++++++++-
+ .../src/security/tainted_action_reading_tests.rs   | 334 +++++++++++++++++++++
+ .../src/security/tainted_action_redirect_tests.rs  | 327 ++++++++++++++++++++
+ 9 files changed, 1047 insertions(+), 47 deletions(-)

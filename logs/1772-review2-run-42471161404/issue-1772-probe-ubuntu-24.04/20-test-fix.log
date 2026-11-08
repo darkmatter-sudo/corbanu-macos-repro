@@ -1,0 +1,44 @@
+   Compiling codex-sandboxing v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/sandboxing)
+   Compiling codex-exec-server v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/exec-server)
+   Compiling codex-linux-sandbox v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/linux-sandbox)
+   Compiling codex-utils-plugins v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/utils/plugins)
+   Compiling codex-rmcp-client v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/rmcp-client)
+   Compiling codex-apply-patch v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/apply-patch)
+   Compiling codex-plugin v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/plugin)
+   Compiling codex-arg0 v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/arg0)
+   Compiling codex-connectors v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/connectors)
+   Compiling codex-analytics v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/analytics)
+   Compiling codex-tools v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/tools)
+   Compiling codex-mcp v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/codex-mcp)
+   Compiling codex-core-skills v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core-skills)
+   Compiling codex-hooks v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/hooks)
+   Compiling codex-extension-api v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/extension-api)
+   Compiling codex-core-plugins v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core-plugins)
+   Compiling codex-test-binary-support v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/test-binary-support)
+   Compiling codex-home v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/codex-home)
+   Compiling codex-skills-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/skills)
+   Compiling codex-exec-server-test-support v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/exec-server/tests/support)
+   Compiling codex-core v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+   Compiling codex-memories-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+   Compiling codex-web-search-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+   Compiling core_test_support v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+   Compiling codex-image-generation-extension v0.1.48 (/home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3m 39s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/x86_64-unknown-linux-gnu/debug/deps/codex_core-21077267e61b3ab0)
+
+running 9 tests
+test security::tainted_action::tainted_action_reading_tests::issue_1772_lexer_reads_redirections_as_the_shell_does ... ok
+test security::tainted_action::tainted_action_reading_tests::issue_1772_main_reading_is_mains ... ok
+test security::tainted_action::tainted_action_reading_tests::issue_1772_quoted_files_are_linear ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... ok
+test security::tainted_action::tainted_action_reading_tests::issue_1772_case_lists_hold_on_mains_reading ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_interleaved_redirections_are_linear ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 3730 filtered out; finished in 2.06s
+
+exit=0

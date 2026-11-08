@@ -1,0 +1,76 @@
+M  core/src/security/tainted_action.rs
+M  core/src/security/tainted_action/measure_tests.rs
+M  core/src/security/tainted_action/shell.rs
+   Compiling codex-core v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core)
+   Compiling codex-image-generation-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/image-generation)
+   Compiling codex-web-search-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/web-search)
+   Compiling codex-memories-extension v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/ext/memories)
+   Compiling core_test_support v0.1.48 (/Users/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/core/tests/common)
+warning: linker stderr: ld: __eh_frame section too large (max 16MB) to encode dwarf unwind offsets in compact unwind table, performance of exception handling might be affected
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+warning: `codex-core` (lib test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3m 53s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (target/aarch64-apple-darwin/debug/deps/codex_core-bae4fe48997897e0)
+
+running 5 tests
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_keeps_1719_hidden_command_asks ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_redirection_cases_ask ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask ... FAILED
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_review_lines_ask ... ok
+test security::tainted_action::tainted_action_redirect_tests::issue_1772_interleaved_redirections_are_linear ... ok
+
+failures:
+
+---- security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask stdout ----
+
+thread 'security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask' (250457) panicked at core/src/security/tainted_action_redirect_tests.rs:299:5:
+assertion failed: `(left == right)`: review 2 lines quiet
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[[0m
+[31m<    "item 1: [\"bash\", \"-lc\", \"cat x | while read l; do true; >/dev/null done; sh; done\"]",[0m
+[31m<    "item 1: [\"bash\", \"-lc\", \"cat x | while read l; do true; 2>/dev/null done; sh; done\"]",[0m
+[31m<    "item 1: [\"bash\", \"-lc\", \"cat x | if true; then true; >/dev/null fi; sh; fi\"]",[0m
+[31m<    "item 1: [\"bash\", \"-lc\", \"cat x | case a in a) true; >/dev/null esac; sh;; esac\"]",[0m
+[31m<    "item 2: [\">'a b'\", \"ls\"]",[0m
+[31m<    "item 2: [\"env\", \">'a b'\", \"ls\"]",[0m
+[31m<    "item 2: [\">a\\\\ b\", \"ls\"]",[0m
+[31m<    "item 2: [\">\\\"a b\\\"\", \"ls\"]",[0m
+[31m<    "item 3: [\"bash\", \"-lc\", \"git -c \\\"user.name=x>'a g\\\\it'\\\" status\"]",[0m
+[31m<    "item 3: [\"git\", \"-c\", \"user.name=x>'a g\\\\it'\", \"status\"]",[0m
+[31m<    "item 4: [\"bash\", \"-lc\", \"$(2>log echo) ./x\"]",[0m
+[31m<    "item 4: [\"bash\", \"-lc\", \"$(2>&1 echo) ./x\"]",[0m
+[31m<    "item 4: [\"bash\", \"-lc\", \"$(<f echo) ./x\"]",[0m
+[31m<    "item 4: [\"bash\", \"-lc\", \"$(<<<a echo) ./x\"]",[0m
+[31m<    "item 4: [\"bash\", \"-lc\", \"$(2>log printf '') ./x\"]",[0m
+[31m<    "item 4: [\"bash\", \"-lc\", \"`2>log echo` ./x\"]",[0m
+[31m<    "item 5: [\"bash\", \"-lc\", \"grep -n \\\"<<<<<<<\\\\|>>>>>>>\\\\|=======\\\" -A3 f\"]",[0m
+[31m<    "item 6: [\"bash\", \"-lc\", \">./out.txt echo hi\"]",[0m
+[31m<][0m
+[32m>[][0m
+
+
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/std/src/panicking.rs:679:5
+   1: core::panicking::panic_fmt
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/panicking.rs:80:14
+   2: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask
+   3: codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask::{closure#0}
+   4: <codex_core::security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask::{closure#0} as core::ops::function::FnOnce<()>>::call_once
+   5: <fn() -> core::result::Result<(), alloc::string::String> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+
+failures:
+    security::tainted_action::tainted_action_redirect_tests::issue_1772_review_2_lines_ask
+
+test result: FAILED. 4 passed; 1 failed; 0 ignored; 0 measured; 3737 filtered out; finished in 4.77s
+
+error: test failed, to rerun pass `-p codex-core --lib`
+exit=101
