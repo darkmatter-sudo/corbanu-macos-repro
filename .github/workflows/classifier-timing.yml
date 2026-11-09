@@ -34,7 +34,7 @@ on:
         required: false
         default: ""
       selftest:
-        description: Test filter for the self-test step (security:: = every classifier test).
+        description: "Test filter for the self-test step (security:: runs every classifier test)."
         required: false
         default: security::tainted_action::tainted_action_timing_probe
       runners:
