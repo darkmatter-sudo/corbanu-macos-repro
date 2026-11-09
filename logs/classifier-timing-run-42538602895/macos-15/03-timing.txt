@@ -1,0 +1,68 @@
+== build: cargo test --release -p codex-core --lib --no-run
+warning: unused import: `futures::FutureExt`
+  --> core/src/accounting_chat_tests.rs:19:5
+   |
+19 | use futures::FutureExt;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `lock_state_for_accounting_fixture` is never used
+    --> core/src/session/turn.rs:4125:25
+     |
+4124 | impl Session {
+     | ------------ method in this implementation
+4125 |     pub(crate) async fn lock_state_for_accounting_fixture(&self) -> impl Drop + '_ {
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Denied` is never constructed
+   --> core/src/accounting_chat_tests.rs:219:8
+    |
+219 | struct Denied;
+    |        ^^^^^^
+
+warning: linker stderr: ld: __eh_frame section too large (max 16MB) to encode dwarf unwind offsets in compact unwind table, performance of exception handling might be affected
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+warning: `codex-core` (lib test) generated 4 warnings
+    Finished `release` profile [optimized + debuginfo] target(s) in 3.00s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+  Executable unittests src/lib.rs (target/release/deps/codex_core-976ac2e5ecbe1971)
+nested_substitution 1000: ok
+nested_substitution 2000: ok
+nested_substitution 4000: ok
+nested_substitution 8000: ok
+alias_chain 1000: ok
+alias_chain 2000: ok
+alias_chain 4000: ok
+alias_chain 8000: ok
+arithmetic 1000: ok
+arithmetic 2000: ok
+arithmetic 4000: ok
+arithmetic 8000: ok
+glob_alternatives 1000: ok
+glob_alternatives 2000: ok
+glob_alternatives 4000: ok
+glob_alternatives 8000: ok
+nested_quotes 1000: ok
+nested_quotes 2000: ok
+nested_quotes 4000: ok
+nested_quotes 8000: ok
+| pattern | 1000 median ms | 2000 median ms | 4000 median ms | 8000 median ms | doubling ratios | verdict |
+|---|---|---|---|---|---|---|
+| nested_substitution | 67.516 | 88.819 | 153.283 | 384.408 | 1.32, 1.73, 2.51 | unclear (ratio between 2.5 and 3.0) |
+| alias_chain | 115.657 | 196.152 | 262.866 | 456.335 | 1.70, 1.34, 1.74 | linear |
+| arithmetic | 33.952 | 38.378 | 47.256 | 52.940 | 1.13, 1.23, 1.12 | linear |
+| glob_alternatives | 57.656 | 76.088 | 119.072 | 251.884 | 1.32, 1.56, 2.12 | linear |
+| nested_quotes | 30.543 | 40.622 | 37.735 | 53.194 | 1.33, 0.93, 1.41 | linear |
+
+Verdicts on each line (classifier result):
+- nested_substitution: Some(UnseenCode)
+- alias_chain: Some(UnseenCode)
+- arithmetic: None
+- glob_alternatives: None, Some(UnseenCode)
+- nested_quotes: Some(UnseenCode)
