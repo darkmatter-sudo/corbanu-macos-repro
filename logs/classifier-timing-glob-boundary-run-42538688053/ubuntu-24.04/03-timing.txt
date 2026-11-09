@@ -1,0 +1,38 @@
+== build: cargo test --release -p codex-core --lib --no-run
+warning: unused import: `futures::FutureExt`
+  --> core/src/accounting_chat_tests.rs:19:5
+   |
+19 | use futures::FutureExt;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `lock_state_for_accounting_fixture` is never used
+    --> core/src/session/turn.rs:4125:25
+     |
+4124 | impl Session {
+     | ------------ method in this implementation
+4125 |     pub(crate) async fn lock_state_for_accounting_fixture(&self) -> impl Drop + '_ {
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Denied` is never constructed
+   --> core/src/accounting_chat_tests.rs:219:8
+    |
+219 | struct Denied;
+    |        ^^^^^^
+
+warning: `codex-core` (lib test) generated 3 warnings
+    Finished `release` profile [optimized + debuginfo] target(s) in 1.69s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+  Executable unittests src/lib.rs (target/release/deps/codex_core-759aa748df341ab9)
+glob_alternatives 2038: ok
+glob_alternatives 2039: ok
+| pattern | 2038 median ms | 2039 median ms | doubling ratios | verdict |
+|---|---|---|---|---|
+| glob_alternatives | 41.119 | 41.137 | 1.00 | linear |
+
+Verdicts on each line (classifier result):
+- glob_alternatives: None, Some(UnseenCode)

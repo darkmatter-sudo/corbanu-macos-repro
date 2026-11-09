@@ -1,0 +1,35 @@
+warning: unused import: `futures::FutureExt`
+  --> core/src/accounting_chat_tests.rs:19:5
+   |
+19 | use futures::FutureExt;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `lock_state_for_accounting_fixture` is never used
+    --> core/src/session/turn.rs:4125:25
+     |
+4124 | impl Session {
+     | ------------ method in this implementation
+4125 |     pub(crate) async fn lock_state_for_accounting_fixture(&self) -> impl Drop + '_ {
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Denied` is never constructed
+   --> core/src/accounting_chat_tests.rs:219:8
+    |
+219 | struct Denied;
+    |        ^^^^^^
+
+
+running 1 test
+probe	arithmetic	8000	46899	warmup	10768331	None
+probe	arithmetic	8000	46899	1	9266927	None
+probe	arithmetic	8000	46899	2	9308659	None
+probe	arithmetic	8000	46899	3	9659468	None
+probe	arithmetic	8000	46899	4	9215791	None
+probe	arithmetic	8000	46899	5	9141100	None
+.
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3754 filtered out; finished in 0.06s
+

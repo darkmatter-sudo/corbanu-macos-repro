@@ -1,0 +1,39 @@
+warning: unused import: `futures::FutureExt`
+  --> core/src/accounting_chat_tests.rs:19:5
+   |
+19 | use futures::FutureExt;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `lock_state_for_accounting_fixture` is never used
+    --> core/src/session/turn.rs:4125:25
+     |
+4124 | impl Session {
+     | ------------ method in this implementation
+4125 |     pub(crate) async fn lock_state_for_accounting_fixture(&self) -> impl Drop + '_ {
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Denied` is never constructed
+   --> core/src/accounting_chat_tests.rs:219:8
+    |
+219 | struct Denied;
+    |        ^^^^^^
+
+warning: linker stderr: ld: __eh_frame section too large (max 16MB) to encode dwarf unwind offsets in compact unwind table, performance of exception handling might be affected
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+
+running 1 test
+probe	alias_chain	2000	35783	warmup	192238291	Some(UnseenCode)
+probe	alias_chain	2000	35783	1	173609625	Some(UnseenCode)
+probe	alias_chain	2000	35783	2	149557666	Some(UnseenCode)
+probe	alias_chain	2000	35783	3	145041459	Some(UnseenCode)
+probe	alias_chain	2000	35783	4	156600417	Some(UnseenCode)
+probe	alias_chain	2000	35783	5	199666625	Some(UnseenCode)
+.
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3760 filtered out; finished in 1.02s
+
