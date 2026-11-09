@@ -1,0 +1,49 @@
+warning: unused import: `futures::FutureExt`
+  --> core/src/accounting_chat_tests.rs:19:5
+   |
+19 | use futures::FutureExt;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `lock_state_for_accounting_fixture` is never used
+    --> core/src/session/turn.rs:4125:25
+     |
+4124 | impl Session {
+     | ------------ method in this implementation
+4125 |     pub(crate) async fn lock_state_for_accounting_fixture(&self) -> impl Drop + '_ {
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Denied` is never constructed
+   --> core/src/accounting_chat_tests.rs:219:8
+    |
+219 | struct Denied;
+    |        ^^^^^^
+
+warning: linker stderr: ld: __eh_frame section too large (max 16MB) to encode dwarf unwind offsets in compact unwind table, performance of exception handling might be affected
+  |
+  = note: `#[warn(linker_messages)]` on by default
+
+
+running 1 test
+probe	nested_substitution	4000	28005	warmup	213095750	Some(UnseenCode)
+probe	nested_substitution	4000	28005	1	264743041	Some(UnseenCode)
+probe	nested_substitution	4000	28005	2	332023083	Some(UnseenCode)
+probe	nested_substitution	4000	28005	3	271762042	Some(UnseenCode)
+probe	nested_substitution	4000	28005	4	209060542	Some(UnseenCode)
+probe	nested_substitution	4000	28005	5	194808375	Some(UnseenCode)
+probe	nested_substitution	4000	28005	6	177006875	Some(UnseenCode)
+probe	nested_substitution	4000	28005	7	259694959	Some(UnseenCode)
+probe	nested_substitution	4000	28005	8	208460709	Some(UnseenCode)
+probe	nested_substitution	4000	28005	9	213346458	Some(UnseenCode)
+probe	nested_substitution	4000	28005	10	171457458	Some(UnseenCode)
+probe	nested_substitution	4000	28005	11	224153708	Some(UnseenCode)
+probe	nested_substitution	4000	28005	12	236329791	Some(UnseenCode)
+probe	nested_substitution	4000	28005	13	274257667	Some(UnseenCode)
+probe	nested_substitution	4000	28005	14	217681167	Some(UnseenCode)
+probe	nested_substitution	4000	28005	15	202820625	Some(UnseenCode)
+.
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3761 filtered out; finished in 3.67s
+
