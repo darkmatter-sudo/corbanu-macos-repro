@@ -1,0 +1,12 @@
+
+running 1 test
+probe	glob_alternatives	2000	10915	warmup	42243781	None
+probe	glob_alternatives	2000	10915	1	40703944	None
+probe	glob_alternatives	2000	10915	2	40414154	None
+probe	glob_alternatives	2000	10915	3	40261260	None
+probe	glob_alternatives	2000	10915	4	40371455	None
+probe	glob_alternatives	2000	10915	5	40389668	None
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.25s
+

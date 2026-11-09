@@ -1,0 +1,12 @@
+
+running 1 test
+probe	nested_quotes	256	2054	warmup	2059596	Some(UnseenCode)
+probe	nested_quotes	256	2054	1	1496422	Some(UnseenCode)
+probe	nested_quotes	256	2054	2	1469270	Some(UnseenCode)
+probe	nested_quotes	256	2054	3	1523112	Some(UnseenCode)
+probe	nested_quotes	256	2054	4	1453797	Some(UnseenCode)
+probe	nested_quotes	256	2054	5	1467458	Some(UnseenCode)
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.01s
+

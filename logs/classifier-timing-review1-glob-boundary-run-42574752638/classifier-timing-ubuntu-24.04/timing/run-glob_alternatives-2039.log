@@ -1,0 +1,12 @@
+
+running 1 test
+probe	glob_alternatives	2039	11149	warmup	42797780	Some(UnseenCode)
+probe	glob_alternatives	2039	11149	1	40894572	Some(UnseenCode)
+probe	glob_alternatives	2039	11149	2	40255108	Some(UnseenCode)
+probe	glob_alternatives	2039	11149	3	40909120	Some(UnseenCode)
+probe	glob_alternatives	2039	11149	4	40921404	Some(UnseenCode)
+probe	glob_alternatives	2039	11149	5	40417672	Some(UnseenCode)
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.25s
+

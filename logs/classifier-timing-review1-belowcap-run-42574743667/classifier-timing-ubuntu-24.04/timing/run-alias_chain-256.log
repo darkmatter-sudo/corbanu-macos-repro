@@ -1,0 +1,12 @@
+
+running 1 test
+probe	alias_chain	256	4135	warmup	22163663	Some(UnseenCode)
+probe	alias_chain	256	4135	1	21440374	Some(UnseenCode)
+probe	alias_chain	256	4135	2	21463490	Some(UnseenCode)
+probe	alias_chain	256	4135	3	21353363	Some(UnseenCode)
+probe	alias_chain	256	4135	4	21410439	Some(UnseenCode)
+probe	alias_chain	256	4135	5	21469328	Some(UnseenCode)
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.13s
+

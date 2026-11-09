@@ -1,0 +1,12 @@
+
+running 1 test
+probe	nested_substitution	1000	7005	warmup	35059487	Some(UnseenCode)
+probe	nested_substitution	1000	7005	1	33937358	Some(UnseenCode)
+probe	nested_substitution	1000	7005	2	33881154	Some(UnseenCode)
+probe	nested_substitution	1000	7005	3	33656646	Some(UnseenCode)
+probe	nested_substitution	1000	7005	4	33672646	Some(UnseenCode)
+probe	nested_substitution	1000	7005	5	33746122	Some(UnseenCode)
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.20s
+

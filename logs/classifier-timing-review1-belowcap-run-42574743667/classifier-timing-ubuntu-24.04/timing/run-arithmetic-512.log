@@ -1,0 +1,12 @@
+
+running 1 test
+probe	arithmetic	512	2459	warmup	1632768	None
+probe	arithmetic	512	2459	1	1203537	None
+probe	arithmetic	512	2459	2	1206071	None
+probe	arithmetic	512	2459	3	1210357	None
+probe	arithmetic	512	2459	4	1173622	None
+probe	arithmetic	512	2459	5	1196306	None
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.01s
+

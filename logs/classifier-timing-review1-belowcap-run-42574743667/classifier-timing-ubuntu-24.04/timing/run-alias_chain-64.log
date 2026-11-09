@@ -1,0 +1,12 @@
+
+running 1 test
+probe	alias_chain	64	943	warmup	6222905	Some(UnseenCode)
+probe	alias_chain	64	943	1	5749057	Some(UnseenCode)
+probe	alias_chain	64	943	2	5637918	Some(UnseenCode)
+probe	alias_chain	64	943	3	5660733	Some(UnseenCode)
+probe	alias_chain	64	943	4	5670567	Some(UnseenCode)
+probe	alias_chain	64	943	5	5697869	Some(UnseenCode)
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.04s
+

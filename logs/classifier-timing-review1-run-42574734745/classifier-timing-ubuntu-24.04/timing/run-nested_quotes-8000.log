@@ -1,0 +1,12 @@
+
+running 1 test
+probe	nested_quotes	8000	64006	warmup	18754104	Some(UnseenCode)
+probe	nested_quotes	8000	64006	1	18380589	Some(UnseenCode)
+probe	nested_quotes	8000	64006	2	18158926	Some(UnseenCode)
+probe	nested_quotes	8000	64006	3	18139530	Some(UnseenCode)
+probe	nested_quotes	8000	64006	4	18175648	Some(UnseenCode)
+probe	nested_quotes	8000	64006	5	18133108	Some(UnseenCode)
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.11s
+

@@ -1,0 +1,22 @@
+
+running 1 test
+probe	glob_alternatives	512	2475	warmup	20529151	None
+probe	glob_alternatives	512	2475	1	16547907	None
+probe	glob_alternatives	512	2475	2	16319138	None
+probe	glob_alternatives	512	2475	3	15967038	None
+probe	glob_alternatives	512	2475	4	16563951	None
+probe	glob_alternatives	512	2475	5	16968568	None
+probe	glob_alternatives	512	2475	6	16171290	None
+probe	glob_alternatives	512	2475	7	16537761	None
+probe	glob_alternatives	512	2475	8	16863273	None
+probe	glob_alternatives	512	2475	9	17159731	None
+probe	glob_alternatives	512	2475	10	17086663	None
+probe	glob_alternatives	512	2475	11	16672541	None
+probe	glob_alternatives	512	2475	12	16460618	None
+probe	glob_alternatives	512	2475	13	16223708	None
+probe	glob_alternatives	512	2475	14	16438795	None
+probe	glob_alternatives	512	2475	15	16372417	None
+test security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3763 filtered out; finished in 0.27s
+

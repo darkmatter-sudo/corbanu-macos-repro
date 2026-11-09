@@ -1,0 +1,25 @@
+# 2026-11-09T06:41:10Z fake-cargo test of classifier_timing_probe.sh (review 1 fixes 1+2): relative OUT_DIR, PATH without timeout/gtimeout (perl alarm), PROBE_TIMEOUT=3, fake binary sleeps 30 s for 'slow'
+== build: cargo test --release -p codex-core --lib --no-run
+   Compiling codex-core (fake)
+== test binary: ~/.cache/ttest/fakeprobe
+fast 1: ok
+fast 2: ok
+slow 1: TIMEOUT
+slow 2: TIMEOUT
+| pattern | 1 median ms | 2 median ms | doubling ratios | verdict |
+|---|---|---|---|---|
+| fast | 0.001 | 0.002 | 2.00 | linear |
+| slow | TIMEOUT | TIMEOUT |  | incomplete (see cells) |
+
+Verdicts on each line (classifier result):
+- fast: None
+- slow: none
+script rc=0
+files under caller/rel-out: build.json build.log raw.tsv run-fast-1.log run-fast-2.log run-slow-1.log run-slow-2.log status.tsv table.md test-binary.txt 
+under codex-rs/rel-out: ls: cannot access '~/.cache/ttest/repo/codex-rs/rel-out': No such file or directory
+fast	1	ok	0.05
+fast	2	ok	0.05
+slow	1	TIMEOUT	3.19
+slow	2	TIMEOUT	3.04
+cwd=~/.cache/ttest/repo/codex-rs/core args=--ignored --exact --nocapture security::tainted_action::tainted_action_timing_probe_tests::classifier_timing_probe
+fake test processes still alive after the run: 0 of 4

@@ -1,0 +1,16 @@
+== build: cargo test --release -p codex-core --lib --no-run
+    Finished `release` profile [optimized + debuginfo] target(s) in 2.31s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+== test binary: /home/runner/work/corbanu-macos-repro/corbanu-macos-repro/CorbanuTerminal/codex-rs/target/release/deps/codex_core-759aa748df341ab9
+glob_alternatives 64: ok
+glob_alternatives 128: ok
+glob_alternatives 256: ok
+glob_alternatives 512: ok
+glob_alternatives 1024: ok
+| pattern | 64 median ms | 128 median ms | 256 median ms | 512 median ms | 1024 median ms | doubling ratios | verdict |
+|---|---|---|---|---|---|---|---|
+| glob_alternatives | 1.769 | 3.007 | 7.221 | 16.538 | 15.361 | 1.70, 2.40, 2.29, 0.93 | linear |
+
+Verdicts on each line (classifier result):
+- glob_alternatives: None
