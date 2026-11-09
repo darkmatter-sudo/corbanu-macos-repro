@@ -33,6 +33,10 @@ on:
         description: Patterns (PROBE_PATTERNS); empty = all five.
         required: false
         default: ""
+      selftest:
+        description: Test filter for the self-test step (security:: = every classifier test).
+        required: false
+        default: security::tainted_action::tainted_action_timing_probe
       runners:
         description: JSON list of runners.
         required: false
@@ -56,6 +60,7 @@ jobs:
       PROBE_REPS: ${{ inputs.reps }}
       PROBE_SIZES: ${{ inputs.sizes }}
       PROBE_PATTERNS_IN: ${{ inputs.patterns }}
+      SELFTEST_FILTER: ${{ inputs.selftest }}
       # Same job-level env as rust-ci-core-security.yml.
       CARGO_INCREMENTAL: "0"
       CORBANU_TEST_NO_NATIVE_KEYRING: "1"
@@ -110,7 +115,7 @@ jobs:
         run: |
           set -o pipefail
           cargo test --release -p codex-core --lib -- \
-            security::tainted_action::tainted_action_timing_probe 2>&1 \
+            "$SELFTEST_FILTER" 2>&1 \
             | tee "$RUNNER_TEMP/logs/02-selftest.txt"
 
       - name: Timings
